@@ -18,7 +18,7 @@ class CreateSubscribedEmailsTable extends Migration
             $table->string('email')->unique();
             $table->boolean('is_active');
             $table->timestamps();
-            $table->softDelete();
+            $table->softDeletes();
         });
     }
 
@@ -29,6 +29,6 @@ class CreateSubscribedEmailsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('emails');
+        Schema::dropIfExists('subscribed_emails');
     }
 }

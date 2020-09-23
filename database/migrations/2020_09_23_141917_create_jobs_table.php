@@ -18,12 +18,12 @@ class CreateJobsTable extends Migration
             $table->string('title');
             $table->string('description');
             $table->string('application_mode');
-            $table->float('salary')->unique();
+            $table->float('salary');
             $table->text('link')->nullable();
-            $table->boolean('is_active');
+            $table->boolean('is_active')->default(true);
             $table->bigInteger('state_id');
             $table->timestamps();
-            $table->softDelete();
+            $table->softDeletes();
         });
     }
 

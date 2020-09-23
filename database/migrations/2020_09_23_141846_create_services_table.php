@@ -16,9 +16,10 @@ class CreateServicesTable extends Migration
         Schema::create('services', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name')->unique();
-            $table->boolean('is_active');
+            $table->string('display_name')->unique();
+            $table->boolean('is_active')->default(true);
             $table->timestamps();
-            $table->softDelete();
+            $table->softDeletes();
         });
     }
 

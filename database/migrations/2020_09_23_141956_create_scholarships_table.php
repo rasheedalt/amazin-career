@@ -21,7 +21,7 @@ class CreateScholarshipsTable extends Migration
             $table->text('link')->nullable();
             $table->boolean('is_active');
             $table->timestamps();
-            $table->softDelete();
+            $table->softDeletes();
         });
     }
 
