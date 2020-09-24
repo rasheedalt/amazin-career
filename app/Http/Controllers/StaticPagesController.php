@@ -20,4 +20,8 @@ class StaticPagesController extends Controller
         return view('pages.contact');
     }
 
+    public function postJobPage(){
+        return view('pages.post-job');
+    }
+
 }

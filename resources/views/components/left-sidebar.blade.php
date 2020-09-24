@@ -6,7 +6,7 @@
             <li><a href="HtmlFiles/AbujaJobs.html">Jobs in Abuja</a></li>
             <li><a href="HtmlFiles/PorthaecourtJobs.html">Jobs in Portharcourt</a></li>
             <li><a href="HtmlFiles/KanoJobs.html">Jobs in Kano</a></li>
-            <li><a href="HtmlFiles/OthersStateJobs.html">Jobs in Other States</a></li> 
+            <li><a href="{{ route('states.all') }}">Jobs in Other States</a></li> 
         </ol>
     </div>
 

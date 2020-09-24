@@ -16,7 +16,7 @@ class CreateScholarshipsTable extends Migration
         Schema::create('scholarships', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('title');
-            $table->string('description');
+            $table->text('description');
             $table->string('application_mode');
             $table->text('link')->nullable();
             $table->boolean('is_active');

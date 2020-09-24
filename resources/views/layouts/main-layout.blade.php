@@ -33,8 +33,8 @@
                     <li><a href="{{ route('about.page') }}">About</a></li>
                     <li><a href="{{ route('services.page') }}">Services</a></li>
                     <li><a href="/">Job Vacancies</a></li>
-                    <li><a href="{{ route('services.page') }}">Post Jobs</a></li>
-                    <li><a href="{{ route('services.page') }}">Scholarships</a></li>
+                    <li><a href="{{ route('post-job.page') }}">Post Jobs</a></li>
+                    <li><a href="{{ route('scholarships.list') }}">Scholarships</a></li>
                     <li><a href="{{ route('contact.page') }}">Contact</a></li>
                     <li><a href="{{ route('services.page') }}">Blog</a></li>
                 </ol>
@@ -43,9 +43,19 @@
     </navbar>
     <section class="my-5 container">
         <div class="searchEng">
-            <input placeholder="Prefered Jobs and Companies" type="text">
-            <input placeholder="Prefered Location" type="text">
-            <button><a href="#">Search </a></button>
+            <div class="row">
+                <div class="col">
+                    <input class="form-control" placeholder="Prefered Jobs and Companies" type="text">
+                </div>
+                <div class="col">
+                    <input class="form-control" placeholder="Prefered Location" type="text">
+                </div>
+            </div>
+            <div class="row mt-2">
+                <div class="col text-center">
+                    <button >Search</button>
+                </div>
+            </div>
         </div>
 
         <div class="searchEngMobile">
@@ -54,19 +64,19 @@
         </div>
     </section>
 
-    <section class="container">
+    <section class="container-fluid">
         <div class="row">
-            <div class="col-lg-3">
+            <div class="col-lg-2">
                 @include('components.left-sidebar')
             </div>
-            <div class="col-lg-6 container">
+            <div class="col-lg-8 container">
                 <div id="maincontent">
                     
                    @yield('main')
                     
                 </div>
             </div>
-            <div class="col-lg-3">
+            <div class="col-lg-2">
                 @include('components.right-sidebar')
             </div>
         </div>

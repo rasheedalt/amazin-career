@@ -15,6 +15,7 @@ class DatabaseSeeder extends Seeder
             StatesTableSeeder::class,
             ServicesTableSeeder::class,
             JobsTableSeeder::class,
+            ScholarshipsTableSeeder::class,
         ]);
     }
 }
