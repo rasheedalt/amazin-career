@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=, initial-scale=1.0">
     <title>AmazincareersNG</title>
-    <link rel="stylesheet" href="/css/main.css">
-    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/main.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
 
     <style>
         /* .home {
@@ -26,16 +27,16 @@
     
     <navbar id ="container">
         <div id ="header">
-               <a href="/"> <img src="/images/Logo.png" alt=""> </a>
+               <a href="/"> <img src="{{ asset('images/Logo.png') }}" alt=""> </a>
                 <ol>
                     <li><a href="/">Home</a></li>
-                    <li><a href="About.html">About</a></li>
-                    <li><a href="Services.html">Services</a></li>
+                    <li><a href="{{ route('about.page') }}">About</a></li>
+                    <li><a href="{{ route('services.page') }}">Services</a></li>
                     <li><a href="/">Job Vacancies</a></li>
-                    <li><a href="PostJob.html">Post Jobs</a></li>
-                    <li><a href="Scholarship.html">Scholarships</a></li>
-                    <li><a href="Contact.html">Contact</a></li>
-                    <li><a href="Blog.html">Blog</a></li>
+                    <li><a href="{{ route('services.page') }}">Post Jobs</a></li>
+                    <li><a href="{{ route('services.page') }}">Scholarships</a></li>
+                    <li><a href="{{ route('contact.page') }}">Contact</a></li>
+                    <li><a href="{{ route('services.page') }}">Blog</a></li>
                 </ol>
 
         </div>
