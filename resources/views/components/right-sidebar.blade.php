@@ -7,7 +7,7 @@
         <h3>OUR SERVICES</h3>
         <ol>
             @foreach($services as $service)
-            <li><a href="#">{{ $service->display_name }}</a></li>
+            <li><a href="{{ route('service.view', $service->id )}}">{{ $service->display_name }}</a></li>
             @endforeach
             <!-- <li><a href="HtmlFiles/BussPlan.html">Business Plan</a></li> -->
         </ol>

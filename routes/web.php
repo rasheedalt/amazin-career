@@ -14,3 +14,5 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/services/{service}', 'ServiceController@viewService')->name('service.view');
+Route::get('/jobs/{job}', 'JobController@view')->name('job.view');
