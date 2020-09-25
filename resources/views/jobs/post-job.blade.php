@@ -11,6 +11,7 @@
         <div class="row justify-content-center">
             <div class="col-8">
                 <form method="POST" action="{{ route('job.post') }}">
+                @csrf
                     <div class="">
                         <input class="form-control" placeholder="Company" type="text"> <br>
                         <input class="form-control" placeholder="Adress/Location" type="text"><br>
