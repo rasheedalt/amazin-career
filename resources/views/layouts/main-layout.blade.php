@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=, initial-scale=1.0">
     <title>AmazincareersNG</title>
-    <link  href="/css/main.css" rel="stylesheet">
-    <link  href="/css/bootstrap.css" rel="stylesheet">
+    <link  href="{{ asset('/css/main.css') }}" rel="stylesheet">
+    <link  href="{{ asset('/css/bootstrap.css') }}" rel="stylesheet">
 
     <style>
-        .home {
+        /* .home {
             color: white;
             height: 20px;
             Background-color: #072638;
@@ -18,7 +18,7 @@
             padding-right: 20px;
             padding-bottom: 8px;
             opacity: 60%;
-        }
+        } */
     </style>
 
 </head>
@@ -26,7 +26,7 @@
     
     <navbar id ="container">
         <div id ="header">
-               <a href="/"> <img src="{{ asset('images/Logo.png') }}" alt=""> </a>
+               <a href="/"> <img src="{{ asset('/images/Logo.png') }}" alt=""> </a>
                 <ol>
                     <li><a href="/">Home</a></li>
                     <li><a href="{{ route('about.page') }}">About</a></li>
