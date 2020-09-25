@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=, initial-scale=1.0">
     <title>AmazincareersNG</title>
-    <link  href="{{ asset('/css/main.css') }}" rel="stylesheet">
-    <link  href="{{ asset('/css/bootstrap.css') }}" rel="stylesheet">
+    <link  href="{{ asset('css/main.css') }}" rel="stylesheet">
+    <link  href="{{ asset('css/bootstrap.css') }}" rel="stylesheet">
 
     <style>
         /* .home {
@@ -32,7 +32,7 @@
                     <li><a href="{{ route('about.page') }}">About</a></li>
                     <li><a href="{{ route('services.page') }}">Services</a></li>
                     <li><a href="/">Job Vacancies</a></li>
-                    <li><a href="{{ route('post-job.page') }}">Post Jobs</a></li>
+                    <li><a href="{{ route('job.post') }}">Post Jobs</a></li>
                     <li><a href="{{ route('scholarships.list') }}">Scholarships</a></li>
                     <li><a href="{{ route('contact.page') }}">Contact</a></li>
                     <li><a href="{{ route('services.page') }}">Blog</a></li>
@@ -64,18 +64,18 @@
     </section>
 
     <section class="container-fluid">
-        <div class="row">
-            <div class="col-lg-2">
+        <div class="row justify-content-center">
+            <div class="col-md-2 mx-0">
                 @include('components.left-sidebar')
             </div>
-            <div class="col-lg-8 container">
+            <div class="col-md-8">
                 <div id="maincontent">
-                    
-                   @yield('main')
+                    @include('components.flash-message')
+                    @yield('main')
                     
                 </div>
             </div>
-            <div class="col-lg-2">
+            <div class="col-md-2 mx-0">
                 @include('components.right-sidebar')
             </div>
         </div>

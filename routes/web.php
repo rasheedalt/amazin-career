@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/','HomeController@home');
 
 // Static Pages
 Route::get('/services', 'StaticPagesController@servicesPage')->name('services.page');
@@ -25,6 +23,7 @@ Route::get('/services/{service}', 'ServiceController@viewService')->name('servic
 
 // Jobs
 Route::get('/jobs/{job}', 'JobController@view')->name('job.view');
+Route::get('/post-job', 'JobController@postJobView')->name('job.post');
 
 // Scholarship
 Route::get('/scholarships', 'ScholarshipsController@index')->name('scholarships.list');

@@ -160,7 +160,7 @@ body {
 .sidebarTwo input{
     margin-top: 15px;
     margin-bottom: 15px;
-    width: 180px;
+    /* width: 180px; */
     height: 10px;
     padding: 8px;
     border-style: none;
@@ -169,7 +169,7 @@ body {
 }
 
 .sidebarTwo button {
-    width: 100px;
+    /* width: 100px; */
     height:30px;
     padding: 5px;
     border-style: none;
@@ -276,6 +276,10 @@ body {
     color: white;
     text-align: center;
 }
+.post{
+    margin-left: 1rem !important;
+    margin-right: 1rem !important;
+}
  .post h4{
     color:  #072638;
     font-weight: bold;
@@ -333,7 +337,7 @@ body {
 }
 
 #adevrtbar {
-    float: left;
+    /* float: left; */
     /* margin-top: -75px; */
 }
 
@@ -470,6 +474,7 @@ body {
     color: white;
     text-align: center;
 }
+
  .post h4{
     color:  #072638;
     font-weight: bold;

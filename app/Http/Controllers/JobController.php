@@ -12,6 +12,22 @@ class JobController extends Controller
         return view('jobs.details', compact('job'));
     }
 
+    public function postJobView(){
+        return view('jobs.post-job');
+    }
+
+    public function saveJob(Request $request){
+        $data = $request->all();
+        $job = Job::create($data);
+        if($job){
+            $this->flashSuccessMessage('Job was saved successfully');
+            return back();
+        }else{
+            $this->flashErrorMessage('Error saving Job');
+            return back()->withInput();
+        }
+    }
+
     public function allStates(){
         $states = State::all();
         return view('jobs.job-by-states', compact('states'));

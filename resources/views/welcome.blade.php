@@ -3,10 +3,6 @@
 @section('main')
     <h3>JOB VACANCIES</h3>
     <div class="post">
-        @php
-            $jobs = App\Models\Job::paginate(10);
-        @endphp
-
         @foreach($jobs as $job)
             <h4>{{ ucwords($job->title) }}</h4>
             <date> Date: {{$job->created_at}} </date>
