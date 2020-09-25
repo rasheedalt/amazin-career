@@ -4,12 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=, initial-scale=1.0">
     <title>AmazincareersNG</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('css/main.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
+    <link  href="/css/main.css" rel="stylesheet">
+    <link  href="/css/bootstrap.css" rel="stylesheet">
 
     <style>
-        /* .home {
+        .home {
             color: white;
             height: 20px;
             Background-color: #072638;
@@ -19,7 +18,7 @@
             padding-right: 20px;
             padding-bottom: 8px;
             opacity: 60%;
-        } */
+        }
     </style>
 
 </head>
