@@ -1,0 +1,148 @@
+*  {
+    margin: 0px;
+    padding: 0px;;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#header {
+    height:211px ;
+    background-color: #F2EDED;
+    text-align: center;
+}
+#header img {
+    height: 150px;
+    width:  150px;
+    align-content: center;
+    padding: 10px;
+}
+
+#header h4 {
+    font-family: Tahoma;
+}
+
+#login {
+    padding: 40px;
+    padding-left: 450px;
+}
+
+#login form  input  {
+    font-family: tahoma;
+    width: 400px;
+    font-size: 14px;
+    padding: 8px;
+    margin-bottom: 10px;
+    border-style: solid;
+    border-width: 1px;
+}
+
+#login form  button  {
+    width: 80px;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-style: none;
+    background-color: #F2EDED;
+    border-radius: 3px;  
+    font-family: tahoma;
+    font-size: 14px;
+    text-decoration: none;
+    color:  #072638;
+}
+
+#login form button:hover {
+    background-color: #072638;
+    color: white;
+    transition: 0.8s ease;
+}
+
+#login p{
+    font-family: tahoma;
+    font-size: 14px;
+}
+
+#login  a {
+    Text-decoration: none;
+    color: red;
+}
+
+#login  a:hover {
+    text-decoration: underline;
+    color:  #02977D;
+}
+
+
+@media only screen and (max-width: 800px){
+
+#header {
+        height: 130px ;
+        background-color: #F2EDED;
+        text-align: center;
+    }
+ #header img {
+        height: 90px;
+        width:  90px;
+        align-content: center;
+        padding: 3px;
+    }
+
+    #header h4 {
+        font-family: Tahoma;
+        font-size: 13px;
+    }
+
+
+    #login {
+        padding: 20px;
+       margin-left: 100px;
+    }
+    
+    #login form  input  {
+        font-family: tahoma;
+        width: 200px;
+        font-size: 12px;
+        padding: 4px;
+        margin-bottom: 8px;
+        border-style: solid;
+        border-width: 1px;
+    }
+    
+    #login form  button  {
+        width: 50px;
+        padding: 5px;
+        margin-bottom: 10px;
+        border-style: none;
+        background-color: #F2EDED;
+        border-radius: 3px;  
+        font-family: tahoma;
+        font-size: 12px;
+        text-decoration: none;
+        color:  #072638;
+    }
+    
+    #login form button:hover {
+        background-color: #072638;
+        color: white;
+        transition: 0.8s ease;
+    }
+    
+    #login p{
+        font-family: tahoma;
+        font-size: 12px;
+    }
+    
+    #login  a {
+        Text-decoration: none;
+        color: red;
+    }
+    
+    #login  a:hover {
+        text-decoration: underline;
+        color:  #02977D;
+    }
+    
+
+
+
+}

@@ -16,6 +16,8 @@ class DatabaseSeeder extends Seeder
             ServicesTableSeeder::class,
             JobsTableSeeder::class,
             ScholarshipsTableSeeder::class,
+            PostsTableSeeder::class,
+            UsersTableSeeder::class,
         ]);
     }
 }

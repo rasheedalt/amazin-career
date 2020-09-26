@@ -7,6 +7,8 @@
     <title>AmazincareersNG</title>
     <link  href="{{ asset('css/main.css') }}" rel="stylesheet">
     <link  href="{{ asset('css/bootstrap.css') }}" rel="stylesheet">
+    <script  href="{{ asset('js/vendor/jquery-2.2.4.min.js') }}"></script>
+    <script  href="{{ asset('js/vendor/bootstrap.min.js') }}"></script>
 
     <style>
         /* .home {
@@ -75,26 +77,9 @@
 
                     <h3>JOB VACANCIES</h3>
                     <div class="post">
-                        @foreach($jobs as $job)
-                            <h4>{{ ucwords($job->title) }}</h4>
-                            <date> Date: {{$job->created_at}} </date>
-                            <p>
-                            @if(strlen($job->description) > 210 )
-                                {{  substr($job->description, 0, 200)."... "}}
-                            @else
-                                {{ $job->description }}
-                            @endif
-                            <a href="{{route('job.view', $job->id )}}">read more</a> </p>
-                            <hr>
-                        @endforeach
-
+                        @include('components.jobs-list')
                     </div>
 
-                    <div class="nextBTN">
-
-                        {{ $jobs->links() }}
-
-                    </div>
                 </div>
             </div>
             <div class="col-md-2 mx-0">
@@ -102,6 +87,9 @@
             </div>
         </div>
     </section>
+
+    <script  href="{{ asset('js/vendor/jquery-2.2.4.min.js') }}"></script>
+    <script  href="{{ asset('js/vendor/bootstrap.min.js') }}"></script>
 
 </body>
 </html>

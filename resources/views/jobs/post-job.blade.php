@@ -10,20 +10,7 @@
         <p> Get started with us by filling the below forms: </p>
         <div class="row justify-content-center">
             <div class="col-8">
-                <form method="POST" action="{{ route('job.post') }}">
-                @csrf
-                    <div class="">
-                        <input class="form-control" placeholder="Company" type="text"> <br>
-                        <input class="form-control" placeholder="Adress/Location" type="text"><br>
-                        <input class="form-control" placeholder="Job Positions" type="text"><br>
-                        <input class="form-control" placeholder="Salary Range" type="text"><br>
-                        <textarea class="form-control" name="Requirement" placeholder="Requirements" id="" cols="30" rows="10"></textarea><br>
-                        <input class="form-control" placeholder="Method of Application" type="text"><br>
-                        <input class="form-control" placeholder="Deadlines" type="text"><br>
-                        <input class="form-control" placeholder="Application Link" type="text"><br>
-                        <button class="btn btn-block text-white" style="background-color:#072638; text-decoration:none">Submit</button>
-                    </div>
-                </form>
+                @include('components.post-job')
                 <hr>
             </div>
         </div>

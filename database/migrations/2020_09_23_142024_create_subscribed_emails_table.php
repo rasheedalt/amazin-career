@@ -16,7 +16,7 @@ class CreateSubscribedEmailsTable extends Migration
         Schema::create('subscribed_emails', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('email')->unique();
-            $table->boolean('is_active');
+            $table->boolean('is_active')->default(true);
             $table->timestamps();
             $table->softDeletes();
         });

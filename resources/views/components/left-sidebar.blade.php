@@ -11,9 +11,12 @@
     </div>
 
     <div class="sidebarTwo">
-        <p>For job adevrt, Enter your mail and Subcribe</p>
-        <input placeholder= "email addresss" type="text">
-        <button>Subcribe</button>
+        <form action="{{ route('email.subscribe') }}" method="POST">
+            @csrf
+            <p>For job adevrt, Enter your mail and Subcribe</p>
+            <input name="email" placeholder= "email addresss" type="text">
+            <button>Subcribe</button>
+        </form>
     </div>
 
     <div class="sidebarThree">
