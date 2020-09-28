@@ -12,7 +12,10 @@
 */
 
 Route::get('/','HomeController@home');
+Route::get('/admin','HomeController@login');
+
 Auth::routes();
+Auth::routes(['register' => false]);
 
 // Static Pages
 Route::get('/services', 'StaticPagesController@servicesPage')->name('services.page');
@@ -41,4 +44,5 @@ Route::get('/blog/{post}', 'PostsController@show')->name('post');
 
 Route::get('/states-jobs', 'JobController@allStates')->name('states.all');
 
+Route::get('/dashboard', 'AdminController@dashboard')->name('dashboard');
 Route::get('/home', 'HomeController@index')->name('home');

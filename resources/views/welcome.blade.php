@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>AmazincareersNG</title>
-    <link  href="{{ asset('css/main.css') }}" rel="stylesheet">
+    <link  href="{{ asset('css/main/main.css') }}" rel="stylesheet">
     <link  href="{{ asset('css/bootstrap.css') }}" rel="stylesheet">
     <script  href="{{ asset('js/vendor/jquery-2.2.4.min.js') }}"></script>
     <script  href="{{ asset('js/vendor/bootstrap.min.js') }}"></script>

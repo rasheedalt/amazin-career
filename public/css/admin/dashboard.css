@@ -1,0 +1,376 @@
+*  {
+    margin: 0px;
+    padding: 0px;;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#header {
+    height:240px ;
+    background-color: #F2EDED;
+    text-align: center;
+}
+#header img {
+    height: 150px;
+    width:  150px;
+    align-content: center;
+    padding: 10px;
+}
+
+#header h4 {
+    font-family: Tahoma;
+}
+
+#header p{
+    font-family: tahoma;
+    font-size: 14px;
+    padding: 5PX;
+}
+
+#sidebar {
+    height: 500px;
+    width: 200px;
+    background-color:#E3E3E3;
+    float: left;
+}
+#sidebar ol a {
+    text-decoration: none;
+    list-style: none;
+    color:  #072638;
+    font-family: tahoma;
+    font-size: 15px;
+}
+#sidebar ol a li {
+    padding: 12px;
+    padding-left: 29px;
+    border-bottom-style: solid;
+    border-color: white;
+    border-width: 1px;
+}
+#sidebar ol li:hover {
+    background-color: #072638;
+    color: white;
+    transition: 1s ease;
+    text-decoration: none;
+}
+
+#sidebar img {
+    height: 80px;
+    width:  80px;
+    padding: 30px;
+    padding-bottom: 10px;
+}
+
+#sidebar p {
+    font-family: tahoma;
+    font-size: 15px;
+    text-indent: 30px;
+}
+
+#maincontent {
+    float: left;
+    margin-left: 100px;
+    margin-top: 30px;
+}
+
+.CI {
+    margin: 10px;
+    width: 150px;   
+    height: 70px;
+    background-color: #E3E3E3;
+    text-align: center;
+    border-radius: 5px;
+    padding: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.CI h2 {
+    font-family: tahoma;
+    font-size: 30px;
+    padding: 10px;
+}
+
+.PJR {
+    margin: 10px;
+    width: 150px;   
+    height: 70px;
+    background-color: #E3E3E3;
+    text-align: center;
+    border-radius: 5px;
+    padding: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.PJR h2 {
+    font-family: tahoma;
+    font-size: 30px;
+    padding: 10px;
+}
+
+#maincontent2 {
+    float: left;
+    margin-top: 30px;
+}
+.Emails {
+    margin: 10px;
+    width: 150px;   
+    height: 70px;
+    background-color: #E3E3E3;
+    text-align: center;
+    border-radius: 5px;
+    padding: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.Emails h2 {
+    font-family: tahoma;
+    font-size: 30px;
+    padding: 10px;
+}
+
+.EmailCL ol  a {
+    color:  #E3E3E3;
+    list-style: none;
+    text-decoration: none;
+    font-family: tahoma;
+    font-size: 15px;
+}
+
+.EmailCL ol a li {
+    width: 170px;
+    height: 25px;
+    background-color:  #072638;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+}
+.EmailCL ol a li:hover {
+    color:  #072638;
+    background-color: #DFDFDF;
+    transition: 1s ease;
+}
+
+#maincontent3 {
+    float: left;
+    margin-top: 30px;
+}
+
+.WV {
+    margin: 10px;
+    width: 150px;   
+    height: 70px;
+    background-color: #E3E3E3;
+    text-align: center;
+    border-radius: 5px;
+    padding: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.WV h2 {
+    font-family: tahoma;
+    font-size: 30px;
+    padding: 10px;
+}
+
+.DV {
+    margin: 10px;
+    width: 150px;   
+    height: 70px;
+    background-color: #E3E3E3;
+    text-align: center;
+    border-radius: 5px;
+    padding: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.DV h2 {
+    font-family: tahoma;
+    font-size: 30px;
+    padding: 10px;
+}
+
+
+#maincontent4 {
+    float: left;
+    margin-top: 30px;
+}
+
+.DCC {
+    margin: 10px;
+    width: 150px;   
+    height: 70px;
+    background-color: #E3E3E3;
+    text-align: center;
+    border-radius: 5px;
+    padding: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.DCC h2 {
+    font-family: tahoma;
+    font-size: 30px;
+    padding: 10px;
+}
+
+.MV{
+    margin: 10px;
+    width: 150px;   
+    height: 70px;
+    background-color: #E3E3E3;
+    text-align: center;
+    border-radius: 5px;
+    padding: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.MV h2 {
+    font-family: tahoma;
+    font-size: 30px;
+    padding: 10px;
+}
+
+.WV{
+    margin: 10px;
+    width: 150px;   
+    height: 70px;
+    background-color: #E3E3E3;
+    text-align: center;
+    border-radius: 5px;
+    padding: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.WV h2 {
+    font-family: tahoma;
+    font-size: 30px;
+    padding: 10px;
+}
+
+
+#MobSidebar1, #MobSidebar, #MobStat1, #MobStat2 {display: none;}
+
+
+@media only screen and (max-width: 800px){
+#header {
+        height: 150px ;
+        background-color: #F2EDED;
+        text-align: center;
+    }
+ #header img {
+        height: 90px;
+        width:  90px;
+        align-content: center;
+        padding: 2px;
+    }
+
+    #header h4 {
+        font-family: Tahoma;
+        font-size: 12px;
+    }
+    #header p{
+        font-size: 12px;
+    }
+
+#sidebar, #maincontent, #maincontent1, #maincontent2,#maincontent3, #maincontent4 {display: none;}
+
+#MobSidebar1, #MobSidebar, #MobStat1, #MobStat2 {display: block;}
+
+#MobSidebar{
+    margin: 40px;
+    margin-bottom: 20px;
+}
+
+#MobSidebar ol a{
+    font-size: 13px;
+    text-decoration: none;
+    color:  #072638;
+}
+
+#MobSidebar ol a li {
+    background-color:  #E3E3E3;
+    padding: 15px;
+    text-align: center;
+    display: inline;
+    border-radius: 2px;
+    margin: 2px;
+}
+
+#MobSidebar ol a li:hover {
+    background-color:  #072638;
+    color: white;
+    transition: 1s ease;
+}
+
+#MobSidebar1 {
+    margin: 40px;
+    margin-bottom: 100px;
+}
+
+#MobSidebar1 ol a{
+    font-size: 13px;
+    text-decoration: none;
+    color:  #072638;
+}
+
+#MobSidebar1 ol a li {
+    background-color:  #E3E3E3;
+    padding: 15px;
+    text-align: center;
+    display: inline;
+    border-radius: 2px;
+    margin: 2px;
+}
+
+#MobSidebar1 ol a li:hover {
+    background-color:  #072638;
+    color: white;
+    transition: 1s ease;
+}
+
+.WV, .DCC, .DV, .MV {
+    width: 120px;
+    height: 30px;
+    font-size: 12px;
+    padding-top: 20px;
+}
+
+.WV h2, .DCC h2, .DV h2, .MV h2 {
+    font-size: 20px;
+}
+
+.WV {
+    float: left;
+    margin-left: 40px;
+}
+.DCC {
+    float: left;
+}
+
+.DV {
+    float: left;
+    margin-left: 40px;
+}
+.MV {
+    float: left;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+}

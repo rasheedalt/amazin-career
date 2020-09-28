@@ -15,7 +15,13 @@ class UsersTableSeeder extends Seeder
             [
                 'firstname' => 'Raji',
                 'lastname' => 'Rasheed',
-                'email' => 'rrasheed@gmail.com',
+                'email' => 'rrasheedalt@gmail.com',
+                'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi'
+            ],
+            [
+                'firstname' => 'Admin',
+                'lastname' => 'Test',
+                'email' => 'admin@test.com',
                 'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi'
             ],
         ];

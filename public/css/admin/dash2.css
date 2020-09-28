@@ -1,0 +1,26 @@
+*  {
+    margin: 0px;
+    padding: 0px;;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#sidebar p{
+    font-family: tahoma;
+    font-size: 14px;
+    color:  #072638;
+    padding-bottom: 5px;
+}
+
+#sidebar p a{
+    Text-decoration: none;
+    color: red;
+}
+
+#sidebar a:hover {
+    text-decoration: underline;
+    color:  #02977D;
+}
+
