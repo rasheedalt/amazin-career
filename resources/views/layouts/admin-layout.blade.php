@@ -6,14 +6,20 @@
     <title>AmazincareersNG</title>
     <link  href="{{ asset('css/admin/main.css') }}" rel="stylesheet">
     <!-- <link  href="{{ asset('css/bootstrap.css') }}" rel="stylesheet"> -->
+    @yield('more-styles')
 
 </head>
 <body>
-        <div id ="header">
-            <a href="/"> <img src="{{ asset('images/Logo.png') }}" alt=""> </a>
-             <h4>ADMIN LOGIN PORTAL</h4>
-        </div>
-        
+    <div id ="header">
+        <a href="/"> <img src="{{ asset('images/Logo.png') }}" alt=""> </a>
+            <h4>ADMIN LOGIN PORTAL</h4>
+            @include('components.flash-message')
+    </div>
+
+    @if(auth()->check())
+        @include('components.admin-sidebar')
+    @endif
+
     @yield('content')
 
 </body>

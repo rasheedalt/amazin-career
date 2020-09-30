@@ -13,6 +13,13 @@
 
 Route::get('/','HomeController@home');
 Route::get('/admin','HomeController@login');
+Route::group(['middleware' => ['auth:web']], function(){
+    Route::get('/dashboard', 'AdminController@dashboard')->name('dashboard');
+    Route::get('/generate-login','AdminController@generateLogin')->name('login.generate');
+    Route::post('/generate-login','AdminController@registerUser')->name('login.generate');
+    Route::get('/deactivate-login','AdminController@deactivateLogin')->name('login.deactivate_page');
+    Route::post('/deactivate-login/{user}','AdminController@deactivateUser')->name('login.deactivate');
+});
 
 Auth::routes();
 Auth::routes(['register' => false]);
@@ -44,5 +51,4 @@ Route::get('/blog/{post}', 'PostsController@show')->name('post');
 
 Route::get('/states-jobs', 'JobController@allStates')->name('states.all');
 
-Route::get('/dashboard', 'AdminController@dashboard')->name('dashboard');
 Route::get('/home', 'HomeController@index')->name('home');
