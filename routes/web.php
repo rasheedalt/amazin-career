@@ -19,6 +19,8 @@ Route::group(['middleware' => ['auth:web']], function(){
     Route::post('/generate-login','AdminController@registerUser')->name('login.generate');
     Route::get('/deactivate-login','AdminController@deactivateLogin')->name('login.deactivate_page');
     Route::post('/deactivate-login/{user}','AdminController@deactivateUser')->name('login.deactivate');
+    Route::get('/change-password','AdminController@changePasswordView')->name('password.change');
+    Route::post('/change-password','AdminController@changePassword')->name('password.change');
 });
 
 Auth::routes();

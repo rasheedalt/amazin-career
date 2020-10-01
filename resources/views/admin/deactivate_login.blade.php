@@ -205,24 +205,24 @@
 
 @section('content')
 <div id="maincontent">
-             <h3>POST VANCANCIES</h3>
-             <hr>
-            <div class= "sideG">
-                <ol>
-                    <a href="{{ route('login.generate') }}"><li>New Login</li></a>
-                    <li Class = "DL"> Deactivite Login</li>
-                   
-                </ol>
-            </div>
+        <h3>POST VANCANCIES</h3>
+        <hr>
+    <div class= "sideG">
+        <ol>
+            <a href="{{ route('login.generate') }}"><li>New Login</li></a>
+            <li Class = "DL"> Deactivite Login</li>
+            
+        </ol>
+    </div>
 
-            <div class="PostJ">
-                @foreach($users as $user)
-                    <form method="post" action="{{ route('login.deactivate', $user->id) }}" >
-                        @csrf
-                    <input value="{{ $user->email }}" type="text" disabled/>
-                    <button style="{{ !$user->is_active ? 'background-color:green;' : '' }}">{{ $user->is_active ? 'Deactivate' : 'Activate'}}</button> <br/>
-                    </form>
-                @endforeach
-            </div>
-        </div>
+    <div class="PostJ">
+        @foreach($users as $user)
+            <form method="post" action="{{ route('login.deactivate', $user->id) }}" >
+                @csrf
+            <input value="{{ $user->email }}" type="text" disabled/>
+            <button style="{{ !$user->is_active ? 'background-color:green;' : '' }}">{{ $user->is_active ? 'Deactivate' : 'Activate'}}</button> <br/>
+            </form>
+        @endforeach
+    </div>
+</div>
 @endsection

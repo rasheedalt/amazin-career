@@ -13,7 +13,6 @@
     <div id ="header">
         <a href="/"> <img src="{{ asset('images/Logo.png') }}" alt=""> </a>
             <h4>ADMIN LOGIN PORTAL</h4>
-            @include('components.flash-message')
     </div>
 
     @if(auth()->check())

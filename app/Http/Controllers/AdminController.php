@@ -26,6 +26,27 @@ class AdminController extends Controller
         return view('admin.deactivate_login', compact('users'));
     }
 
+    public function changePasswordView(){
+        return view('admin.change_password');
+    }
+
+    public function changePassword(Request $request){
+        $request->validate([
+            'current_password' => 'required|string|min:4',
+            'new_password' => 'required|string|min:4',
+            'password_confirmation' => 'required|string|min:4|same:new_password',
+        ]);
+
+        if(!Hash::check($request->current_password, auth()->user()->password)){
+            $this->flashErrorMessage('current password incorrect');
+            return back()->withInput();
+        }
+
+        User::find(auth()->user()->id)->update(['password'=> Hash::make($request->new_password)]); 
+        $this->flashSuccessMessage('Password changed successfully');
+        return back();
+    }
+
     public function deactivateUser(User $user){
         $user->is_active = !$user->is_active;
         $user->save();
@@ -38,7 +59,6 @@ class AdminController extends Controller
             'password' => 'required|string|min:6'
             ]);
         $data = $request->all();
-        // return $data;
         $data['password'] = Hash::make($request->password);
         $user = User::create($data);
         $this->flashSuccessMessage("{$user->firstname} added successfully");

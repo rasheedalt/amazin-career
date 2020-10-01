@@ -7,8 +7,6 @@
     <title>AmazincareersNG</title>
     <link  href="{{ asset('css/main/main.css') }}" rel="stylesheet">
     <link  href="{{ asset('css/bootstrap.css') }}" rel="stylesheet">
-    <script  href="{{ asset('js/vendor/jquery-2.2.4.min.js') }}"></script>
-    <script  href="{{ asset('js/vendor/bootstrap.min.js') }}"></script>
 
     <style>
         /* .home {
@@ -87,9 +85,6 @@
             </div>
         </div>
     </section>
-
-    <script  href="{{ asset('js/vendor/jquery-2.2.4.min.js') }}"></script>
-    <script  href="{{ asset('js/vendor/bootstrap.min.js') }}"></script>
 
 </body>
 </html>

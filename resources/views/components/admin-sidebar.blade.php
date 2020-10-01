@@ -4,7 +4,7 @@
         <a href="Schoarship.html"><li> Post Scholarships</li></a>
         <a href="BlogP.html"><li> Blog Post</li></a>
         <a href="{{ route('login.generate') }}"><li> Generate Login </li></a>
-        <a href="ChangeP.html"><li> Change Password</li></a>
+        <a href="{{ route('password.change') }}"><li> Change Password</li></a>
         <a href="{{ route('logout') }}"
             onclick="event.preventDefault();
             document.getElementById('logout-form').submit();">
