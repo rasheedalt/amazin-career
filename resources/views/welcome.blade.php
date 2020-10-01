@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>AmazincareersNG</title>
-    <link  href="{{ asset('css/main/main.css') }}" rel="stylesheet">
-    <link  href="{{ asset('css/bootstrap.css') }}" rel="stylesheet">
+    <link  href="/css/main/main.css" rel="stylesheet">
+    <link  href="/css/bootstrap.css" rel="stylesheet">
 
     <style>
         /* .home {
@@ -27,7 +27,7 @@
     
     <navbar id ="container">
         <div id ="header">
-               <a href="/"> <img src="{{ asset('/images/Logo.png') }}" alt=""> </a>
+               <a href="/"> <img src="/images/Logo.png" alt=""> </a>
                 <ol>
                     <li><a href="/">Home</a></li>
                     <li><a href="{{ route('about.page') }}">About</a></li>
