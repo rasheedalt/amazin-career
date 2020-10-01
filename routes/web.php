@@ -21,6 +21,12 @@ Route::group(['middleware' => ['auth:web']], function(){
     Route::post('/deactivate-login/{user}','AdminController@deactivateUser')->name('login.deactivate');
     Route::get('/change-password','AdminController@changePasswordView')->name('password.change');
     Route::post('/change-password','AdminController@changePassword')->name('password.change');
+    Route::get('/blog-post','AdminController@blogPostView')->name('blog.post');
+    Route::post('/blog-post','AdminController@blogPost')->name('blog.post');
+    Route::get('/scholarship-post','AdminController@postScholarshipView')->name('scholarship.post');
+    Route::post('/scholarship-post','AdminController@postScholarship')->name('scholarship.post');
+    Route::get('/job-post','AdminController@postJobView')->name('job.post');
+    Route::post('/job-post','AdminController@postJob')->name('job.post');
 });
 
 Auth::routes();

@@ -26,6 +26,30 @@ class AdminController extends Controller
         return view('admin.deactivate_login', compact('users'));
     }
 
+    public function postJobView(){
+        return view('admin.job_post');
+    }
+
+    public function postJob(){
+        return view('admin.post_scholarship');
+    }
+
+    public function postScholarshipView(){
+        return view('admin.post_scholarship');
+    }
+
+    public function postScholarship(){
+        return view('admin.post_scholarship');
+    }
+
+    public function blogPostView(){
+        return view('admin.blog_post');
+    }
+
+    public function blogPost(Request $request){
+        return view('admin.blog_post');
+    }
+
     public function changePasswordView(){
         return view('admin.change_password');
     }
