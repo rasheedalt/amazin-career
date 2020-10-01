@@ -11,7 +11,7 @@
 </head>
 <body>
     <div id ="header">
-        <a href="/"> <img src="{{ asset('images/AmzinCareerPNG.gif') }}" alt=""> </a>
+        <a href="/"> <img src="{{ asset('images/error.JPG') }}" alt=""> </a>
             <h4>ADMIN LOGIN PORTAL</h4>
     </div>
 
