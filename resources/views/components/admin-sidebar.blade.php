@@ -1,6 +1,6 @@
 <div id="sidebar">
     <ol>
-        <a href="{{ route('job.post') }}"><li> Post Vacancies</li></a>
+        <a href="{{ route('admin.job_post') }}"><li> Post Vacancies</li></a>
         <a href="{{ route('scholarship.post') }}"><li> Post Scholarships</li></a>
         <a href="{{ route('blog.post') }}"><li> Blog Post</li></a>
         <a href="{{ route('login.generate') }}"><li> Generate Login </li></a>

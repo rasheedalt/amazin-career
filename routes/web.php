@@ -25,8 +25,8 @@ Route::group(['middleware' => ['auth:web']], function(){
     Route::post('/blog-post','AdminController@blogPost')->name('blog.post');
     Route::get('/scholarship-post','AdminController@postScholarshipView')->name('scholarship.post');
     Route::post('/scholarship-post','AdminController@postScholarship')->name('scholarship.post');
-    Route::get('/job-post','AdminController@postJobView')->name('job.post');
-    Route::post('/job-post','AdminController@postJob')->name('job.post');
+    Route::get('/admin/job-post','AdminController@postJobView')->name('admin.job_post');
+    Route::post('/admin/job-post','AdminController@postJob')->name('admin.job_post');
 });
 
 Auth::routes();
