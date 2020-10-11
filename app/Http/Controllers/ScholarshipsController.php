@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Scholarship;
+use App\Http\Requests\SaveScholarshipRequest;
 
 class ScholarshipsController extends Controller
 {
@@ -34,9 +35,11 @@ class ScholarshipsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(SaveScholarshipRequest $request)
     {
-        //
+        $scholarship = Scholarship::create($request->all());
+        $this->flashSuccessMessage('Scholarship saved successfully');
+        return back();
     }
 
     /**

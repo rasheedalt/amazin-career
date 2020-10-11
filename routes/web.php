@@ -23,8 +23,7 @@ Route::group(['middleware' => ['auth:web']], function(){
     Route::post('/change-password','AdminController@changePassword')->name('password.change');
     Route::get('/blog-post','AdminController@blogPostView')->name('blog.post');
     Route::post('/blog-post','AdminController@blogPost')->name('blog.post');
-    Route::get('/scholarship-post','AdminController@postScholarshipView')->name('scholarship.post');
-    Route::post('/scholarship-post','AdminController@postScholarship')->name('scholarship.post');
+    Route::get('/scholarship-post','AdminController@postScholarshipView')->name('scholarship.showform');
     Route::get('/admin/job-post','AdminController@postJobView')->name('admin.job_post');
     Route::post('/admin/job-post','AdminController@postJob')->name('admin.job_post');
 });
@@ -47,7 +46,8 @@ Route::post('/post-job', 'JobController@saveJob')->name('job.post');
 
 // Scholarship
 Route::get('/scholarships', 'ScholarshipsController@index')->name('scholarships.list');
-Route::get('/scholarships/{scholarship}', 'ScholarshipsController@view')->name('scholarship.view');
+Route::get('/scholarships/{scholarship}', 'ScholarshipsController@show')->name('scholarship.post');
+Route::post('/scholarships/post', 'ScholarshipsController@store')->name('scholarship.post');
 
 // Posts
 Route::post('/blog/post', 'PostsController@store')->name('post.store');

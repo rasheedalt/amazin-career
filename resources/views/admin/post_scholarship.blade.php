@@ -129,14 +129,14 @@
     <hr>
     <div class="PostJ">
     @include('components.flash-message')
-        <form method="post" action="{{ route('password.change') }}">
-        @csrf
-            <input placeholder="Scholarships title" type="text"/> <br/>
-            <textarea name="Requirement" placeholder="About Scholarship" id="" cols="30" rows="10"></textarea><br/>
-            <textarea name="Requirement" placeholder="Requirement/Qualifications" id="" cols="30" rows="10"></textarea><br/>
-            <textarea name="Requirement" placeholder="Method of Application" id="" cols="30" rows="10"></textarea><br/>
-            <input placeholder="Deadlines" type="text"/><br/>
-            <input placeholder="Application Link" type="text"/><br/>
+        <form method="post" action="{{ route('scholarship.post') }}">
+            @csrf
+            <input name="title" placeholder="Scholarships title" value="{{ old('title') }}" type="text"/> <br/>
+            <textarea name="description" placeholder="About Scholarship" id="" cols="30" rows="10">{{ old('description') }}</textarea><br/>
+            <textarea name="requirements" placeholder="Requirement/Qualifications" id="" cols="30" rows="10">{{ old('requirements') }}</textarea><br/>
+            <textarea name="application_mode" placeholder="Method of Application" id="" cols="30" rows="10">{{ old('application_mode') }}</textarea><br/>
+            <input name="deadline" placeholder="Deadlines" value="{{ old('deadline') }}" type="text"/><br/>
+            <input name="link" placeholder="Application Link" value="{{ old('link') }}" type="text"/><br/>
             <button>Post</button>
         </form>
     </div>

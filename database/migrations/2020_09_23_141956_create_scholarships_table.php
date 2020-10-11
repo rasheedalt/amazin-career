@@ -17,9 +17,11 @@ class CreateScholarshipsTable extends Migration
             $table->bigIncrements('id');
             $table->string('title');
             $table->text('description');
+            $table->text('requirements')->nullable();
             $table->string('application_mode');
+            $table->string('deadline')->nullable();
             $table->text('link')->nullable();
-            $table->boolean('is_active');
+            $table->boolean('is_active')->default(true);
             $table->timestamps();
             $table->softDeletes();
         });

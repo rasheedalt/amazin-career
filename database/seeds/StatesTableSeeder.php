@@ -12,9 +12,6 @@ class StatesTableSeeder extends Seeder
      */
     public function run()
     {
-        // truncate `states` table
-        DB::table('states')->delete();
-
         // associative array of Nigerian states and codes
         $states = [
             'FC' => 'Abuja',
@@ -57,24 +54,14 @@ class StatesTableSeeder extends Seeder
         ];
 
         // put each item in associative array into new array that can be inserted by query builder
-        $data = [];
         foreach ($states as $code => $name) {
-            $data[] = [
+            App\Models\State::updateOrCreate([
                 'code' => $code,
                 'name' => $name
-            ];
+            ],[
+                'code' => $code,
+                'name' => $name
+            ]);
         }
-        DB::table('states')->insert($data);
-
-        /*
-        * To get timestamps (created_at, updated_at) automatically added, you can use Eloquent to create instead:
-        */
-
-        /* foreach ($states as $code => $name) {
-          App\Models\State::create([
-            'code' => $code,
-            'name' => $name
-          ]);
-        } */
     }
 }
