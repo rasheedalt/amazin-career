@@ -3,26 +3,15 @@
 @section('content')
         <div id="login">
         
-            <div class="">
-                @if ($errors->any())
-                    @foreach($errors->all() as $error)
-                        <span style="color:red">{{ $error }}</span><br>
-                    @endforeach     
-                @endif
-            </div>
+            @include('components.flash-message')
 
             <form method="POST" action="{{ route('login') }}">
                 @csrf 
                 <input name="email" placeholder="Email Address" class="@if($errors->has('email')) is-invalid @endif" value="{{ old('email') }}" type="text" required /> <br/>
 
-                <input class="@error('password') is-invalid @enderror" value="{{ old('password') }}" name="password" placeholder="Password" type="password" required /><br/>
+                <input class="" value="{{ old('password') }}" name="password" placeholder="Password" type="password" required /><br/>
 
-                <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                <label class="form-check-label" for="remember">
-                    {{ __('Remember Me') }}
-                </label><br>
-                
+                <!-- <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}> -->
                 <button type="submit"> Login  </button>
             </form>
             <p>

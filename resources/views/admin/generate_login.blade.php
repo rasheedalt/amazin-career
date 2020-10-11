@@ -1,6 +1,7 @@
 @extends('layouts.admin-layout')
-    <link  href="{{ asset('css/admin/dashboard.css') }}" rel="stylesheet">
+
 @section('more-styles')
+<link  href="{{ asset('css/admin/dashboard.css') }}" rel="stylesheet">
 
     <style>
         .GL {
@@ -15,7 +16,6 @@
             background-color: #072638;
             color: white;
         }
-
         #maincontent {
             border-radius: 5px;
             background-color:#E3E3E3;
@@ -30,12 +30,6 @@
             padding: 5px;
             padding-bottom: 20px;
         }
-        
-        .State {
-            padding: 15px;
-            margin-left: 10px;
-            float: left;
-        }
 
         .PostJ {
             float: left;
@@ -44,29 +38,31 @@
             margin-left: 40px;
         }
 
-        .PostJ input, textarea {
+        .PostJ input {
             padding: 8px;
-            width: 600px;
+            width: 500px;
             font-size: 14px;
             font-family: Tahoma;
-            margin-bottom: 8px;
-            border-style: solid;
-            border-width: 1px;
+            margin-bottom: 5px;
+            margin-top: 5px;
+            border-bottom-style: solid;
+            border-width: 0px;
+            background-color: #E3E3E3;
         }
+
         .PostJ button{
         width: 100px;
         padding: 10px;
-        margin-bottom: 20px;
         border-style: none;
-        background-color: #072638;
+        background-color: red;
         color: white;
         border-radius: 3px;
         font-family: tahoma;
         font-size: 14px;
        }
        .PostJ button:hover {
-        background-color: #F2EDED;
-        color:  #072638;
+        background-color: #072638;
+        color: white;
         transition: 0.8s ease;
         }
 
@@ -131,14 +127,15 @@
             padding-top: 10px;
         }
 
-        .PostJ input, textarea {
+        .PostJ input {
             padding: 5px;
-            width: 230px;
+            width: 180px;
             font-size: 12px;
             font-family: Tahoma;
             margin-bottom: 4px;
+            margin-top: 4px;
             border-style: solid;
-            border-width: 1px;
+            border-width: 0px;
         }
         .PostJ  textarea {
             height: 220px;
@@ -146,22 +143,22 @@
         }
         .PostJ button{
         width: 60px;
-        padding: 5px;
+        padding: 6px;
         margin-bottom: 5px;
         border-style: none;
-        background-color: #072638;
+        background-color: red;
         color: white;
         border-radius: 1px;
         font-family: tahoma;
         font-size: 11px;
        }
        .PostJ button:hover {
-        background-color: #F2EDED;
-        color:  #072638;
+        color: #F2EDED;
+        background-color:  #072638;
         transition: 0.8s ease;
         }
 
-        .NL {
+        .DL {
             padding: 8px;
             padding-left: 10px;
             background-color: #072638;
@@ -172,7 +169,7 @@
         .sideG {
             padding-top: 10px;
             width: 120px;
-            background-color:#E3E3E3;
+            background-color #072638;
         }
         .sideG ol a {
             text-decoration: none;
@@ -196,9 +193,6 @@
         }
 
 
-
-        }
-
     </style>
 @endsection
 
@@ -218,7 +212,7 @@
                 @csrf
                 <input name="firstname" placeholder="Firstname" type="text"/> <br/>
                 <input name="lastname" placeholder="Lastname" type="text"/> <br/>
-                <input name="email" placeholder="Email Adress" type="email"/> <br/>
+                <input name="email" placeholder="Email Address" type="email"/> <br/>
                 <input name="password" placeholder="Password" type="text"/><br/>
                 <button>Generate</button>
             </form>

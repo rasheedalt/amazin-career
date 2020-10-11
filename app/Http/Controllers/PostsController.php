@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\StorePostRequest;
 use App\Models\Post;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
 
 class PostsController extends Controller
 {
@@ -34,9 +37,25 @@ class PostsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StorePostRequest $request)
     {
-        //
+        if($request->hasFile('post_image')){
+            $image = $request->file('post_image');
+            $extension = $image->getClientOriginalExtension();
+            $url = Storage::disk('public')->put($request->title.'_'.time().'.'.$extension,  File::get($image));
+            $image_url = url('/').$url;
+        }else{
+            $image_url = url('/').'default_post_image.jpg';
+        }
+
+        $post = Post::create([
+            'title' => $request->title,
+            'body' => $request->body,
+            'image_url' => $image_url,
+            'user_id' => auth()->id(),
+        ]);
+        $this->flashSuccessMessage('Blog post successfully added');
+        return back();  
     }
 
     /**

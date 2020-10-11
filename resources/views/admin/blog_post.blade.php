@@ -142,12 +142,12 @@
              <hr>
             <div class="PostJ">
                 @include('components.flash-message')
-                <form method="post" action="{{ route('password.change') }}">
+                <form method="post" action="{{ route('post.store') }}" enctype="multipart/form-data">
                 @csrf
-                    <input placeholder="Blog title" type="text"/> <br/>
-                    <textarea name="Requirement" placeholder="Blof Write Up" id="" cols="250" rows="10"></textarea><br/>
+                    <input placeholder="Blog title" value="{{ old('title') }}" name="title" type="text"/> <br/>
+                    <textarea name="body" placeholder="Blof Write Up" id="" cols="250" rows="10">{{ old('body') }}</textarea><br/>
                     <p>Upload your images below: </p>
-                    <input type="file" placeholder="Image"/> <br/>
+                    <input type="file" name="post_image" placeholder="Image"/> <br/>
                     <button>Post</button>
                 </form>
             </div>

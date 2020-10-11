@@ -47,7 +47,7 @@ class LoginController extends Controller
         $request->validate(
             [
             'email' => 'required|email|exists:users',
-            'password' => 'required|string|min:6'
+            'password' => 'required|string|min:4'
             ]);
         $remember = $request->remember_token;
 
@@ -60,6 +60,12 @@ class LoginController extends Controller
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password,'is_active' => true],$remember)) {
             return redirect()->route('dashboard');
         }  else {
+            $user = User::where('email', $request->email)->first();
+            if(!$user->is_active){
+                $this->flashErrorMessage('Your account has been suspended. Contact the admin.');
+            }else{
+                $this->flashErrorMessage('Incorrect Password');
+            }
             return back()->withInput();
         }
 

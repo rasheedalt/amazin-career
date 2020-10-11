@@ -205,7 +205,7 @@
 
 @section('content')
 <div id="maincontent">
-        <h3>POST VANCANCIES</h3>
+        <h3>MANAGE LOGIN</h3>
         <hr>
     <div class= "sideG">
         <ol>
@@ -219,7 +219,7 @@
         @foreach($users as $user)
             <form method="post" action="{{ route('login.deactivate', $user->id) }}" >
                 @csrf
-            <input value="{{ $user->email }}" type="text" disabled/>
+            <input value="{{ strtoupper($user->email) }}" type="text" disabled/>
             <button style="{{ !$user->is_active ? 'background-color:green;' : '' }}">{{ $user->is_active ? 'Deactivate' : 'Activate'}}</button> <br/>
             </form>
         @endforeach

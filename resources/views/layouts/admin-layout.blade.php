@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=, initial-scale=1.0">
     <title>AmazincareersNG</title>
     <link  href="{{ asset('css/admin/main.css') }}" rel="stylesheet">
-    <!-- <link  href="{{ asset('css/bootstrap.css') }}" rel="stylesheet"> -->
+    @if(in_array(Route::currentRouteName(),['login', 'password.request']) )
+    <link  href="{{ asset('css/bootstrap.css') }}" rel="stylesheet">
+    @endif
+
     @yield('more-styles')
 
 </head>

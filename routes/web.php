@@ -49,6 +49,9 @@ Route::post('/post-job', 'JobController@saveJob')->name('job.post');
 Route::get('/scholarships', 'ScholarshipsController@index')->name('scholarships.list');
 Route::get('/scholarships/{scholarship}', 'ScholarshipsController@view')->name('scholarship.view');
 
+// Posts
+Route::post('/blog/post', 'PostsController@store')->name('post.store');
+
 //email sub
 Route::post('/subscribe', 'SubscribedEmailsController@store')->name('email.subscribe');
 
