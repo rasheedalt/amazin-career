@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
+use App\Models\State;
 
 class AdminController extends Controller
 {
@@ -27,7 +28,8 @@ class AdminController extends Controller
     }
 
     public function postJobView(){
-        return view('admin.job_post');
+        $states = State::all();
+        return view('admin.job_post', compact('states'));
     }
 
     public function postJob(){

@@ -55,13 +55,11 @@ class StatesTableSeeder extends Seeder
 
         // put each item in associative array into new array that can be inserted by query builder
         foreach ($states as $code => $name) {
-            App\Models\State::updateOrCreate([
-                'code' => $code,
-                'name' => $name
-            ],[
-                'code' => $code,
-                'name' => $name
-            ]);
+            App\Models\State::updateOrCreate(
+                // ['name' => $name],
+                ['code' => $code,'name' => $name]
+            );
+            // dd($name);
         }
     }
 }

@@ -139,39 +139,9 @@
              <hr>
             <div class= "State">
                 <form action="">
-                    <input type="checkbox" value="Lagos"> Lagos<br/>
-                    <input type="checkbox" value="Abuja"> Abuja<br/>
-                    <input type="checkbox" value="Kano"> Kano<br/>
-                    <input type="checkbox" value="Portharcourt"> Portharcourt<br/>
-                    <input type="checkbox" value="Abia"> Abia<br/>
-                    <input type="checkbox" value="Adamawa"> Adamawa<br/>
-                    <input type="checkbox" value="Akwa Ibom"> Akwa Ibom<br/>
-                    <input type="checkbox" value="Anambra"> Anambra<br/>
-                    <input type="checkbox" value="Bauchi"> Bauchi<br/>
-                    <input type="checkbox" value="Bayelsa"> Bayelsa<br/>
-                    <input type="checkbox" value="Benue"> Benue<br/>
-                    <input type="checkbox" value="Borno"> Borno<br/>
-                    <input type="checkbox" value="Cross River"> Cross River<br/>
-                    <input type="checkbox" value="Edo"> Edo<br/>
-                    <input type="checkbox" value="Ekiti"> Ekiti<br/>
-                    <input type="checkbox" value="Gombe"> Gombe<br/>
-                    <input type="checkbox" value="Jigawa"> Jigawa<br/>
-                    <input type="checkbox" value="Kaduna"> Kaduna<br/>
-                    <input type="checkbox" value="Katsina"> Katsina<br/>
-                    <input type="checkbox" value="Kebbi"> Kebbi<br/>
-                    <input type="checkbox" value="Kogi"> Kogi<br/>
-                    <input type="checkbox" value="Kwara"> Kwara<br/>
-                    <input type="checkbox" value="Nassarawa"> Nassarawa<br/>
-                    <input type="checkbox" value="Niger"> Niger<br/>
-                    <input type="checkbox" value="Ogun"> Ogun<br/>
-                    <input type="checkbox" value="Ondo"> Ondo<br/>
-                    <input type="checkbox" value="Osun"> Osun<br/>
-                    <input type="checkbox" value="Oyo"> Oyo<br/>
-                    <input type="checkbox" value="Plateau"> Plateau<br/>
-                    <input type="checkbox" value="Sokoto"> Sokoto<br/>
-                    <input type="checkbox" value="Taraba"> Taraba<br/>
-                    <input type="checkbox" value="Yobe"> Yobe<br/>
-                    <input type="checkbox" value="Zamfara"> Zamfara<br/>
+                    @foreach($states as $state)
+                        <input type="checkbox" value="{{ $state->name }}"> {{ $state->name }}<br/>
+                    @endforeach
             </div>
 
             <div class="PostJ">
