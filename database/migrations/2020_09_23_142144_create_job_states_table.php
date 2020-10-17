@@ -13,7 +13,7 @@ class CreateJobStatesTable extends Migration
      */
     public function up()
     {
-        Schema::create('job_states', function (Blueprint $table) {
+        Schema::create('job_state', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('job_id');
             $table->bigInteger('state_id');

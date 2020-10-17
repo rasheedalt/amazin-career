@@ -19,12 +19,11 @@ class CreateJobsTable extends Migration
             $table->text('description');
             $table->text('company_name')->nullable();
             $table->text('address')->nullable();
-            $table->date('deadline')->nullable();
+            $table->text('deadline')->nullable();
             $table->string('application_mode');
-            $table->float('salary');
+            $table->text('salary')->nullable();
             $table->text('link')->nullable();
             $table->boolean('is_active')->default(true);
-            $table->bigInteger('state_id');
             $table->timestamps();
             $table->softDeletes();
         });

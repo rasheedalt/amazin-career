@@ -24,13 +24,13 @@ class SaveJobRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'string',
-            'description' => 'string',
-            'company_name' => 'string',
+            'title' => 'required|string',
+            'description' => 'required|string',
+            'company_name' => 'required|string',
             'address' => 'string|nullable',
-            'deadline' => 'string',
-            'application_mode' => 'string',
-            'salary' => 'string',
+            'deadline' => 'string|nullable',
+            'application_mode' => 'required|string',
+            'salary' => 'required|string',
             'link' => 'string|nullable',
         ];
     }

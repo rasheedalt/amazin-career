@@ -8,6 +8,7 @@
     @if(in_array(Route::currentRouteName(),['login', 'password.request']) )
     <link  href="{{ asset('css/bootstrap.css') }}" rel="stylesheet">
     @endif
+    <script src="{{ asset('js/vendor/jquery-2.2.4.min.js') }}"></script>
 
     @yield('more-styles')
 

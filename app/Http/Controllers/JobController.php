@@ -18,8 +18,7 @@ class JobController extends Controller
 
     public function saveJob(Request $request){
         $data = $request->all();
-        $this->flashSuccessMessage('Job was saved successfully');
-            return back();
+        
         $job = Job::create($data);
         if($job){
             $this->flashSuccessMessage('Job was saved successfully');

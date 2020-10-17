@@ -16,4 +16,8 @@ class Job extends Model
         'salary',
         'link',
     ];
+
+    public function states(){
+        return $this->belongsToMany(State::class);
+    }
 }

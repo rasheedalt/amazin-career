@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
+use App\Models\Job;
 use App\Models\User;
 use App\Models\State;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use App\Http\Requests\SaveJobRequest;
 
 class AdminController extends Controller
 {
@@ -32,8 +34,17 @@ class AdminController extends Controller
         return view('admin.job_post', compact('states'));
     }
 
-    public function postJob(){
-        return view('admin.post_scholarship');
+    public function postJob(SaveJobRequest $request){
+        $data = $request->all();
+        $states =  $request->state;
+        
+        $job = Job::create($data);
+
+        if($states){
+            $job->states()->attach($states);
+        }
+        $this->flashSuccessMessage('Saved sucessfully');
+        return back();
     }
 
     public function postScholarshipView(){

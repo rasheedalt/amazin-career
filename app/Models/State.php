@@ -9,5 +9,9 @@ class State extends Model
     protected $fillable = [
         'name', 'code'
     ];
+
+    public function jobs(){
+        return $this->belongsToMany(Job::class);
+    }
     
 }

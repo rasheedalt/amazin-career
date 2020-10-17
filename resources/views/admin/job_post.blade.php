@@ -137,26 +137,43 @@
 <div id="maincontent">
              <h3>POST VANCANCIES</h3>
              <hr>
-            <div class= "State">
-                <form action="">
-                    @foreach($states as $state)
-                        <input type="checkbox" value="{{ $state->name }}"> {{ $state->name }}<br/>
-                    @endforeach
-            </div>
+            <form action="{{ route('admin.job_post') }}" method="POST">
+                <div class= "State">
+                            <label><input type="checkbox" value="" id="ckbCheckAll"> select all</label><br/>
+                        @foreach($states as $state)
+                            <label><input class="checkBoxClass" type="checkbox"name="state[]" value="{{ $state->id }}" id="{{ $state->name }}"> {{ $state->name }}</label><br/>
+                        @endforeach
+                </div>
 
-            <div class="PostJ">
-                <form>
-                    <input placeholder="Company" type="text"/> <br/>
-                    <input placeholder="Adress/Location" type="text"/><br/>
-                    <input placeholder="Job Positions" type="text"/><br/>
-                    <input placeholder="Salary Range" type="text"/><br/>
-                    <textarea name="Requirement" placeholder="Requirements" id="" cols="30" rows="10"></textarea><br/>
-                    <textarea name="Requirement" placeholder="Metod of Application" id="" cols="30" rows="10"></textarea><br/>
-                    <input placeholder="Deadlines" type="text"/><br/>
-                    <input placeholder="Application Link" type="text"/><br/>
-                    <button>Post</button>
-                </form>
-            </div>
+                <div class="PostJ">
+                @include('components.flash-message')
+
+                        @csrf
+                        <input name="company_name" value="{{ old('company_name') }}" placeholder="Company" type="text"/> <br/>
+                        <input name="address" value="{{ old('address') }}" placeholder="Adress/Location" type="text"/><br/>
+                        <input name="title" value="{{ old('title') }}" placeholder="Job Positions" type="text"/><br/>
+                        <input name="salary" value="{{ old('salary') }}" placeholder="Salary Range" type="text"/><br/>
+                        <textarea name="description" placeholder="Requirements" id="" cols="30" rows="10">{{ old('description') }}</textarea><br/>
+                        <textarea name="application_mode" placeholder="Method of Application" id="" cols="30" rows="10">{{ old('application_mode') }}</textarea><br/>
+                        <input name="deadline" value="{{ old('deadline') }}" placeholder="Deadlines" type="text"/><br/>
+                        <!-- <input name="deadline" placeholder="Deadlines" type="text" onfocus="(this.type='date')" /><br/> -->
+                        <input name="link" value="{{ old('link') }}" placeholder="Application Link" type="text"/><br/>
+                        <button>Post</button>
+                </div>
+            </form>
            
         </div>
+<script>
+    $(document).ready(function () {
+    $("#ckbCheckAll").click(function () {
+        $(".checkBoxClass").prop('checked', $(this).prop('checked'));
+    });
+    
+    $(".checkBoxClass").change(function(){
+        if (!$(this).prop("checked")){
+            $("#ckbCheckAll").prop("checked",false);
+        }
+    });
+});
+</script>
 @endsection

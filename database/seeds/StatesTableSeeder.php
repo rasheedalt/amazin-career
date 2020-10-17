@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\State;
 use Illuminate\Database\Seeder;
 
 class StatesTableSeeder extends Seeder
@@ -55,11 +56,13 @@ class StatesTableSeeder extends Seeder
 
         // put each item in associative array into new array that can be inserted by query builder
         foreach ($states as $code => $name) {
-            App\Models\State::updateOrCreate(
-                // ['name' => $name],
-                ['code' => $code,'name' => $name]
-            );
-            // dd($name);
+            $state = [
+                'name' => $name,
+                'code' => $code,
+            ];
+
+            State::updateOrCreate(
+                $state);
         }
     }
 }

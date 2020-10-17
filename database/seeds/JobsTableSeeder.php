@@ -11,19 +11,18 @@ class JobsTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('states')->delete();
-
         $faker = Faker\Factory::create();
 
         for($i = 0; $i < 50; $i++) {
-            \App\Models\Job::create([
+            $job = \App\Models\Job::create([
                 'title' => $faker->word,
                 'description' => $faker->sentences(5, true),
                 'application_mode' => $faker->word,
                 'is_active' => true,
                 'salary' => 23000,
-                'state_id' => $faker->numberBetween(75,111)
             ]);
+
+            $job->states()->attach($faker->numberBetween(1,36));
         }
     }
 }
