@@ -18,6 +18,7 @@ class CreateServicesTable extends Migration
             $table->string('name')->unique();
             $table->string('display_name')->unique();
             $table->boolean('is_active')->default(true);
+            $table->text('description')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });
