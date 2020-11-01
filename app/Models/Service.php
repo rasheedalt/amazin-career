@@ -7,8 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 class Service extends Model
 {
     protected $fillable = [
-        'name', 'description',
-        'display_name', 'is_active',
+        'id',
+        'name', 
+        'description',
+        'display_name', 
+        'is_active',
         'description'
     ];
+
+    public function formfield(){
+        return $this->hasMany(FormFieldType::class);
+    }
 }

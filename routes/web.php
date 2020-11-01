@@ -59,6 +59,12 @@ Route::post('/subscribe', 'SubscribedEmailsController@store')->name('email.subsc
 Route::get('/blog-posts', 'PostsController@index')->name('posts');
 Route::get('/blog/{post}', 'PostsController@show')->name('post');
 
+// Services
+Route::get('/business-plan', 'ServiceController@businessPlanView')->name('service.business_plan');
+Route::get('/company-registraion', 'ServiceController@companyRegistrationView')->name('service.company_reg');
+Route::get('/cover-letter', 'ServiceController@coverLetterView')->name('service.cover_letter');
+Route::get('/cv-review', 'ServiceController@cvRevieView')->name('service.cv_review');
+Route::get('/linkedIn-optimization', 'ServiceController@linkedInOptimizationView')->name('service.linkin_opt');
 
 Route::get('/states-jobs', 'JobController@allStates')->name('states.all');
 
