@@ -33,4 +33,17 @@ class JobController extends Controller
         $states = State::all();
         return view('jobs.job-by-states', compact('states'));
     }
+
+    public function viewStateJobs($stateCode){
+        $state = State::where('code', strtoupper($stateCode))->first();
+        if(!$state){
+            $this->flashErrorMessage('Error in State Code');
+            return back();
+        }
+        $stateID = $state->id;
+        $jobs = Job::whereHas('state', function($q) use($stateID) {
+            $q->where('states.id', $stateID);
+        })->paginate(10);
+        return view('jobs.state-jobs', compact('state', 'jobs'));
+    }
 }

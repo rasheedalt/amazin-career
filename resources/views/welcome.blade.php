@@ -75,7 +75,9 @@
 
                     <h3>JOB VACANCIES</h3>
                     <div class="post">
-                        @include('components.jobs-list')
+                        @include('components.jobs-list', [
+                        'jobs' => $jobs
+                        ])
                     </div>
 
                 </div>

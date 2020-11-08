@@ -43,6 +43,7 @@ Route::get('/services/{service}', 'ServiceController@viewService')->name('servic
 Route::get('/jobs/{job}', 'JobController@view')->name('job.view');
 Route::get('/post-job', 'JobController@postJobView')->name('job.post');
 Route::post('/post-job', 'JobController@saveJob')->name('job.post');
+Route::get('/view-jobs/{stateCode}', 'JobController@viewStateJobs')->name('job.state');
 
 // Scholarship
 Route::get('/scholarships', 'ScholarshipsController@index')->name('scholarships.list');

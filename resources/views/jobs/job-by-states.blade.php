@@ -104,52 +104,52 @@
     <div class="row">
         <div class="col">
             <ol>
-                <li><a href="LagosJobs.html">LA|Lagos Jobs</a></li>
-                <li><a href="AbujaJobs.html"> FC|Abuja Jobs</a></li>
-                <li><a href="PorthaecourtJobs.html"> PH|Portharcourt Jobs</a></li>
-                <li><a href="KanoJobs.html">KN|Kano Jobs</a></li>
-                <li><a href="AB.html"> AB|Abia Jobs</a></li> 
-                <li><a href="AD.html">AD|Adamawa Jobs </a></li>
-                <li><a href="Ak.html">AK|Akwa Ibom Jobs</a></li>
-                <li><a href="AN.html">AN|Anambra Jobs</a></li>
-                <li><a href="BA.html">BA|Bauchi Jobs</a></li>
-                <li><a href="BY.html">BY|Bayelsa Jobs</a></li>
-                <li><a href="BE.html">BE|Benue Jobs</a></li>
-                <li><a href="BO.html">BO|Borno Jobs</a></li>
+                <li><a href="{{ route('job.state', 'LA') }}">LA|Lagos Jobs</a></li>
+                <li><a href="{{ route('job.state', 'FC') }}"> FC|Abuja Jobs</a></li>
+                <li><a href="{{ route('job.state', 'RI') }}"> PH|Portharcourt Jobs</a></li>
+                <li><a href="{{ route('job.state', 'KN') }}l">KN|Kano Jobs</a></li>
+                <li><a href="{{ route('job.state', 'AB') }}"> AB|Abia Jobs</a></li> 
+                <li><a href="{{ route('job.state', 'AD') }}">AD|Adamawa Jobs </a></li>
+                <li><a href="{{ route('job.state', 'AK') }}">AK|Akwa Ibom Jobs</a></li>
+                <li><a href="{{ route('job.state', 'AN') }}">AN|Anambra Jobs</a></li>
+                <li><a href="{{ route('job.state', 'BA') }}">BA|Bauchi Jobs</a></li>
+                <li><a href="{{ route('job.state', 'BY') }}">BY|Bayelsa Jobs</a></li>
+                <li><a href="{{ route('job.state', 'BE') }}">BE|Benue Jobs</a></li>
+                <li><a href="{{ route('job.state', 'BO') }}">BO|Borno Jobs</a></li>
             </ol>
         </div>
 
         <div class="col">
             <ol>
-                <li><a href="CR.html">CR|Cross River Jobs</a></li>
-                <li><a href="EB.html">EB|Ebonyi Jobs</a></li>
-                <li><a href="ED.html">ED|Edo Jobs</a></li>
-                <li><a href="EK.html">EK|Ekiti Jobs</a></li>
-                <li><a href="EN.html">EN|Enugu Jobs</a></li>
-                <li><a href="GO.html">GO|Gombe Jobs</a></li>
-                <li><a href="IM.html">IM|Imo Jobs</a></li>
-                <li><a href="JI.html">JI|Jigawa Jobs</a></li>
-                <li><a href="KD.html">KD|Kaduna Jobs</a></li>
-                <li><a href="KT.html">KT|Katsina Jobs</a></li>
-                <li><a href="KE.html">KE|Kebbi Jobs</a></li>
-                <li><a href="KO.html">KO|Kogi Jobs</a></li>
+                <li><a href="{{ route('job.state', 'CR') }}">CR|Cross River Jobs</a></li>
+                <li><a href="{{ route('job.state', 'EB') }}">EB|Ebonyi Jobs</a></li>
+                <li><a href="{{ route('job.state', 'ED') }}">ED|Edo Jobs</a></li>
+                <li><a href="{{ route('job.state', 'EK') }}">EK|Ekiti Jobs</a></li>
+                <li><a href="{{ route('job.state', 'EN') }}">EN|Enugu Jobs</a></li>
+                <li><a href="{{ route('job.state', 'GO') }}">GO|Gombe Jobs</a></li>
+                <li><a href="{{ route('job.state', 'IM') }}">IM|Imo Jobs</a></li>
+                <li><a href="{{ route('job.state', 'JI') }}">JI|Jigawa Jobs</a></li>
+                <li><a href="{{ route('job.state', 'KD') }}">KD|Kaduna Jobs</a></li>
+                <li><a href="{{ route('job.state', 'KT') }}">KT|Katsina Jobs</a></li>
+                <li><a href="{{ route('job.state', 'KE') }}">KE|Kebbi Jobs</a></li>
+                <li><a href="{{ route('job.state', 'KO') }}">KO|Kogi Jobs</a></li>
             </ol>
         </div>
 
         <div class="col">
             <ol>
-                <li><a href="KW.html">KW|Kwara Jobs</a></li>
-                <li><a href="NA.html">NA|Nassarawa Jobs</a></li>
-                <li><a href="NI.html">NI|Niger Jobs</a></li>
-                <li><a href="OG.html">OG|Ogun Jobs</a></li>
-                <li><a href="ON.html">ON|Ondo Jobs</a></li>
-                <li><a href="OS.html">OS|Osun Jobs</a></li>
-                <li><a href="OY.html">OY|Oyo Jobs</a></li>
-                <li><a href="PL.html">PL|Plateau Jobs</a></li>
-                <li><a href="SO.html">SO|Sokoto Jobs</a></li>
-                <li><a href="TA.html">TA|Taraba Jobs</a></li>
-                <li><a href="YO.html">YO|Yobe Jobs</a></li>
-                <li><a href="ZA.html">ZA|Zamfara Jobs</a></li>
+                <li><a href="{{ route('job.state', 'KW') }}">KW|Kwara Jobs</a></li>
+                <li><a href="{{ route('job.state', 'NA') }}">NA|Nassarawa Jobs</a></li>
+                <li><a href="{{ route('job.state', 'NI') }}">NI|Niger Jobs</a></li>
+                <li><a href="{{ route('job.state', 'OG') }}">OG|Ogun Jobs</a></li>
+                <li><a href="{{ route('job.state', 'ON') }}">ON|Ondo Jobs</a></li>
+                <li><a href="{{ route('job.state', 'OS') }}">OS|Osun Jobs</a></li>
+                <li><a href="{{ route('job.state', 'OY') }}">OY|Oyo Jobs</a></li>
+                <li><a href="{{ route('job.state', 'PL') }}">PL|Plateau Jobs</a></li>
+                <li><a href="{{ route('job.state', 'SO') }}">SO|Sokoto Jobs</a></li>
+                <li><a href="{{ route('job.state', 'TA') }}">TA|Taraba Jobs</a></li>
+                <li><a href="{{ route('job.state', 'YO') }}">YO|Yobe Jobs</a></li>
+                <li><a href="{{ route('job.state', 'ZA') }}">ZA|Zamfara Jobs</a></li>
             </ol>
         </div>
 

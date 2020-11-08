@@ -2,10 +2,10 @@
     <div class="sidebarOne">
         <h3>JOBS BY STATES</h3>
         <ol>
-            <li><a href="HtmlFiles/LagosJobs.html">Jobs in Lagos</a></li>
-            <li><a href="HtmlFiles/AbujaJobs.html">Jobs in Abuja</a></li>
-            <li><a href="HtmlFiles/PorthaecourtJobs.html">Jobs in Portharcourt</a></li>
-            <li><a href="HtmlFiles/KanoJobs.html">Jobs in Kano</a></li>
+            <li><a href="{{ route('job.state', 'LA') }}">Jobs in Lagos</a></li>
+            <li><a href="{{ route('job.state', 'FC') }}">Jobs in Abuja</a></li>
+            <li><a href="{{ route('job.state', 'RI') }}">Jobs in Portharcourt</a></li>
+            <li><a href="{{ route('job.state', 'KN') }}">Jobs in Kano</a></li>
             <li><a href="{{ route('states.all') }}">Jobs in Other States</a></li> 
         </ol>
     </div>
