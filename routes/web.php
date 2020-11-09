@@ -48,7 +48,7 @@ Route::post('/jobs/search', 'JobController@searchJob')->name('job.search');
 
 // Scholarship
 Route::get('/scholarships', 'ScholarshipsController@index')->name('scholarships.list');
-Route::get('/scholarships/{scholarship}', 'ScholarshipsController@show')->name('scholarship.post');
+Route::get('/scholarships/{scholarship}', 'ScholarshipsController@show')->name('scholarship.view');
 Route::post('/scholarships/post', 'ScholarshipsController@store')->name('scholarship.post');
 
 // Posts

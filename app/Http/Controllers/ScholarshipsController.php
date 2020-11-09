@@ -50,7 +50,7 @@ class ScholarshipsController extends Controller
      */
     public function show(Scholarship $scholarship)
     {
-        return view('scholarship.details', compact('scholarship'));
+        return view('scholarships.details', compact('scholarship'));
     }
 
     /**
