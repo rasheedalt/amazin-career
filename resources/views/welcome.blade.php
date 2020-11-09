@@ -27,7 +27,7 @@
     
     <navbar id ="container">
         <div id ="header">
-               <a href="/"> <img src="/images/Logo.png" alt=""> </a>
+               <a href="/"> <img src="{{ asset('images/Logo.png') }}" alt=""> </a>
                 <ol>
                     <li><a href="/">Home</a></li>
                     <li><a href="{{ route('about.page') }}">About</a></li>
