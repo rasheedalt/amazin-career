@@ -46,4 +46,29 @@ class JobController extends Controller
         })->paginate(10);
         return view('jobs.state-jobs', compact('state', 'jobs'));
     }
+
+    public function searchJob(Request $request){
+        // Split the terms by word.
+        $job = $request->job ?? explode(" ", request('job'));
+        $state = $request->state ?? explode(" ", request('state'));
+
+        $search = Job::query()
+            ->where(function ($query) use ($job) {
+                foreach ($job as $term) {
+                    $query->where('jobs.title', 'like', '%' . $term . '%');
+                }
+            });
+
+        if($state){
+            $serach = $search->whereHas('state', function ($query) use ($state) {
+                foreach ($state as $term) {
+                    // Loop over the terms and do a search for each.
+                    $query->where('states.name', 'like', '%' . $term . '%');
+                }
+            });
+        }
+
+        $jobs = $search->paginate(10);
+        return view('jobs.state-jobs', compact('state', 'jobs'));
+    }
 }

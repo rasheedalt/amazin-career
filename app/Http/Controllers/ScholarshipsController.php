@@ -15,7 +15,7 @@ class ScholarshipsController extends Controller
      */
     public function index()
     {
-        $scholarships = Scholarship::paginate(10);
+        $scholarships = Scholarship::latest()->paginate(10);
         return view('scholarships.list',compact('scholarships'));
     }
 

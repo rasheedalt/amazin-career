@@ -12,7 +12,7 @@ class StaticPagesController extends Controller
     }
 
     public function servicesPage(){
-        $services = Service::where('is_active', true)->get();
+        $services = Service::where('is_active', true)->latest()->get();
         return view('pages.services', compact('services'));
     }
 
