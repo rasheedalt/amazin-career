@@ -5,7 +5,13 @@ namespace App\Http\Controllers;
 use App\Models\Job;
 use App\Models\User;
 use App\Models\State;
+use App\Models\CvRewrite;
+use App\Models\CoverLetter;
+use App\Models\Scholarship;
+use App\Models\BusinessPlan;
 use Illuminate\Http\Request;
+use App\Models\SubscribedEmail;
+use App\Models\LinkedinOptimization;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Requests\SaveJobRequest;
 
@@ -17,7 +23,16 @@ class AdminController extends Controller
     }
 
     public function dashboard(){
-        return view('admin.dashboard');
+        $emailCount = SubscribedEmail::count();
+        $jobs = Job::count();
+        $jobRequests = Job::where('is_approved', true)->count();
+        $cvs = CvRewrite::count();
+        $Scholarships = Scholarship::count();
+        $businessPlan = BusinessPlan::count();
+        $linkedInOpt = LinkedinOptimization::count();
+        $coverLetters = CoverLetter::count();
+        return view('admin.dashboard', compact('emailCount', 'jobs', 'businessPlan', 'cvs', 
+                    'Scholarships', 'linkedInOpt', 'coverLetters', 'jobRequests'));
     }
 
     public function generateLogin(){

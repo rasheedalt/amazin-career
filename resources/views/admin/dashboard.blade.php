@@ -4,18 +4,18 @@
        <div id="maincontent">
             <div class="CI">
                 <p>Contact Inbox</p>
-                <h2>36</h >
+                <h2>0</h >
             </div>
             <div class="PJR">
                 <p>Post Job Requests</p>
-                <h2>6</h>
+                <h2>{{ $jobRequests }}</h>
             </div>
         </div>
 
         <div id="maincontent2">
             <div class="Emails">
                 <p>Email Subcription</p>
-                <h2>36</h >
+                <h2>{{ $emailCount }}</h >
             </div>
             <div class="EmailCL">
                 <ol>
@@ -28,30 +28,30 @@
 
         <div id="maincontent3"> 
             <div class="WV">
-                <p>Website Visitors</p>
-                <h2>36.123</h >
+                <p>Jobs Available</p>
+                <h2>{{ $jobs }}</h >
             </div>
             <div class="DV">
-                <p>Daily visitors</p>
-                <h2>23,122</h>
+                <p>CV Rewrite Requests</p>
+                <h2>{{ $cvs }}</h>
             </div>
         </div>
 
         <div id="maincontent4"> 
         
             <div class="DCC">
-                <p>Daily Click Counts</p>
-                <h2>36.123</h >
+                <p>Business Plan Requests</p>
+                <h2>{{ $businessPlan }}</h >
             </div>
 
             <div class="MV">
-                <p>Monthly visitors</p>
-                <h2>23,122</h>
+                <p>LinkedIn Opt. Requests</p>
+                <h2>{{ $linkedInOpt }}</h>
             </div>
 
             <div class="WV">
-                <p>Weekly visitors</p>
-                <h2>23,122</h>
+                <p>Cover Letter Requests</p>
+                <h2>{{ $coverLetters }}</h>
             </div>
        </div>
         

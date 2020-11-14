@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Job;
 use App\Models\State;
+use Illuminate\Http\Request;
+use App\Http\Requests\SearchJobRequest;
 
 class JobController extends Controller
 {
@@ -20,6 +21,11 @@ class JobController extends Controller
         $data = $request->all();
         
         $job = Job::create($data);
+        
+        if(auth()->user()){
+            $job->update(['is_approved' => true]);
+        }
+
         if($job){
             $this->flashSuccessMessage('Job was saved successfully');
             return back();
@@ -47,11 +53,17 @@ class JobController extends Controller
         return view('jobs.state-jobs', compact('state', 'jobs'));
     }
 
-    public function searchJob(Request $request){
-        // Split the terms by word.
-        $job = $request->job ? explode(" ", request('job')) : '';
-        $state = $request->state ? explode(" ", request('state')) : '';
-        $keyword = "{$request->job} {$request->state}";
+    public function searchJob(SearchJobRequest $request){
+        if($request->mobile_search){
+            $job = $request->mobile_search ? explode(" ", request('mobile_search')) : '';
+            $state = '';
+            $keyword = "{mobile_search}";
+        }else{
+            // Split the terms by word.
+            $job = $request->job ? explode(" ", request('job')) : '';
+            $state = $request->state ? explode(" ", request('state')) : '';
+            $keyword = "{$request->job} {$request->state}";
+        }
 
         $search = Job::query();
         if($job){

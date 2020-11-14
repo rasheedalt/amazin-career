@@ -18,7 +18,7 @@
             </div>
 
             <div class="searchEngMobile">
-                <input placeholder="Search for job vancancies" type="text"/>
+                <input placeholder="Search for job vancancies" type="text" name="mobile_search"/>
                 <button type="submit" >Search</button>
             </div>
         </form>
