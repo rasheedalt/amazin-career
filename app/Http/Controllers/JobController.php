@@ -41,7 +41,7 @@ class JobController extends Controller
             return back();
         }
         $stateID = $state->id;
-        $jobs = Job::whereHas('state', function($q) use($stateID) {
+        $jobs = Job::whereHas('states', function($q) use($stateID) {
             $q->where('states.id', $stateID);
         })->paginate(10);
         return view('jobs.state-jobs', compact('state', 'jobs'));
@@ -49,18 +49,22 @@ class JobController extends Controller
 
     public function searchJob(Request $request){
         // Split the terms by word.
-        $job = $request->job ?? explode(" ", request('job'));
-        $state = $request->state ?? explode(" ", request('state'));
+        $job = $request->job ? explode(" ", request('job')) : '';
+        $state = $request->state ? explode(" ", request('state')) : '';
+        $keyword = "{$request->job} {$request->state}";
 
-        $search = Job::query()
-            ->where(function ($query) use ($job) {
+        $search = Job::query();
+        if($job){
+            $search = $search->where(function ($query) use ($job) {
                 foreach ($job as $term) {
-                    $query->where('jobs.title', 'like', '%' . $term . '%');
+                    $query->where('jobs.title', 'like', '%' . $term . '%')
+                    ->orWhere('jobs.company_name', 'like', '%' . $term . '%');
                 }
             });
+        }
 
         if($state){
-            $serach = $search->whereHas('state', function ($query) use ($state) {
+            $search = $search->whereHas('states', function ($query) use ($state) {
                 foreach ($state as $term) {
                     // Loop over the terms and do a search for each.
                     $query->where('states.name', 'like', '%' . $term . '%');
@@ -69,6 +73,6 @@ class JobController extends Controller
         }
 
         $jobs = $search->paginate(10);
-        return view('jobs.state-jobs', compact('state', 'jobs'));
+        return view('jobs.state-jobs', compact('state', 'jobs', 'keyword'));
     }
 }

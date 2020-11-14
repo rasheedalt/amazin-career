@@ -100,13 +100,25 @@
 </style> -->
 
 @section('main')
-    <h3>JOB VACANCIES IN {{ strtoupper($state->name) }}</h3>
+    @php
+        $keyword = $keyword ?? NULL;
+    @endphp
+    @if($keyword)
+        <h3>SEARCH RESULT FOR KEYWORDS  "{{ $keyword }}"</h3>
+    @else
+        <h3>JOB VACANCIES {{ strtoupper($state->name) }}</h3>
+    @endif
+
     <div class="row">
-        <div class="post">
-            @include('components.jobs-list', [
-            'jobs' => $jobs
-            ])
-        </div>
+        @if($jobs->count() > 0)
+            <div class="post">
+                @include('components.jobs-list', [
+                'jobs' => $jobs
+                ])
+            </div>
+        @else
+            <div class="col-12 mx-auto text-center mt-4">No Job record found</div>
+        @endif
     </div>
 
 @endsection
