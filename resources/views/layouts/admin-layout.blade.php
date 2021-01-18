@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="shortcut icon" href="/images/Logo.png" >
     <meta name="viewport" content="width=, initial-scale=1.0">
     <title>AmazincareersNG</title>
     <link  href="{{ asset('css/admin/main.css') }}" rel="stylesheet">

@@ -2,42 +2,33 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="shortcut icon" href="/images/Logo.png" >
     <meta name="viewport" content="width=, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>AmazincareersNG</title>
     <link  href="/css/main/main.css" rel="stylesheet">
     <link  href="/css/bootstrap.css" rel="stylesheet">
 
-    <style>
-        /* .home {
-            color: white;
-            height: 20px;
-            Background-color: #072638;
-            border-radius: 5px;
-            padding-top: 8px;
-            padding-left: 20px;
-            padding-right: 20px;
-            padding-bottom: 8px;
-            opacity: 60%;
-        } */
-    </style>
+    <script src="/js/jquery-2.2.4.min.js.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
 
 </head>
 <body>
     
-    <navbar id ="container">
+    <navbar id ="container" >
         <div id ="header">
-               <a href="/"> <img src="{{ asset('images/Logo.png') }}" alt=""> </a>
-                <ol>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="{{ route('about.page') }}">About</a></li>
-                    <li><a href="{{ route('services.page') }}">Services</a></li>
-                    <li><a href="/">Job Vacancies</a></li>
-                    <li><a href="{{ route('job.post') }}">Post Jobs</a></li>
-                    <li><a href="{{ route('scholarships.list') }}">Scholarships</a></li>
-                    <li><a href="{{ route('contact.page') }}">Contact</a></li>
-                    <li><a href="{{ route('services.page') }}">Blog</a></li>
-                </ol>
+        <a href="/" class="navbar-brand"> <img src="{{ asset('/images/Logo.png') }}" alt="Amazin Careers"> </a>
+              
+            <ol >
+                <li class="nav-item"><a href="/">Home</a></li>
+                <li class="nav-item"><a href="{{ route('about.page') }}">About</a></li>
+                <li class="nav-item"><a href="{{ route('services.page') }}">Services</a></li>
+                <li class="nav-item"><a href="/">Job Vacancies</a></li>
+                <li class="nav-item"><a href="{{ route('job.post') }}">Post Jobs</a></li>
+                <li class="nav-item"><a href="{{ route('scholarships.list') }}">Scholarships</a></li>
+                <li class="nav-item"><a href="{{ route('contact.page') }}">Contact</a></li>
+                <li class="nav-item"><a href="{{ route('posts') }}">Blog</a></li>
+            </ol>
 
         </div>
     </navbar>

@@ -2,42 +2,35 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/ico" sizes="16x16" >
     <meta name="viewport" content="width=, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>AmazincareersNG</title>
-    <link  href="{{ asset('css/main/main.css') }}" rel="stylesheet">
     <link  href="{{ asset('css/bootstrap.css') }}" rel="stylesheet">
-
-    <style>
-        /* .home {
-            color: white;
-            height: 20px;
-            Background-color: #072638;
-            border-radius: 5px;
-            padding-top: 8px;
-            padding-left: 20px;
-            padding-right: 20px;
-            padding-bottom: 8px;
-            opacity: 60%;
-        } */
-    </style>
+    <link  href="{{ asset('css/main/main.css') }}" rel="stylesheet">
 
 </head>
 <body>
     
     <navbar id ="container">
         <div id ="header">
-               <a href="/"> <img src="{{ asset('/images/Logo.png') }}" alt=""> </a>
-                <ol>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="{{ route('about.page') }}">About</a></li>
-                    <li><a href="{{ route('services.page') }}">Services</a></li>
-                    <li><a href="/">Job Vacancies</a></li>
-                    <li><a href="{{ route('job.post') }}">Post Jobs</a></li>
-                    <li><a href="{{ route('scholarships.list') }}">Scholarships</a></li>
-                    <li><a href="{{ route('contact.page') }}">Contact</a></li>
-                    <li><a href="{{ route('posts') }}">Blog</a></li>
-                </ol>
+               <a href="/" class="navbar-brand"> <img src="{{ asset('/images/Logo.png') }}" alt="Amazin Careers"> </a>
+               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+               <div class="collapse navbar-collapse" id="navbarNav" >
+
+                   <ul class="navbar-nav">
+                       <li class="nav-item"><a href="/">Home</a></li>
+                       <li class="nav-item"><a href="{{ route('about.page') }}">About</a></li>
+                       <li class="nav-item"><a href="{{ route('services.page') }}">Services</a></li>
+                       <li class="nav-item"><a href="/">Job Vacancies</a></li>
+                       <li class="nav-item"><a href="{{ route('job.post') }}">Post Jobs</a></li>
+                       <li class="nav-item"><a href="{{ route('scholarships.list') }}">Scholarships</a></li>
+                       <li class="nav-item"><a href="{{ route('contact.page') }}">Contact</a></li>
+                       <li class="nav-item"><a href="{{ route('posts') }}">Blog</a></li>
+                   </ul>
+               </div>
 
         </div>
     </navbar>
@@ -46,17 +39,17 @@
 
     <section class="container-fluid">
         <div class="row justify-content-center">
-            <div class="col-md-2 mx-0">
+            <div class="col-md-2 m-0">
                 @include('components.left-sidebar')
             </div>
-            <div class="col-md-8">
+            <div class="col-md-8 col-sm-12 m-0">
                 <div id="maincontent">
                     @include('components.flash-message')
                     @yield('main')
                     
                 </div>
             </div>
-            <div class="col-md-2 mx-0">
+            <div class="col-md-2 m-0">
                 @include('components.right-sidebar')
             </div>
         </div>

@@ -24,7 +24,7 @@ body {
 #header ol {
     float: right;
     /* height: 200px; */
-    margin: 100px;
+    margin-top: 100px;
 }
 
 #header ol li {
@@ -109,7 +109,7 @@ body {
 .sidebarOne {
     /* margin-top: 120px; */
     /* height:230px; */
-    width: 230px;
+    /* width: 230px; */
 }
 .sidebarOne h3 {
     background-color: #072638;
@@ -147,7 +147,7 @@ body {
     padding-left: 10px;
     padding-right: 10px;
     /* height: 140px; */
-    width: 200px;
+    /* width: 200px; */
     background-color:  #072638;
     color: white;
     font-size: 14px;
@@ -197,7 +197,7 @@ body {
 .sidebarThree {
     margin-top: 10px;
     /* height:230px; */
-    width: 230px;
+    /* width: 230px; */
 }
 
 .sidebarThree button {
@@ -209,7 +209,7 @@ body {
     border-radius: 5px;
     color: white;
     text-indent: 10px;
-    width: 220px;
+    /* width: 220px; */
 }
 
 .sidebarThree button a {
@@ -219,7 +219,7 @@ body {
 .sidebarThree button:hover {
     transition: 0.8s ease;
     background-color: #072638;
-    width:  220px;
+    /* width:  220px; */
 }
 .sidebarThree button a:hover {
     text-decoration: none;
@@ -239,7 +239,7 @@ body {
     margin: 5px;
     padding: 2px;
     /* height: 150px; */
-    width: 220px;
+    /* width: 220px; */
     background-color:  #072638;
     border-radius: 5px;
 }
@@ -343,7 +343,7 @@ body {
 
 .Servicebar {
     /* height:230px; */
-    width: 230px;
+    /* width: 230px; */
 }
 
 .Servicebar h3 {
@@ -380,8 +380,8 @@ body {
     margin-left: 5px;
     padding-top: 20px;
    padding: 20px;
-    height: 200px;
-    width: 200px;
+    /* height: 200px;
+    width: 200px; */
     background-color:  #072638;
     color: white;
     font-size: 14px;
@@ -395,7 +395,7 @@ body {
     padding-top: 20px;
     padding: 20px;
     height: 200px;
-    width: 200px;
+    /* width: 200px; */
     background-color:  #072638;
     color: white;
     font-size: 14px;
@@ -413,12 +413,13 @@ body {
         width:  100px;
         position: relative;
         top: 5px;
-        left: 150px;
+        left: 160px;
     }
-#header ol {display: none;}
+ #header ol {margin-top: 20px;}
+/* #header ol {display: none;}
 #header ol li {display: none;}
 #header ol li a {display: none;}
-#header ol li a a:hover{display: none;}
+#header ol li a a:hover{display: none;} */
 
 .searchEng input {display: none;}
 .searchEng button {display: none;}
@@ -461,7 +462,7 @@ body {
 
 #maincontent {
     /* width: 440px; */
-    height: 4500px;
+    min-height: 100vh;
     /* margin: 5px; */
     margin-top: 50px;
 }

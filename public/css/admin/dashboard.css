@@ -70,9 +70,9 @@ body {
 }
 
 #maincontent {
-    float: left;
+    /* float: left;
     margin-left: 100px;
-    margin-top: 30px;
+    margin-top: 30px; */
 }
 
 .CI {
