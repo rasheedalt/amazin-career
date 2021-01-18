@@ -462,7 +462,7 @@ body {
 
 #maincontent {
     /* width: 440px; */
-    min-height: 100vh;
+    min-height: 100vh; 
     /* margin: 5px; */
     margin-top: 50px;
 }
