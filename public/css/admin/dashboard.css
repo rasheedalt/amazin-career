@@ -31,9 +31,9 @@ body {
 
 #sidebar {
     height: 500px;
-    width: 200px;
+    /* width: 200px; */
     background-color:#E3E3E3;
-    float: left;
+    /* float: left; */
 }
 #sidebar ol a {
     text-decoration: none;
@@ -58,7 +58,7 @@ body {
 
 #sidebar img {
     height: 80px;
-    width:  80px;
+    /* width:  80px; */
     padding: 30px;
     padding-bottom: 10px;
 }
@@ -274,7 +274,7 @@ body {
         font-size: 12px;
     }
 
-#sidebar, #maincontent, #maincontent1, #maincontent2,#maincontent3, #maincontent4 {display: none;}
+/* #sidebar, #maincontent, #maincontent1, #maincontent2,#maincontent3, #maincontent4 {display: none;} */
 
 #MobSidebar1, #MobSidebar, #MobStat1, #MobStat2 {display: block;}
 

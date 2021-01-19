@@ -1,6 +1,44 @@
 @extends('layouts.admin-layout')
     <link  href="{{ asset('css/admin/dashboard.css') }}" rel="stylesheet">
 @section('content')
+<div class="row">
+    <div class="col-md-4">
+        <div id="">
+            <div class="CI">
+                <p>Contact Inbox</p>
+                <h2>0</h >
+            </div>
+            <div class="PJR">
+                <p>Post Job Requests</p>
+                <h2>{{ $jobRequests }}</h>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card bg-muted">
+            <div class="card-body bg-primary">
+                <p>Contact Inbox</p>
+                <h2>0</h >
+            </div>
+            <div class="PJR">
+                <p>Post Job Requests</p>
+                <h2>{{ $jobRequests }}</h>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div id="">
+            <div class="CI">
+                <p>Contact Inbox</p>
+                <h2>0</h >
+            </div>
+            <div class="PJR">
+                <p>Post Job Requests</p>
+                <h2>{{ $jobRequests }}</h>
+            </div>
+        </div>
+    </div>
+</div>
        <div id="maincontent">
             <div class="CI">
                 <p>Contact Inbox</p>
