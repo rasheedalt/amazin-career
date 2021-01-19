@@ -5,7 +5,7 @@
         
             @include('components.flash-message')
             <div class="row justify-content-center mt-3">
-                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-7">
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-8 col-xs-10">
                     <form method="POST" action="{{ route('login') }}" id="loginForm">
                         @csrf 
                         <div class="">

@@ -7,6 +7,21 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+#maincontent {
+    border-radius: 5px;
+    background-color:#E3E3E3;
+    /* width: 900px;
+    height: 500px; */
+    padding: 20px;
+}
+#maincontent h3 {
+    text-align: center;
+    font-family: Tahoma;
+    font-size: 17px;
+    padding: 5px;
+    padding-bottom: 20px;
+}
+
 #header {
     height:240px ;
     background-color: #F2EDED;
@@ -253,7 +268,7 @@ body {
 #MobSidebar1, #MobSidebar, #MobStat1, #MobStat2 {display: none;}
 
 
-@media only screen and (max-width: 800px){
+/* @media only screen and (max-width: 800px){
 #header {
         height: 150px ;
         background-color: #F2EDED;
@@ -274,7 +289,7 @@ body {
         font-size: 12px;
     }
 
-/* #sidebar, #maincontent, #maincontent1, #maincontent2,#maincontent3, #maincontent4 {display: none;} */
+#sidebar, #maincontent, #maincontent1, #maincontent2,#maincontent3, #maincontent4 {display: none;}
 
 #MobSidebar1, #MobSidebar, #MobStat1, #MobStat2 {display: block;}
 
@@ -373,4 +388,4 @@ body {
 
 
 
-}
+} */

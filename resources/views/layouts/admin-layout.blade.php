@@ -18,18 +18,24 @@
             <h4>ADMIN LOGIN PORTAL</h4>
     </div>
 
-    <div class="row">
-        @if(auth()->check())
-                <div class="col-md-2 col-sm-3" style="height: 100vh !important; background-color: #E3E3E3"  >
-                    @include('components.admin-sidebar')
+    @if(auth()->check())
+        <div class="row @if(!auth()->check()) justify-content-center @endif">
+            <div class="col-md-2 col-sm-3" style="min-height: 100vh !important; background-color: #E3E3E3"  >
+                @include('components.admin-sidebar')
+            </div>
+            <div class="col-md-10 col-sm-9">
+                <div >
+                    @yield('content')
                 </div>
-        @endif
-        <div class="col-6">
-            <div @if(!auth()->check()) style="min-height: 75vh;" @endif>
+            </div>
+        </div>
+    @else
+        <div class="">
+            <div style="min-height: 75vh;">
                 @yield('content')
             </div>
         </div>
-    </div>
+    @endif
 
 
     <footer class="bg-light text-center">

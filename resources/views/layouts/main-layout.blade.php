@@ -12,25 +12,20 @@
 </head>
 <body>
     
-    <navbar id ="container">
+<navbar id ="container" >
         <div id ="header">
-               <a href="/" class="navbar-brand"> <img src="{{ asset('/images/Logo.png') }}" alt="Amazin Careers"> </a>
-               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-               <div class="collapse navbar-collapse" id="navbarNav" >
-
-                   <ul class="navbar-nav">
-                       <li class="nav-item"><a href="/">Home</a></li>
-                       <li class="nav-item"><a href="{{ route('about.page') }}">About</a></li>
-                       <li class="nav-item"><a href="{{ route('services.page') }}">Services</a></li>
-                       <li class="nav-item"><a href="/">Job Vacancies</a></li>
-                       <li class="nav-item"><a href="{{ route('job.post') }}">Post Jobs</a></li>
-                       <li class="nav-item"><a href="{{ route('scholarships.list') }}">Scholarships</a></li>
-                       <li class="nav-item"><a href="{{ route('contact.page') }}">Contact</a></li>
-                       <li class="nav-item"><a href="{{ route('posts') }}">Blog</a></li>
-                   </ul>
-               </div>
+        <a href="/" class="navbar-brand"> <img src="{{ asset('/images/Logo.png') }}" alt="Amazin Careers"> </a>
+              
+            <ol >
+                <li class="nav-item"><a href="/">Home</a></li>
+                <li class="nav-item"><a href="{{ route('about.page') }}">About</a></li>
+                <li class="nav-item"><a href="{{ route('services.page') }}">Services</a></li>
+                <li class="nav-item"><a href="/">Job Vacancies</a></li>
+                <li class="nav-item"><a href="{{ route('job.post') }}">Post Jobs</a></li>
+                <li class="nav-item"><a href="{{ route('scholarships.list') }}">Scholarships</a></li>
+                <li class="nav-item"><a href="{{ route('contact.page') }}">Contact</a></li>
+                <li class="nav-item"><a href="{{ route('posts') }}">Blog</a></li>
+            </ol>
 
         </div>
     </navbar>
@@ -54,6 +49,15 @@
             </div>
         </div>
     </section>
+
+    <footer class="bg-light text-center">
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+            © Copyright {{ date('Y') }}
+            <a class="text-dark" href="/">Amazin Careers</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
 
 </body>
 </html>

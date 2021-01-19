@@ -10,39 +10,22 @@
             background-color: #072638;
             color: white;
         }
-        #maincontent {
-            border-radius: 5px;
-            background-color:#E3E3E3;
-            width: 900px;
-            height: 800px;
-            padding: 20px;
-        }
-        #maincontent h3 {
-            text-align: center;
-            font-family: Tahoma;
-            font-size: 17px;
-            padding: 5px;
-            padding-bottom: 20px;
-        }
-        #sidebar {
-        height: 1100px;
-        }
-        
+
         .State {
             padding: 15px;
             margin-left: 10px;
-            float: left;
+            /* float: left; */
         }
 
         .PostJ {
-            float: left;
+            /* float: left; */
             padding: 15px;
             margin-left: 40px;
         }
 
         .PostJ input, textarea {
             padding: 8px;
-            width: 600px;
+            /* width: 600px; */
             font-size: 14px;
             font-family: Tahoma;
             margin-bottom: 8px;
@@ -66,100 +49,48 @@
         transition: 0.8s ease;
         }
 
-        @media only screen and (max-width: 800px){
-            #maincontent{
-            display: inline;
-            margin: 20px;
-            border-radius: 2px;
-            background-color:#E3E3E3;
-            width: 400px;
-            height: 800px;
-            padding: 10px;
-        }
-        #maincontent h3 {
-            text-align: center;
-            font-family: Tahoma;
-            font-size: 13px;
-            padding: 2px;
-            padding-bottom: 10px;
-        }
-
-        .State {
-            padding: 5px;
-            margin-left: 5px;
-            float: left;
-            padding-top: 10px;
-        }
-
-        .PostJ {
-            float: left;
-            padding: 5px;
-            margin-left: 10px;
-            padding-top: 10px;
-        }
-
-        .PostJ input, textarea {
-            padding: 5px;
-            width: 230px;
-            font-size: 12px;
-            font-family: Tahoma;
-            margin-bottom: 4px;
-            border-style: solid;
-            border-width: 1px;
-        }
-        .PostJ  textarea {
-            height: 220px;
-
-        }
-        .PostJ button{
-        width: 60px;
-        padding: 5px;
-        margin-bottom: 5px;
-        border-style: none;
-        background-color: #072638;
-        color: white;
-        border-radius: 1px;
-        font-family: tahoma;
-        font-size: 11px;
-       }
-       .PostJ button:hover {
-        background-color: #F2EDED;
-        color:  #072638;
-        transition: 0.8s ease;
-        }
-
-        }
 
     </style>
 @endsection
 
 @section('content')
-<div id="maincontent">
+<div id="maincontent" class="mt-2 mr-2 mb-3">
              <h3>POST VANCANCIES</h3>
              <hr>
             <form action="{{ route('admin.job_post') }}" method="POST">
-                <div class= "State">
-                            <label><input type="checkbox" value="" id="ckbCheckAll"> select all</label><br/>
-                        @foreach($states as $state)
-                            <label><input class="checkBoxClass" type="checkbox"name="state[]" value="{{ $state->id }}" id="{{ $state->name }}"> {{ $state->name }}</label><br/>
-                        @endforeach
+                <div class="row">
+                    <div class="col-3">
+                        <div class= "State">
+                                    <label><input type="checkbox" value="" id="ckbCheckAll"> select all</label><br/>
+                                <div class="row">
+                                @foreach($states as $state)
+                                    <div class="col-6">
+                                        <label><input class="checkBoxClass" type="checkbox"name="state[]" value="{{ $state->id }}" id="{{ $state->name }}"> {{ $state->name }}</label><br/>
+                                    </div>
+                                    @endforeach
+                                </div>
+                        </div>
+                    </div>
+                    <div class="col-8">
+
+                        <div class="PostJ">
+                        @include('components.flash-message')
+        
+                                @csrf
+                                <input class="form-control" name="company_name" value="{{ old('company_name') }}" placeholder="Company" type="text"/> <br/>
+                                <input class="form-control" name="address" value="{{ old('address') }}" placeholder="Adress/Location" type="text"/><br/>
+                                <input class="form-control" name="title" value="{{ old('title') }}" placeholder="Job Positions" type="text"/><br/>
+                                <input class="form-control" name="salary" value="{{ old('salary') }}" placeholder="Salary Range" type="text"/><br/>
+                                <textarea class="form-control" name="description" placeholder="Requirements" id="" cols="30" rows="10">{{ old('description') }}</textarea><br/>
+                                <textarea class="form-control" name="application_mode" placeholder="Method of Application" id="" cols="30" rows="10">{{ old('application_mode') }}</textarea><br/>
+                                <input class="form-control" name="deadline" value="{{ old('deadline') }}" placeholder="Deadlines" type="text"/><br/>
+                                <!-- <input name="deadline" placeholder="Deadlines" type="text" onfocus="(this.type='date')" /><br/> -->
+                                <input class="form-control" name="link" value="{{ old('link') }}" placeholder="Application Link" type="text"/><br/>
+                                <button>Post</button>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="PostJ">
-                @include('components.flash-message')
-
-                        @csrf
-                        <input name="company_name" value="{{ old('company_name') }}" placeholder="Company" type="text"/> <br/>
-                        <input name="address" value="{{ old('address') }}" placeholder="Adress/Location" type="text"/><br/>
-                        <input name="title" value="{{ old('title') }}" placeholder="Job Positions" type="text"/><br/>
-                        <input name="salary" value="{{ old('salary') }}" placeholder="Salary Range" type="text"/><br/>
-                        <textarea name="description" placeholder="Requirements" id="" cols="30" rows="10">{{ old('description') }}</textarea><br/>
-                        <textarea name="application_mode" placeholder="Method of Application" id="" cols="30" rows="10">{{ old('application_mode') }}</textarea><br/>
-                        <input name="deadline" value="{{ old('deadline') }}" placeholder="Deadlines" type="text"/><br/>
-                        <!-- <input name="deadline" placeholder="Deadlines" type="text" onfocus="(this.type='date')" /><br/> -->
-                        <input name="link" value="{{ old('link') }}" placeholder="Application Link" type="text"/><br/>
-                        <button>Post</button>
-                </div>
             </form>
            
         </div>

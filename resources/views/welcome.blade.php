@@ -59,5 +59,14 @@
         </div>
     </section>
 
+    <footer class="bg-light text-center">
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+            © Copyright {{ date('Y') }}
+            <a class="text-dark" href="/">Amazin Careers</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+
 </body>
 </html>
