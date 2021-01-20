@@ -4,7 +4,7 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'raleway','Segoe UI',Arial, Helvetica, sans-serif, Tahoma, Geneva, Verdana, sans-serif;
 }
 
 
@@ -77,6 +77,14 @@ body {
     color:  #02977D;
 }
 
+.navbar-toggler{
+    display: none;
+    background-color:deeppink;
+}
+.card-body {
+    background-color: dimgray;
+    color: white;
+}
 
 @media only screen and (max-width: 800px){
 
@@ -96,6 +104,28 @@ body {
         font-family: Tahoma;
         font-size: 13px;
     }
+#side{
+    display: none;
+    position: absolute;
+    z-index: 4;
+    width: 50vw;
+    height: 100%;
+    background-color: solid !important;
+}
+.navbar-toggler{
+    display: block;
+    position: absolute;
+    left: 80vw;
+    margin-left: auto;
+    margin-top: 10px;
+    color: white;
+    background-color: #02977D;
+    z-index: 5;
+    background-color: solid !important;
+    border: 1px solid transparent;
+}
+
+}
 
 /* 
     #login {

@@ -57,7 +57,7 @@ class JobController extends Controller
         if($request->mobile_search){
             $job = $request->mobile_search ? explode(" ", request('mobile_search')) : '';
             $state = '';
-            $keyword = "{mobile_search}";
+            $keyword = "{$request->mobile_search}";
         }else{
             // Split the terms by word.
             $job = $request->job ? explode(" ", request('job')) : '';

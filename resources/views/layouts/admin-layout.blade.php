@@ -7,6 +7,7 @@
     <title>AmazincareersNG</title>
     <link  href="{{ asset('css/admin/main.css') }}" rel="stylesheet">
     <link  href="{{ asset('css/bootstrap.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="{{ asset('js/vendor/jquery-2.2.4.min.js') }}"></script>
 
     @yield('more-styles')
@@ -15,22 +16,25 @@
 <body>
     <div id ="header">
         <a href="/"> <img src="{{ asset('images/Logo.png') }}" alt=""> </a>
-            <h4>ADMIN LOGIN PORTAL</h4>
+            <h4>AMAZIN CAREERS ADMIN</h4>
     </div>
 
     @if(auth()->check())
+    <button class="navbar-toggler" style="color:#fff; font-size:28px;" type="button" data-toggle="collapse" data-target="#side" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <i class="fa fa-navicon" style="color:#fff; font-size:28px;"></i>
+    </button>
         <div class="row @if(!auth()->check()) justify-content-center @endif">
-            <div class="col-md-2 col-sm-3" style="min-height: 100vh !important; background-color: #E3E3E3"  >
+            <div id="side" class="col-md-2 col-sm-3" style="min-height: 100vh !important; background-color: #E3E3E3"  >
                 @include('components.admin-sidebar')
             </div>
-            <div class="col-md-10 col-sm-9">
+            <div id="main-content" class="col-md-8 col-sm-9 mx-3 mx-md-0">
                 <div >
                     @yield('content')
                 </div>
             </div>
         </div>
     @else
-        <div class="">
+        <div id="main-content">
             <div style="min-height: 75vh;">
                 @yield('content')
             </div>
@@ -46,6 +50,12 @@
         </div>
         <!-- Copyright -->
     </footer>
+
+    <script>
+        $('.navbar-toggler').click(function(){
+            $('#side').toggle()
+        })
+    </script>
 
 </body>
 </html>

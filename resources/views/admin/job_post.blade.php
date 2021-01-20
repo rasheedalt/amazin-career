@@ -55,7 +55,7 @@
 
 @section('content')
 <div id="maincontent" class="mt-2 mr-2 mb-3">
-             <h3>POST VANCANCIES</h3>
+             <h3>POST JOB</h3>
              <hr>
             <form action="{{ route('admin.job_post') }}" method="POST">
                 <div class="row">
@@ -81,10 +81,9 @@
                                 <input class="form-control" name="address" value="{{ old('address') }}" placeholder="Adress/Location" type="text"/><br/>
                                 <input class="form-control" name="title" value="{{ old('title') }}" placeholder="Job Positions" type="text"/><br/>
                                 <input class="form-control" name="salary" value="{{ old('salary') }}" placeholder="Salary Range" type="text"/><br/>
-                                <textarea class="form-control" name="description" placeholder="Requirements" id="" cols="30" rows="10">{{ old('description') }}</textarea><br/>
-                                <textarea class="form-control" name="application_mode" placeholder="Method of Application" id="" cols="30" rows="10">{{ old('application_mode') }}</textarea><br/>
+                                <textarea class="form-control" name="description" placeholder="Requirements" id="" cols="30" rows="5">{{ old('description') }}</textarea><br/>
+                                <textarea class="form-control" name="application_mode" placeholder="Method of Application" id="" cols="30" rows="5">{{ old('application_mode') }}</textarea><br/>
                                 <input class="form-control" name="deadline" value="{{ old('deadline') }}" placeholder="Deadlines" type="text"/><br/>
-                                <!-- <input name="deadline" placeholder="Deadlines" type="text" onfocus="(this.type='date')" /><br/> -->
                                 <input class="form-control" name="link" value="{{ old('link') }}" placeholder="Application Link" type="text"/><br/>
                                 <button>Post</button>
                         </div>

@@ -4,7 +4,7 @@
 <div class="row mt-2">
     <div class="col-md-3 col-sm-4">
         <div class="card bg-muted">
-            <div class="card-body bg-primary">
+            <div class="card-body ">
                 <p>Contact Inbox</p>
                 <h2>0</h >
             </div>
@@ -12,7 +12,7 @@
     </div>
     <div class="col-md-3 col-sm-4">
         <div class="card bg-muted">
-            <div class="card-body bg-primary">
+            <div class="card-body ">
                 <p>Job Requests</p>
                 <h2>{{ $jobRequests }}</h >
             </div>
@@ -20,7 +20,7 @@
     </div>
     <div class="col-md-3 col-sm-4">
         <div class="card bg-muted">
-            <div class="card-body bg-primary">
+            <div class="card-body ">
                 <p>Emails</p>
                 <h2>{{ $emailCount }}</h >
             </div>
@@ -28,7 +28,7 @@
     </div>
     <div class="col-md-3 col-sm-4">
         <div class="card bg-muted">
-            <div class="card-body bg-primary">
+            <div class="card-body ">
                 <p>Jobs Available</p>
                 <h2>{{ $jobs }}</h >
             </div>
@@ -36,7 +36,7 @@
     </div>
     <div class="col-md-3 col-sm-4">
         <div class="card bg-muted">
-            <div class="card-body bg-primary">
+            <div class="card-body ">
                 <p>Business Plan Requests</p>
                 <h2>{{ $businessPlan }}</h >
             </div>
@@ -44,7 +44,7 @@
     </div>
     <div class="col-md-3 col-sm-4">
         <div class="card bg-muted">
-            <div class="card-body bg-primary">
+            <div class="card-body ">
                 <p>CV Rewrite Requests</p>
                 <h2>{{ $cvs }}</h>
             </div>
@@ -52,7 +52,7 @@
     </div>
     <div class="col-md-3 col-sm-4">
         <div class="card bg-muted">
-            <div class="card-body bg-primary">
+            <div class="card-body ">
                 <p>LinkedIn Opt. Requests</p>
                 <h2>{{ $linkedInOpt }}</h>
             </div>
@@ -60,7 +60,7 @@
     </div>
     <div class="col-md-3 col-sm-4">
         <div class="card bg-muted">
-            <div class="card-body bg-primary">
+            <div class="card-body ">
                 <p>Cover Letter Requests</p>
                 <h2>{{ $coverLetters }}</h>
             </div>

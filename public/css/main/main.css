@@ -4,7 +4,7 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, ;
+    font-family: 'roboto','Segoe UI', Tahoma, Geneva, Verdana, sans-serif, ;
 }
 
 
@@ -43,7 +43,7 @@ body {
 }
 #header ol li a:hover {
     color: white;
-    height: 10px;
+    height: 25px;
     Background-color: #072638;
     border-radius: 5px;
     transition: 0.8s ease;
@@ -60,7 +60,7 @@ body {
 
 .searchEng input {
     width: 350px;
-    height: 20px;
+    height: 40px;
     padding: 8px;
     border-style: solid;
     border-radius: 5px;
@@ -435,7 +435,7 @@ body {
 }
 .searchEngMobile input{
     width: 315px;
-    height: 15px;
+    height: 25px;
     font-family: tahoma;
     font-size: 12px;
     padding: 5px;
