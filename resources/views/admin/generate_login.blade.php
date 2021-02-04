@@ -77,6 +77,7 @@
 
     </style>
 @endsection
+<?php $user = auth()->user(); ?>
 
 @section('content')
     <div id="maincontent" class="my-2">
@@ -87,7 +88,7 @@
                     <div class= "sideG">
                         <ul>
                             <li class="NL" href="{{ route('login.generate') }}"> New Login</li>
-                            <a href="{{ route('login.deactivate_page') }}"><li class="NL mt-1">Deactivite Login</li></a>
+                            @if($user->isSuperAdmin())<a href="{{ route('login.deactivate_page') }}"><li class="NL mt-1">Deactivite Login</li></a>@endif
                         </ul>
                     </div>
                 </div>

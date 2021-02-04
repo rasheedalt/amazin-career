@@ -16,25 +16,29 @@ class UsersTableSeeder extends Seeder
                 'firstname' => 'Raji',
                 'lastname' => 'Rasheed',
                 'email' => 'rrasheedalt@gmail.com',
-                'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi'
+                'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi',
+                'role_id' => 1,
             ],
             [
                 'firstname' => 'Kehinde',
                 'lastname' => 'Adegoke',
                 'email' => 'Kadegoke760@gmail.com',
-                'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi'
+                'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi',
+                'role_id' => 1
             ],
             [
                 'firstname' => 'Dhikrullah',
                 'lastname' => 'Mudathir',
                 'email' => 'mudathirdhikrullah@gmail.com',
-                'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi'
+                'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi',
+                'role_id' => 1
             ],
             [
                 'firstname' => 'Admin',
                 'lastname' => 'Test',
                 'email' => 'admin@test.com',
-                'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi'
+                'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi',
+                'role_id' => 2
             ],
         ];
 

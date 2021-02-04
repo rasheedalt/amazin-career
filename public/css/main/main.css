@@ -413,12 +413,16 @@ body {
         width:  100px;
         position: relative;
         top: 5px;
-        left: 160px;
+        left: 100%;
+        /* right: 40%; */
     }
- #header ol {margin-top: 20px;}
+    #header ol {margin-top: 20px;}
+    #header ol li a {    
+        font-size: 13px;
+        padding: 10px;
+    }
 /* #header ol {display: none;}
 #header ol li {display: none;}
-#header ol li a {display: none;}
 #header ol li a a:hover{display: none;} */
 
 .searchEng input {display: none;}
@@ -434,7 +438,7 @@ body {
     left: 10px;
 }
 .searchEngMobile input{
-    width: 315px;
+    /* width: 315px; */
     height: 25px;
     font-family: tahoma;
     font-size: 12px;
