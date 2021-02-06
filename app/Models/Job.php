@@ -16,6 +16,9 @@ class Job extends Model
         'salary',
         'link',
         'state',
+        'is_active',
+        'is_approved',
+        'company_registration_no'
     ];
 
     public function states(){

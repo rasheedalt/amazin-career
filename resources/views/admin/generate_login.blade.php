@@ -77,7 +77,10 @@
 
     </style>
 @endsection
-<?php $user = auth()->user(); ?>
+<?php $user = auth()->user();
+        $user_role_heirachy = $user->roleHeirachy();
+        $roles = \App\Models\Role::where('hierachy', '<=', $user_role_heirachy)->get();
+ ?>
 
 @section('content')
     <div id="maincontent" class="my-2">
@@ -100,6 +103,11 @@
                             <input class="form-control" name="lastname" placeholder="Lastname" type="text"/> <br/>
                             <input class="form-control" name="email" placeholder="Email Address" type="email"/> <br/>
                             <input class="form-control" name="password" placeholder="Password" type="text"/><br/>
+                            <select class="form-control mb-3" name="role_id">
+                                @foreach($roles as $role)
+                                    <option value="{{ $role->id }}">{{ $role->name }}</option>
+                                @endforeach
+                            </select>
                             <button>Generate</button>
                         </form>
                     </div>

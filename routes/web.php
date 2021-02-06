@@ -26,6 +26,12 @@ Route::group(['middleware' => ['auth:web']], function(){
     Route::get('/scholarship-post','AdminController@postScholarshipView')->name('scholarship.showform');
     Route::get('/admin/job-post','AdminController@postJobView')->name('admin.job_post');
     Route::post('/admin/job-post','AdminController@postJob')->name('admin.job_post');
+    Route::get('/manage-jobs','AdminController@ManageJobs')->name('admin.manage_jobs');
+    Route::post('/activate-toggle/{job}','JobController@ActivateToggle')->name('admin.activate_toggle');
+    Route::post('/approve-job/{job}','JobController@approveJob')->name('admin.approve_job');
+    
+    // Service Requests
+    Route::get('/admin/job-requests','AdminController@jobRequests')->name('admin.job_requests');
 });
 
 Auth::routes();

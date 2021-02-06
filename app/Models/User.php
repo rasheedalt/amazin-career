@@ -38,13 +38,17 @@ class User extends Authenticatable
     ];
 
     public function role(){
-        $this->belongsTo(Role::class);
+        return $this->belongsTo(Role::class, 'role_id');
+    }
+
+    public function roleHeirachy(){
+        return Role::where('id', $this->role_id)->first()->hierachy ?? 0;
     }
 
     public function isAdmin(){
         return $this->role_id == Role::ADMIN;
     }
-    
+
     public function isSuperAdmin(){
         return $this->role_id == Role::SUPER_ADMIN;
     }

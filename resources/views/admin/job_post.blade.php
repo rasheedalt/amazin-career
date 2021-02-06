@@ -78,6 +78,7 @@
         
                                 @csrf
                                 <input class="form-control" name="company_name" value="{{ old('company_name') }}" placeholder="Company" type="text"/> <br/>
+                                <input class="form-control" name="company_registration_no" value="{{ old('company_registration_no') }}" placeholder="Company Registration No" type="text"/> <br/>
                                 <input class="form-control" name="address" value="{{ old('address') }}" placeholder="Adress/Location" type="text"/><br/>
                                 <input class="form-control" name="title" value="{{ old('title') }}" placeholder="Job Positions" type="text"/><br/>
                                 <input class="form-control" name="salary" value="{{ old('salary') }}" placeholder="Salary Range" type="text"/><br/>

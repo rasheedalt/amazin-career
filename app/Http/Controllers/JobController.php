@@ -47,9 +47,10 @@ class JobController extends Controller
             return back();
         }
         $stateID = $state->id;
-        $jobs = Job::whereHas('states', function($q) use($stateID) {
-            $q->where('states.id', $stateID);
-        })->paginate(10);
+        $jobs = Job::where('is_approved', true)->where('is_active', true)
+                ->whereHas('states', function($q) use($stateID) {
+                    $q->where('states.id', $stateID);
+                })->paginate(10);
         return view('jobs.state-jobs', compact('state', 'jobs'));
     }
 
@@ -65,7 +66,8 @@ class JobController extends Controller
             $keyword = "{$request->job} {$request->state}";
         }
 
-        $search = Job::query();
+        // $search = Job::query();
+        $search = Job::where('is_approved', true)->where('is_active', true);
         if($job){
             $search = $search->where(function ($query) use ($job) {
                 foreach ($job as $term) {
@@ -86,5 +88,25 @@ class JobController extends Controller
 
         $jobs = $search->paginate(10);
         return view('jobs.state-jobs', compact('state', 'jobs', 'keyword'));
+    }
+
+    public function approveJob(Job $job){
+        $job->update(['is_approved' => true]);
+        $this->flashSuccessMessage('Job approved successfully');
+        return back();
+    }
+
+    public function ActivateToggle(Job $job){
+        if(auth()->user() && !auth()->user()->isStaff()){
+
+            $toggle = $job->is_active ? false : true;
+            $job->update(['is_active' => $toggle]);
+            $this->flashSuccessMessage('Successfull');
+            return back();
+
+        }else{
+            $this->flashErrorMessage('Unauthorized');
+            return back();
+        }
     }
 }

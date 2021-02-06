@@ -2,6 +2,7 @@
     @csrf
     <div >
         <input class="form-control" name="company_name" placeholder="Company" type="text"> <br>
+        <input class="form-control" name="company_registration_no" placeholder="Company Registration No" type="text"> <br>
         <input class="form-control" name="address" placeholder="Adress/Location" type="text"><br>
         <input class="form-control" name="title" placeholder="Job Positions" type="text"><br>
         <input class="form-control" name="salary" placeholder="Salary Range" type="text"><br>

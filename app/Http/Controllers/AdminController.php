@@ -25,7 +25,7 @@ class AdminController extends Controller
     public function dashboard(){
         $emailCount = SubscribedEmail::count();
         $jobs = Job::count();
-        $jobRequests = Job::where('is_approved', true)->count();
+        $jobRequests = Job::where('is_approved', false)->count();
         $cvs = CvRewrite::count();
         $Scholarships = Scholarship::count();
         $businessPlan = BusinessPlan::count();
@@ -108,12 +108,23 @@ class AdminController extends Controller
     public function registerUser(Request $request){
         $request->validate([
             'email' => 'required|email|unique:users',
-            'password' => 'required|string|min:6'
+            'password' => 'required|string|min:6',
+            'role_id' => 'required|integer',
             ]);
-        $data = $request->all();
-        $data['password'] = Hash::make($request->password);
-        $user = User::create($data);
+            $data = $request->all();
+            $data['password'] = Hash::make($request->password);
+            $user = User::create($data);
         $this->flashSuccessMessage("{$user->firstname} added successfully");
         return back();
+    }
+
+    public function jobRequests(Request $request){
+        $requests = Job::where('is_approved', false)->paginate(10);
+        return view('admin.job-requests', compact('requests'));
+    }
+
+    public function ManageJobs(Request $request){
+        $jobs = Job::paginate(10);
+        return view('admin.manage_jobs', compact('jobs'));
     }
 }

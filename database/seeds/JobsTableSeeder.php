@@ -19,6 +19,7 @@ class JobsTableSeeder extends Seeder
                 'description' => $faker->sentences(5, true),
                 'application_mode' => $faker->word,
                 'is_active' => true,
+                'is_approved' => true,
                 'salary' => 23000,
             ]);
 

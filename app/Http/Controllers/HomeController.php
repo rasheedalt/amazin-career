@@ -25,7 +25,7 @@ class HomeController extends Controller
      */
     public function home()
     {
-        $jobs = Job::latest()->paginate(10);
+        $jobs = Job::latest()->where('is_approved', true)->where('is_active', true)->paginate(10);
         return view('welcome', compact('jobs'));
     }
 
