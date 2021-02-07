@@ -81,7 +81,7 @@
 
 @section('content')
     <div id="maincontent" class="my-2">
-            <h3>Job Posting Requests</h3>
+            <h3>Cover Letter Requests</h3>
             <hr>
             <div class="row">
                 <div class="col-md-3">
@@ -92,27 +92,28 @@
                     <table class="table table-striped table-bordered">
                         <thead>
                             <tr>
-                                <th>Title</th>
-                                <th>Company Name</th>
-                                <!-- <th>Date</th> -->
-                                <th></th>
+                                <th>Applicant Name</th>
+                                <th>Email</th>
+                                <th>Date</th>
+                                <th>CV</th>
                                 <th></th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($requests as $request)
-                            <tr>
-                                <td>{{ $request->title}}</td>
-                                <td>{{ $request->company_name}}</td>
-                                <!-- <td>{{ $request->created_at->format('d M Y')}}</td> -->
-                                <td><a href="#" data-toggle="modal" data-target="#exampleModal" onclick="loadDetails({{$request}})" >View details</a></td>
-                                <td><form method="post" action="{{ route('admin.approve_job', $request->id) }}">
-                                    @csrf
-                                    <button class="btn btn-success">Approve</button>
-                                 </form>
-                                </td>
-                            </tr>
-                            @endforeach
+                            @if($requests->count() > 0)
+
+                                @foreach($requests as $request)
+                                <tr>
+                                    <td>{{ $request->first_name.' '.$request->last_name }}</td>
+                                    <td>{{ $request->email_address }}</td>
+                                    <td>{{ $request->created_at->format('d M Y') }}</td>
+                                    <td><a href="{{ $request->cv }}" target="blank" >View</td>
+                                    <td><a href="#" data-toggle="modal" data-target="#exampleModal" onclick="loadDetails({{$request}})" >View details</a></td>
+                                </tr>
+                                @endforeach
+                            @else
+                                <tr><td colspan="5" class="text-center">No request available</td></tr>
+                            @endif
                         </tbody>
                         <tfoot>
                             {{ $requests->links() }}
@@ -129,7 +130,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Job Details</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Cover Letter Request Details</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
                 </button>
@@ -146,16 +147,13 @@
     </div>
 
     <script>
-        function loadDetails(job){
+        function loadDetails(request){
             var content = `
-            Title: ${job.title} <br><br>
-            Company Name: ${job.company_name} <br><br>
-            Description: ${job.description} <br><br>
-            Salary: ${job.salary} <br><br>
-            Application Mode: ${job.application_mode} <br><br>
-            Link: ${job.link} <br><br>
-            Deadline: ${job.deadline} <br><br>
-            Date Submitted: ${job.created_at} <br><br>
+            First Name: ${request.first_name} <br><br>
+            Last Name: ${request.last_name} <br><br>
+            email: ${request.email_address} <br><br>
+            Phone: ${request.phone_number} <br><br>
+            Date Submitted: ${request.created_at} <br><br>
             `;
             $('#details').html(content)
             $('#exampleModal').show()

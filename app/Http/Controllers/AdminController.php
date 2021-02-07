@@ -11,6 +11,7 @@ use App\Models\Scholarship;
 use App\Models\BusinessPlan;
 use Illuminate\Http\Request;
 use App\Models\SubscribedEmail;
+use App\Models\CompanyRegistration;
 use App\Models\LinkedinOptimization;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Requests\SaveJobRequest;
@@ -120,6 +121,31 @@ class AdminController extends Controller
 
     public function jobRequests(Request $request){
         $requests = Job::where('is_approved', false)->paginate(10);
+        return view('admin.job-requests', compact('requests'));
+    }
+
+    public function cvRewriteRequests(Request $request){
+        $requests = CvRewrite::paginate(10);
+        return view('admin.cv_review_requests', compact('requests'));
+    }
+
+    public function businessRegistrationRequests(Request $request){
+        $requests = CompanyRegistration::paginate(10);
+        return view('admin.company_registration_requests', compact('requests'));
+    }
+
+    public function coverLetterRequests(Request $request){
+        $requests = CoverLetter::paginate(10);
+        return view('admin.cover_letter_rewrite_requests', compact('requests'));
+    }
+
+    public function linkedInOptimizationRequests(Request $request){
+        $requests = LinkedinOptimization::paginate(10);
+        return view('admin.linkedin_optimization_requests', compact('requests'));
+    }
+
+    public function businessPlanRequests(Request $request){
+        $requests = BusinessPlan::paginate(10);
         return view('admin.job-requests', compact('requests'));
     }
 

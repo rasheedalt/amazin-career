@@ -31,7 +31,12 @@ Route::group(['middleware' => ['auth:web']], function(){
     Route::post('/approve-job/{job}','JobController@approveJob')->name('admin.approve_job');
     
     // Service Requests
-    Route::get('/admin/job-requests','AdminController@jobRequests')->name('admin.job_requests');
+    Route::get('/requests/jobs','AdminController@jobRequests')->name('admin.job_requests');
+    Route::get('/requests/business-plan','AdminController@businessPlanRequests')->name('admin.business_plan_requests');
+    Route::get('/requests/linkedIn-opt','AdminController@linkedInOptimizationRequests')->name('admin.linkedin_requests_requests');
+    Route::get('/requests/cover-letter','AdminController@coverLetterRequests')->name('admin.cover_letter_requests');
+    Route::get('/requests/business-registration','AdminController@businessRegistrationRequests')->name('admin.business_reg_requests');
+    Route::get('/requests/cv-rewrite','AdminController@cvRewriteRequests')->name('admin.cv_rewrite_requests');
 });
 
 Auth::routes();
