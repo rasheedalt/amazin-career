@@ -55,18 +55,34 @@
 
 @section('content')
 <div id="maincontent" class="mt-2 mr-2">
-             <h3> BLOG POSTS </h3>
+             <h3> Subscribed Emails </h3>
              <hr>
             <div class="PostJ">
-                @include('components.flash-message')
-                <form method="post" action="{{ route('post.store') }}" enctype="multipart/form-data">
-                @csrf
-                    <input placeholder="Blog title" class="form-control" value="{{ old('title') }}" name="title" type="text"/> <br/>
-                    <textarea name="body" class="form-control" placeholder="Blof Write Up" id="" cols="250" rows="10">{{ old('body') }}</textarea><br/>
-                    <p>Upload your images below: </p>
-                    <input type="file" name="post_image" placeholder="Image"/> <br/>
-                    <button>Post</button>
-                </form>
+                    <table class="table table-striped table-bordered">
+                        <thead>
+                            <tr>
+                                <th>S/N</th>
+                                <th>Email</th>
+                                <th>Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if($emails->count() > 0)
+                                @foreach($emails as $email)
+                                <tr>
+                                    <td>{{ $email->id }}</td>
+                                    <td>{{ $email->email }}</td>
+                                    <td>{{ $email->created_at->format('d M Y') }}</td>
+                                </tr>
+                                @endforeach
+                            @else
+                                <tr><td colspan="3" class="text-center">No request available</td></tr>
+                            @endif
+                        </tbody>
+                        <tfoot>
+                            {{ $emails->links() }}
+                        </tfoot>
+                    </table>
             </div>
         </div>
 @endsection

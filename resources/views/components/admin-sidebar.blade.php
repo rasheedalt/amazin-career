@@ -6,6 +6,7 @@
         <a href="{{ route('scholarship.showform') }}"><li> Post Scholarships</li></a>
         <a href="{{ route('blog.post') }}"><li> Blog Post</li></a>
         <a href="{{ route('admin.job_requests') }}"><li> Service Requests</li></a>
+        @if(!$user->isStaff())<a href="{{ route('admin.emails') }}"><li> Subscribed Emails </li></a>@endif
         @if(!$user->isStaff())<a href="{{ route('login.generate') }}"><li> Generate Login </li></a>@endif
         @if(!$user->isStaff())<a href="{{ route('admin.manage_jobs') }}"><li> Manage Jobs </li></a>@endif
         <a href="{{ route('password.change') }}"><li> Change Password</li></a>

@@ -29,6 +29,7 @@ Route::group(['middleware' => ['auth:web']], function(){
     Route::get('/manage-jobs','AdminController@ManageJobs')->name('admin.manage_jobs');
     Route::post('/activate-toggle/{job}','JobController@ActivateToggle')->name('admin.activate_toggle');
     Route::post('/approve-job/{job}','JobController@approveJob')->name('admin.approve_job');
+    Route::get('/emails','SubscribedEmailsController@index')->name('admin.emails');
     
     // Service Requests
     Route::get('/requests/jobs','AdminController@jobRequests')->name('admin.job_requests');

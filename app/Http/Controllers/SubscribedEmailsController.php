@@ -14,7 +14,8 @@ class SubscribedEmailsController extends Controller
      */
     public function index()
     {
-        //
+        $emails = SubscribedEmail::paginate(15);
+        return view('admin.emails', compact('emails'));
     }
 
     /**
