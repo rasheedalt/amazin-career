@@ -32,9 +32,9 @@
 
     <div class="sidebarFour">
         <ol>
-            <li><a href="HtmlFiles/Disclamier.html">Disclamier</a></li>
-            <li><a href="HtmlFiles/Policy.html">Privacy Policy</a></li>
-            <li><a href="HtmlFiles/Terms.html">Terms of Services</a></li> 
+            <li><a href="{{ route('disclaimer.page') }}">Disclamier</a></li>
+            <li><a href="{{ route('policy.page') }}">Privacy Policy</a></li>
+            <li><a href="{{ route('terms.page') }}">Terms of Services</a></li> 
         </ol>
     </div>
 

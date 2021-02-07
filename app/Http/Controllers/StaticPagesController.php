@@ -24,4 +24,16 @@ class StaticPagesController extends Controller
         return view('pages.post-job');
     }
 
+    public function disclaimerPage(){
+        return view('pages.disclaimer');
+    }
+
+    public function termsPage(){
+        return view('pages.terms');
+    }
+
+    public function policyPage(){
+        return view('pages.policy');
+    }
+
 }

@@ -42,6 +42,9 @@ Route::get('/services', 'StaticPagesController@servicesPage')->name('services.pa
 Route::get('/about', 'StaticPagesController@aboutPage')->name('about.page');
 Route::get('/contact', 'StaticPagesController@contactPage')->name('contact.page');
 Route::get('/post-job', 'StaticPagesController@postJobPage')->name('post-job.page');
+Route::get('/disclaimer', 'StaticPagesController@disclaimerPage')->name('disclaimer.page');
+Route::get('/terms', 'StaticPagesController@termsPage')->name('terms.page');
+Route::get('/policy', 'StaticPagesController@policyPage')->name('policy.page');
 
 Route::get('/services/{service}', 'ServiceController@viewService')->name('service.view');
 
