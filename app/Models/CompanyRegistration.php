@@ -13,6 +13,8 @@ class CompanyRegistration extends Model
         'second_proposed_business_name',
         'email_address',
         'business_address',
+        'name_of_business_owner',
+        'nature_of_bussiness',
         'phone_number',
         'start_date',
     ];

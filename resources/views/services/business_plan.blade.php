@@ -15,7 +15,7 @@
     </p>
     <p> Just fill out the form and we’ll be in touch </p>
     <div>
-        <form method="POST" action="{{ route('job.post') }}">
+        <form method="POST" action="{{ route('service.business_plan') }}">
         @csrf
         <div class="row">
             <div class="col-6">

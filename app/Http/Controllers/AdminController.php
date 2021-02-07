@@ -51,8 +51,10 @@ class AdminController extends Controller
     }
 
     public function postJob(SaveJobRequest $request){
-        $data = $request->all();
+        $data = $request->except('state', '_token');
         $states =  $request->state;
+        $data['is_active'] = true;
+        $data['is_approved'] = true;
         
         $job = Job::create($data);
 
@@ -120,37 +122,38 @@ class AdminController extends Controller
     }
 
     public function jobRequests(Request $request){
-        $requests = Job::where('is_approved', false)->paginate(10);
+        $requests = Job::where('is_approved', false)
+                    ->orderBy('created_at', 'desc')->paginate(10);
         return view('admin.job-requests', compact('requests'));
     }
 
     public function cvRewriteRequests(Request $request){
-        $requests = CvRewrite::paginate(10);
+        $requests = CvRewrite::orderBy('created_at', 'desc')->paginate(10);
         return view('admin.cv_review_requests', compact('requests'));
     }
 
     public function businessRegistrationRequests(Request $request){
-        $requests = CompanyRegistration::paginate(10);
+        $requests = CompanyRegistration::orderBy('created_at', 'desc')->paginate(10);
         return view('admin.company_registration_requests', compact('requests'));
     }
 
     public function coverLetterRequests(Request $request){
-        $requests = CoverLetter::paginate(10);
+        $requests = CoverLetter::orderBy('created_at', 'desc')->paginate(10);
         return view('admin.cover_letter_rewrite_requests', compact('requests'));
     }
 
     public function linkedInOptimizationRequests(Request $request){
-        $requests = LinkedinOptimization::paginate(10);
+        $requests = LinkedinOptimization::orderBy('created_at', 'desc')->paginate(10);
         return view('admin.linkedin_optimization_requests', compact('requests'));
     }
 
     public function businessPlanRequests(Request $request){
-        $requests = BusinessPlan::paginate(10);
-        return view('admin.job-requests', compact('requests'));
+        $requests = BusinessPlan::orderBy('created_at', 'desc')->paginate(10);
+        return view('admin.business_plan_requests', compact('requests'));
     }
 
     public function ManageJobs(Request $request){
-        $jobs = Job::paginate(10);
+        $jobs = Job::orderBy('created_at', 'desc')->paginate(10);
         return view('admin.manage_jobs', compact('jobs'));
     }
 }

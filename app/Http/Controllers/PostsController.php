@@ -42,13 +42,14 @@ class PostsController extends Controller
         if($request->hasFile('post_image')){
             $image = $request->file('post_image');
             $extension = $image->getClientOriginalExtension();
-            $url = Storage::disk('public')->put($request->title.'_'.time().'.'.$extension,  File::get($image));
-            $image_url = url('/').$url;
+            $name = "{$request->title}_blog_image_".time().'.'.$extension;
+            $url = $request->file('post_image')->storeAs('public/blog_images/', $name);
+            $image_url = url('/').'/storage/blog_images/'.$url;
         }else{
             $image_url = url('/').'default_post_image.jpg';
         }
 
-        $post = Post::create([
+        Post::create([
             'title' => $request->title,
             'body' => $request->body,
             'image_url' => $image_url,

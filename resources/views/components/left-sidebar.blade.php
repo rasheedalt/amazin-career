@@ -14,7 +14,7 @@
         <form action="{{ route('email.subscribe') }}" method="POST">
             @csrf
             <p>For job adevrt, Enter your mail and Subcribe</p>
-            <input name="email" placeholder= "email addresss" type="text">
+            <input class='form-control' name="email" placeholder= "email addresss" type="text">
             <button>Subcribe</button>
         </form>
     </div>

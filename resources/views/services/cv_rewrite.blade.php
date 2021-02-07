@@ -17,7 +17,7 @@
     <p> Just fill out the form and we’ll be in touch </p>
 
     <div>
-        <form method="POST" action="{{ route('job.post') }}">
+        <form method="POST" action="{{ route('service.cv_review') }}" enctype="multipart/form-data" >
         @csrf
         <div class="row">
             <div class="col-6">

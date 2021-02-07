@@ -23,7 +23,7 @@ class JobController extends Controller
         $job = Job::create($data);
         
         if(auth()->user()){
-            $job->update(['is_approved' => true]);
+            $job->update(['is_approved' => true, 'is_active' => true]);
         }
 
         if($job){
