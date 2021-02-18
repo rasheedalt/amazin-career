@@ -15,7 +15,7 @@
     <p class="text-center mt-4 pt-4">Jobs Not Available</p>
 @endif
 
-<div class="nextBTN">
+<div class="nextBTN container-fluid">
 
     {{ $jobs->links() }}
 

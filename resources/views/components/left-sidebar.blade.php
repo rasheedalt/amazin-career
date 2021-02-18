@@ -13,14 +13,14 @@
     <div class="sidebarTwo">
         <form action="{{ route('email.subscribe') }}" method="POST">
             @csrf
-            <p>For job adevrt, Enter your mail and Subcribe</p>
-            <input class='form-control' name="email" placeholder= "email addresss" type="text">
+            <p>Enter your mail and Subcribe for job alerts</p>
+            <input class='form-control' name="email" placeholder= "Email Addresss" type="text">
             <button>Subcribe</button>
         </form>
     </div>
 
     <div class="sidebarThree">
-        <button><a href="HtmlFiles/AdvertwithUs.html">ADVERSITE WITH US </a> </button>
+        <button class="text-center"><a href="HtmlFiles/AdvertwithUs.html">ADVERTISE WITH US </a> </button>
         <ol>
             <li>Facebook</li>
             <li>Instagram</li>

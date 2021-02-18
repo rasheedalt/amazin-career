@@ -1,4 +1,4 @@
-<section class="my-5 container">
+<section class="my-md-5 container">
         <form action="{{ route('job.search') }}" method="post">
             @csrf
             <div class="searchEng">
