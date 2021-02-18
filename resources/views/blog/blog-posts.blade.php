@@ -24,7 +24,7 @@
         @foreach($posts as $post)
         <div class="row">
             <div class="col-6">
-                <img src="images/Blog.jpg" alt="" width="100%"> 
+                <img src="images/Blog.jpg" width="100%" class="max-width: 90vw;" alt=""> 
             </div>
             <div class="col-6">
                 <h4>{{ $post->title }}</h4>
