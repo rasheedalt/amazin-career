@@ -37,7 +37,7 @@
             <div class="col-md-2 m-0">
                 @include('components.left-sidebar')
             </div>
-            <div class="col-md-8 col-sm-12 m-0">
+            <div class="col-md-8 col-sm-12 m-0" id="mid-content">
                 <div id="maincontent">
                     @include('components.flash-message')
                     @yield('main')

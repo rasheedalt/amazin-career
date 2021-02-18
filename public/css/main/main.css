@@ -283,7 +283,7 @@ body {
  .post h4{
     color:  #072638;
     font-weight: bold;
-    font-size: 19px;
+    font-size: 17px;
     margin-top: 10px;
     line-height: 20px;
     padding: 5px;
@@ -432,6 +432,10 @@ body {
         color: white;
         background-color: #072638;
     }
+
+    #mid-content{
+        padding: 0 !important;
+    }
 /* #header ol {display: none;}
 #header ol li {display: none;}
 #header ol li a a:hover{display: none;} */
@@ -450,7 +454,7 @@ body {
 }
 .searchEngMobile input{
     /* width: 315px; */
-    height: 25px;
+    /* height: 25px; */
     font-family: tahoma;
     font-size: 12px;
     padding: 5px;
@@ -494,7 +498,7 @@ body {
  .post h4{
     color:  #072638;
     font-weight: bold;
-    font-size: 19px;
+    font-size: 17px;
     margin-top: 8px;
     line-height: 15px;
     padding: 3px;

@@ -40,7 +40,7 @@
             <div class="col-md-2 mx-0">
                 @include('components.left-sidebar')
             </div>
-            <div class="col-md-8">
+            <div class="col-md-8" id="mid-content">
                 <div id="maincontent">
                     @include('components.flash-message')
 
