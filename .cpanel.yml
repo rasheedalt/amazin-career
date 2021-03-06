@@ -1,0 +1,5 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/amazinca/amazin3/
+    - /bin/cp -R * $DEPLOYPATH

@@ -16,9 +16,9 @@ class DatabaseSeeder extends Seeder
             RolesTableSeeder::class,
             StatesTableSeeder::class,
             ServicesTableSeeder::class,
-            JobsTableSeeder::class,
-            ScholarshipsTableSeeder::class,
-            PostsTableSeeder::class,
+            // JobsTableSeeder::class,
+            // ScholarshipsTableSeeder::class,
+            // PostsTableSeeder::class,
         ]);
     }
 }

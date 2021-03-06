@@ -1,6 +1,6 @@
 @if($jobs->count() > 0)
     @foreach($jobs as $job)
-        <h4>{{ ucwords($job->title) }}</h4>
+        <h4><a href="{{route('job.view', $job->id )}}" style="color: #072638;">{{ ucwords($job->title) }}</a></h4>
         <date> Date posted: {{$job->created_at->format('d M Y h:i a')}} </date>
         <p>
         @if(strlen($job->description) > 210 )
