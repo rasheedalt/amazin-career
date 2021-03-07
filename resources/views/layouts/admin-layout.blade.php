@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <link rel="shortcut icon" href="/images/Logo.png" >
     <meta name="viewport" content="width=, initial-scale=1.0">
-    <title>AmazincareersNG</title>
+    <title>Amazin Careers NG</title>
     <link  href="{{ asset('css/admin/main.css') }}" rel="stylesheet">
     <link  href="{{ asset('css/bootstrap.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">

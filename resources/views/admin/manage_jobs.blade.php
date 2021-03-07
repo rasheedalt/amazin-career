@@ -103,12 +103,10 @@
                                 <td>{{ $job->created_at->format('d M Y')}}</td>
                                 <td class="{{ $job->is_active ? 'text-success' : 'text-danger' }}">{{ $job->is_active ? 'Active' : 'Inactive'}}</td>
                                 <td><a href="#" data-toggle="modal" data-target="#exampleModal" onclick="loadDetails({{$job}})" >View details</a></td>
-                                <td><form method="post" id="jobForm{{$job->id}}" action="">
-                                    @csrf
-                                    </form>
+                                <td><form method="post" id="jobForm{{$job->id}}"> @csrf</form>
                                     <button class="btn {{ $job->is_active ? 'btn-danger' : 'btn-success'}}" onClick="confirmDelete('jobForm{{$job->id}}', '{{ route('admin.activate_toggle', $job->id) }}', 'active')" class="btn btn-danger">{{ $job->is_active ? 'Deactivate' : 'Activate'}}</button>
                                     @if(auth()->user()->isSuperAdmin())
-                                    <button onClick="confirmDelete('jobForm{{$job->id}}', '{{ route('admin.delete_job', $job->id) }}', 'delete')" class="btn btn-danger">Delete</button>
+                                    <button onClick="confirmDelete('jobForm{{$job->id}}', '{{ route('admin.delete_job', $job->id) }}', 'delete')" class="btn btn-danger mt-1">Delete</button>
                                     @endif
                                 </td>
                             </tr>

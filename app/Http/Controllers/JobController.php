@@ -38,7 +38,7 @@ class JobController extends Controller
     public function deleteJob(Job $job){
         if(auth()->user() && auth()->user()->isSuperAdmin()){
             $job->delete();
-            $this->flashSuccessMessage('Job was saved successfully');
+            $this->flashSuccessMessage('Job deleted successfully');
             return back();
         }else{
             $this->flashErrorMessage('Error saving Job');
