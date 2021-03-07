@@ -5,7 +5,7 @@
         <input class="form-control" name="company_registration_no" placeholder="Company Registration No" type="text"> <br>
         <input class="form-control" name="address" placeholder="Adress/Location" type="text"><br>
         <input class="form-control" name="title" placeholder="Job Positions" type="text"><br>
-        <input class="form-control" name="salary" placeholder="Salary Range" type="text"><br>
+        <input class="form-control" name="salary" required placeholder="Salary Range" type="text"><br>
         <textarea class="form-control" name="description" placeholder="Requirements" id="" cols="30" rows="10"></textarea><br>
         <input class="form-control" name="application_mode" placeholder="Method of Application" type="text"><br>
         <input class="form-control" name="deadline" placeholder="Deadlines" type="text"><br>

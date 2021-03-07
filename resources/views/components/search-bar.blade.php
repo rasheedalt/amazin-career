@@ -18,10 +18,14 @@
             </div>
 
             <div class="searchEngMobile">
-                <input style="width: 55vw;" placeholder="Search for job vancancies" type="text" name="mobile_search"/><br><br>
-                <p class="text-center" >
-                    <button type="submit" >Search</button>
-                </p>
+                <div class="row">
+                    <div class="col-8">
+                        <input class="form-control" placeholder="Search for job vancancies" type="text" name="mobile_search"/>
+                    </div>
+                    <div class="col-2">
+                        <button type="submit" >Search</button>
+                    </div>
+                </div>
             </div>
         </form>
     </section>
