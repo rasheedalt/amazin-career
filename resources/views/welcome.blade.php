@@ -5,7 +5,8 @@
     <link rel="shortcut icon" href="/images/Logo.png" >
     <meta name="viewport" content="width=, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>AmazincareersNG</title>
+    <title>Amazin Careers NG</title>
+    <meta name="desc" content="Nigerian Jobs">
     <link  href="/css/main/main.css" rel="stylesheet">
     <link  href="/css/bootstrap.css" rel="stylesheet">
 
