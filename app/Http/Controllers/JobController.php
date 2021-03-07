@@ -35,6 +35,17 @@ class JobController extends Controller
         }
     }
 
+    public function deleteJob(Job $job){
+        if(auth()->user() && auth()->user()->isSuperAdmin()){
+            $job->delete();
+            $this->flashSuccessMessage('Job was saved successfully');
+            return back();
+        }else{
+            $this->flashErrorMessage('Error saving Job');
+            return back()->withInput();
+        }
+    }
+
     public function allStates(){
         $states = State::all();
         return view('jobs.job-by-states', compact('states'));

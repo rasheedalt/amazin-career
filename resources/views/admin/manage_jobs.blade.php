@@ -72,9 +72,6 @@
             transition: 1s ease;
         }
 
-
-
-
     </style>
 @endsection
 <?php $user = auth()->user(); ?>
@@ -95,6 +92,7 @@
                                 <th>Status</th>
                                 <th></th>
                                 <th></th>
+                                <th></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -105,10 +103,13 @@
                                 <td>{{ $job->created_at->format('d M Y')}}</td>
                                 <td class="{{ $job->is_active ? 'text-success' : 'text-danger' }}">{{ $job->is_active ? 'Active' : 'Inactive'}}</td>
                                 <td><a href="#" data-toggle="modal" data-target="#exampleModal" onclick="loadDetails({{$job}})" >View details</a></td>
-                                <td><form method="post" action="{{ route('admin.activate_toggle', $job->id) }}">
+                                <td><form method="post" id="jobForm{{$job->id}}" action="">
                                     @csrf
-                                    <button class="btn {{ $job->is_active ? 'btn-danger' : 'btn-success'}}">{{ $job->is_active ? 'Deactivate' : 'Activate'}}</button>
-                                 </form>
+                                    </form>
+                                    <button class="btn {{ $job->is_active ? 'btn-danger' : 'btn-success'}}" onClick="confirmDelete('jobForm{{$job->id}}', '{{ route('admin.activate_toggle', $job->id) }}', 'active')" class="btn btn-danger">{{ $job->is_active ? 'Deactivate' : 'Activate'}}</button>
+                                    @if(auth()->user()->isSuperAdmin())
+                                    <button onClick="confirmDelete('jobForm{{$job->id}}', '{{ route('admin.delete_job', $job->id) }}', 'delete')" class="btn btn-danger">Delete</button>
+                                    @endif
                                 </td>
                             </tr>
                             @endforeach
@@ -144,6 +145,9 @@
         </div>
     </div>
 
+@endsection
+
+@section('more-scripts')
     <script>
         function loadDetails(job){
             var content = `
@@ -159,6 +163,31 @@
             `;
             $('#details').html(content)
             $('#exampleModal').show()
+        }
+
+        function confirmDelete(formId, url, type){
+            let form =  $(`#${formId}`)
+
+            if(type == 'delete'){
+                swal({
+                    title: "Are you sure you want to delete this job?",
+                    text: "Once deleted, you will not be able to recover this job details",
+                    icon: "warning",
+                    buttons: true,
+                    dangerMode: true,
+                    })
+                    .then((willDelete) => {
+                    if (willDelete) {
+                        form.attr('action', url);
+                        form.submit()
+                    } else {
+                        swal("Job not deleted");
+                    }
+                });
+            }else{
+                form.attr('action', url);
+                form.submit()
+            }
         }
     </script>
 @endsection

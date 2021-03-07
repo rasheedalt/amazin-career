@@ -10,14 +10,15 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="{{ asset('js/vendor/jquery-2.2.4.min.js') }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
     @yield('more-styles')
 
 </head>
 <body>
     <div id ="header">
-        <a href="/"> <img src="{{ asset('images/Logo.png') }}" alt=""> </a>
+        <a href="/"> <img src="{{ asset('images/Logo.png') }}" alt="amazin careers ng logo"> </a>
             <h4>AMAZIN CAREERS ADMIN</h4>
     </div>
 
@@ -30,7 +31,7 @@
                 @include('components.admin-sidebar')
             </div>
 
-            <div id="main-content" class="col-md-8 col-sm-9 mx-3 mx-md-0">
+            <div id="main-content" class="col-md-10 col-sm-9 mx-3 mx-md-0">
                 @include('components.flash-message')
                 <div >
                     @yield('content')
@@ -60,6 +61,7 @@
             $('#side').toggle()
         })
     </script>
+    @yield('more-scripts')
 
 </body>
 </html>

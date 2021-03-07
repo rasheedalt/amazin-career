@@ -5,7 +5,8 @@
     <link rel="shortcut icon" href="/images/favicon.ico" type="image/ico" sizes="16x16" >
     <meta name="viewport" content="width=, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>AmazincareersNG</title>
+    <title>@yield('title','Amazin Careers NG')</title>
+    <meta name="desc" content="@yield('desc','Nigerian Jobs')">
     <link  href="{{ asset('css/bootstrap.css') }}" rel="stylesheet">
     <link  href="{{ asset('css/main/main.css') }}" rel="stylesheet">
 
