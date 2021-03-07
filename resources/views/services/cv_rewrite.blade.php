@@ -27,7 +27,7 @@
             <input class="form-control" name="phone_number" placeholder="Phone Number" value="{{ old('phone_number') }}" type="text"><br>
             <p>Upload your CV below:</p>
             <input class="form-control" name="cv" type="file" accept=".pdf, .doc, .docx"><br>
-            <p>For CV creating, You might not need to upload any CV</p>
+            <p>For CV creation, You might not need to upload any CV</p>
             <button class="btn btn-block text-white" style="background-color:#072638; text-decoration:none">Submit</button>
             </div>
         </div>
