@@ -9,7 +9,7 @@
 
         <p> Get started with us by filling the below forms: </p>
         <div class="row justify-content-center">
-            <div class="col-8">
+            <div class="col-md-9">
                 @include('components.post-job')
                 <hr>
             </div>

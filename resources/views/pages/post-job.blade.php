@@ -16,7 +16,8 @@
                 <input class="form-control" placeholder="Job Positions" type="text"><br>
                 <input class="form-control" placeholder="Salary Range" type="text"><br>
                 <textarea class="form-control" name="Requirement" placeholder="Requirements" id="" cols="30" rows="10"></textarea><br>
-                <input class="form-control" placeholder="Method of Application" type="text"><br>
+                <textarea class="form-control" name="method_of_application" placeholder="Method of Application" id="" cols="30" rows="2"></textarea><br>
+                <!-- <input class="form-control" placeholder="Method of Application" type="text"><br> -->
                 <input class="form-control" placeholder="Deadlines" type="text"><br>
                 <input class="form-control" placeholder="Application Link" type="text"><br>
                 <button class="btn btn-block text-white" style="background-color:#072638; text-decoration:none">Submit</button>
