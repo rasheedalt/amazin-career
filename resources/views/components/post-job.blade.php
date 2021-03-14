@@ -4,62 +4,75 @@
     </div>
     <div class="card-body">
         <form method="POST" action="{{ route('job.post') }}">
-            <div class="mb-2">
-                <label class="switch">
-                    <input type="checkbox">
-                    <span class="slider round"></span>
-                </label>
-                <p> Group Job</p>
+            <div class="row mb-2">
+                <div class="col-6">
+                    <label class="switch">
+                        <input id="switch" type="checkbox" name="is_group" value="yes">
+                        <span class="slider round"></span>
+                    </label>
+                    <p> Group Job</p>
+                </div>
+                <div class="col-6 add-job">
+                    <a class="float-right" href="#"><i class="fa fa-plus"></i> Add Job</a>
+                </div>
             </div>
             @csrf
             <div id="jobContainer">
-                <div class="job1">
-                    <div class="form-row">
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label for="inputEmail4">Company Name</label>
+                      <textarea class="form-control" name="company_name" cols="30" rows="2"></textarea>
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label for="inputPassword4">Company Reg No</label>
+                      <input class="form-control" name="company_registration_no" type="text"> 
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputAddress">Address</label>
+                    <textarea class="form-control" name="address" type="text"></textarea>
+                </div>
+
+                <div class="jobs">
+                  <div id="job1">
+                      <div class="row first-job-title">
+                        <div class="col"><h4>Job Position 1</h4></div>
+                      </div>
+                      <div class="form-group">
+                          <label for="inputAddress">Job Title</label>
+                          <textarea class="form-control" name="title[0]" type="text"></textarea>
+                      </div>
+
+                      <div class="form-group form-row">
                         <div class="form-group col-md-6">
-                        <label for="inputEmail4">Company Name</label>
-                        <textarea class="form-control" name="company_name[0]" cols="30" rows="2"></textarea>
+                          <label for="inputAddress">Requirements/Job description</label>
+                          <textarea class="form-control" name="description[0]" cols="30" rows="5"></textarea>
                         </div>
+
                         <div class="form-group col-md-6">
-                        <label for="inputPassword4">Company Reg No</label>
-                        <input class="form-control" name="company_registration_no[0]" type="text"> 
+                          <label for="inputAddress">Method of Application</label>
+                          <textarea class="form-control" name="application_mode[0]" cols="30" rows="3"></textarea>
                         </div>
-                    </div>
+                      </div>
 
-                    <div class="form-group">
-                        <label for="inputAddress">Address</label>
-                        <textarea class="form-control" name="address[0]" type="text"></textarea>
-                    </div>
+                      <div class="form-row">
+                          <div class="form-group col-md-6">
+                          <label for="inputEmail4">Salary Range</label>
+                          <input class="form-control" name="salary[0]" required type="text">
+                          </div>
+                          <div class="form-group col-md-6">
+                              <label for="inputPassword4">Deadline</label>
+                              <input class="form-control" name="deadline[0]" type="text">
+                          </div>
+                      </div>
 
-                    <div class="form-group">
-                        <label for="inputAddress">Job Title</label>
-                        <textarea class="form-control" name="title[0]" type="text"></textarea>
-                    </div>
+                      <div class="form-group">
+                          <label for="inputAddress">Application Link</label>
+                          <input class="form-control" name="link[0]" type="text">
+                      </div>
+                      <hr>
+                  </div>
 
-                    <div class="form-group">
-                        <label for="inputAddress">Requirements/Job description</label>
-                        <textarea class="form-control" name="description[0]" cols="30" rows="8"></textarea>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="inputAddress">Method of Application</label>
-                        <textarea class="form-control" name="application_mode[0]" cols="30" rows="3"></textarea>
-                    </div>
-
-                    <div class="form-row">
-                        <div class="form-group col-md-6">
-                        <label for="inputEmail4">Salary Range</label>
-                        <input class="form-control" name="salary[0]" required type="text">
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label for="inputPassword4">Deadline</label>
-                            <input class="form-control" name="deadline[0]" type="text">
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="inputAddress">Application Link</label>
-                        <input class="form-control" name="link[0]" type="text">
-                    </div>
                 </div>
 
                 <!-- <input class="form-control" name="company_name" placeholder="Company Name" type="text"> <br> -->
@@ -143,3 +156,71 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 </style>
+
+<script>
+  $(document ).ready(function() {
+        $('.add-job').hide()
+        $('.first-job-title').hide()
+
+        $('#switch').change(function(){
+          if($('#switch').is(":checked")){
+            $('.add-job').show()
+            $('.first-job-title').show()
+          }else{
+            $('.add-job').hide()
+            $('.first-job-title').hide()
+          }
+        })
+
+        $('.add-job').on('click', function(){
+          let length = $('.jobs').children().length + 1;
+
+          let row = `<div id="job${length}">
+                      <div class="row">
+                        <div class="col"><h4>Job Position ${length}</h4></div>
+                        <div class="col"><a onClick="removeDiv(${length})" class="float-right" href="#"><i class="fa fa-times fa-2x"></i></a></div>
+                      </div>
+                      <div class="form-group">
+                          <label for="inputAddress">Job Title</label>
+                          <textarea class="form-control" name="title[0]" type="text"></textarea>
+                      </div>
+
+                      <div class="form-group form-row">
+                        <div class="form-group col-md-6">
+                          <label for="inputAddress">Requirements/Job description</label>
+                          <textarea class="form-control" name="description[0]" cols="30" rows="5"></textarea>
+                        </div>
+
+                        <div class="form-group col-md-6">
+                          <label for="inputAddress">Method of Application</label>
+                          <textarea class="form-control" name="application_mode[0]" cols="30" rows="3"></textarea>
+                        </div>
+                      </div>
+
+                      <div class="form-row">
+                          <div class="form-group col-md-6">
+                          <label for="inputEmail4">Salary Range</label>
+                          <input class="form-control" name="salary[0]" required type="text">
+                          </div>
+                          <div class="form-group col-md-6">
+                              <label for="inputPassword4">Deadline</label>
+                              <input class="form-control" name="deadline[0]" type="text">
+                          </div>
+                      </div>
+
+                      <div class="form-group">
+                          <label for="inputAddress">Application Link</label>
+                          <input class="form-control" name="link[0]" type="text">
+                      </div>
+                      <hr>
+                  </div>`;
+            $('.jobs').append(row)
+         
+        })
+
+    });
+
+    function removeDiv(id){
+      $(`#job${id}`).remove()
+    }
+</script>
