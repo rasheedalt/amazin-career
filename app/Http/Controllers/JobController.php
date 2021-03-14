@@ -21,7 +21,8 @@ class JobController extends Controller
 
     public function saveJob(Request $request){
         $data = $request->all();
-        if($data['is_group'] == 'yes'){
+        // dd($data);
+        if(isset($data['is_group']) && $data['is_group'] == 'yes'){
             DB::beginTransaction();
 
             try {
@@ -59,16 +60,18 @@ class JobController extends Controller
 
         }else{
 
+            $jobs = $data['job'];
+
             $dataToSave = [
                 'company_name' => $data['company_name'],
                 'company_registration_no' => $data['company_registration_no'],
                 'address' => $data['address'],
-                'title' => $data['title'][1],
-                'description' => $data['description'][1],
-                'application_mode' => $data['application_mode'][1],
-                'salary' => $data['salary'][1],
-                'deadline' => $data['deadline'][1],
-                'link' => $data['link'][1],
+                'title' => $jobs[1]['title'],
+                'description' => $jobs[1]['description'],
+                'application_mode' => $jobs[1]['application_mode'],
+                'salary' => $jobs[1]['salary'],
+                'deadline' => $jobs[1]['deadline'],
+                'link' => $jobs[1]['link'],
             ];
 
             $job = Job::create($dataToSave);

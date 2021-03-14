@@ -5,19 +5,19 @@
     <div class="post">
         <h4>{{ ucwords($job->title) }}</h4>
         <date> Date posted: {{ $job->created_at->format('d - M - Y') }} </date>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate culpa sequi quo, cum voluptates at consequatur maiores hic dicta voluptatem impedit deserunt, velit pariatur iste asperiores! Placeat ipsam quas eligendi error, facere quo aperiam deserunt temporibus accusamus itaque officia tempora, ipsum animi ex dolorum praesentium consequatur molestiae exercitationem saepe quis!. </p>
+        <p>{{ $job->company_name }}</p>
 
         <p><strong>Requirements</strong></p>
 
-        <p>{{ $job->description }}</p>
+        <p><pre style="font-family: 'roboto','Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.9;">{{ $job->description }}</pre></p>
 
         <p><strong>Method of Application</strong></p>
         <p>{{ $job->application_mode }}</p>
 
         <p><strong>Deadline</strong></p>
-        <p>djlk</p>
+        <p>{{ $job->deadline }}</p>
 
-        <p><strong>Deadline/Salary Range</strong></p>
+        <p><strong>Salary</strong></p>
         <p>{{ $job->salary }} </p>
 
         @if($job->link)
