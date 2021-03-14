@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Job;
 use App\Models\State;
+use App\Models\JobGroup;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Http\Requests\SearchJobRequest;
 
 class JobController extends Controller
@@ -19,20 +21,71 @@ class JobController extends Controller
 
     public function saveJob(Request $request){
         $data = $request->all();
-        
-        $job = Job::create($data);
-        
-        if(auth()->user()){
-            $job->update(['is_approved' => true, 'is_active' => true]);
-        }
+        if($data['is_group'] == 'yes'){
+            DB::beginTransaction();
 
-        if($job){
-            $this->flashSuccessMessage('Job was saved successfully');
-            return back();
+            try {
+                $basicData = [
+                    'company_name' => $data['company_name'],
+                    'company_registration_no' => $data['company_registration_no'],
+                    'address' => $data['address']
+                ];
+
+                $jobs = $data['job'];
+                $group = JobGroup::create([
+                    'name' => $data['company_name'],
+                    'description' => $data['company_name'] ." ".count($jobs). ' positions',
+                ]);
+
+                foreach($jobs as $job){
+                    $job = array_merge($basicData, $job);
+                    $job['job_group_id'] = $group->id;
+                    Job::create($job);
+
+                    if(auth()->user()){
+                        $job->update(['is_approved' => true, 'is_active' => true]);
+                    }
+                }
+                DB::commit();
+
+                $this->flashSuccessMessage('Jobs were saved successfully');
+                return back();
+
+            } catch (\Exception $e) {
+                DB::rollback();
+                $this->flashErrorMessage('Error saving Job');
+                return back()->withInput();
+            }
+
         }else{
-            $this->flashErrorMessage('Error saving Job');
-            return back()->withInput();
-        }
+
+            $dataToSave = [
+                'company_name' => $data['company_name'],
+                'company_registration_no' => $data['company_registration_no'],
+                'address' => $data['address'],
+                'title' => $data['title'][1],
+                'description' => $data['description'][1],
+                'application_mode' => $data['application_mode'][1],
+                'salary' => $data['salary'][1],
+                'deadline' => $data['deadline'][1],
+                'link' => $data['link'][1],
+            ];
+
+            $job = Job::create($dataToSave);
+            
+            if(auth()->user()){
+                $job->update(['is_approved' => true, 'is_active' => true]);
+            }
+
+            if($job){
+                $this->flashSuccessMessage('Job was saved successfully');
+                return back();
+            }else{
+                $this->flashErrorMessage('Error saving Job');
+                return back()->withInput();
+            }
+        }   
+
     }
 
     public function deleteJob(Job $job){

@@ -18,7 +18,8 @@ class Job extends Model
         'state',
         'is_active',
         'is_approved',
-        'company_registration_no'
+        'company_registration_no',
+        'job_group_id'
     ];
 
     public function states(){
