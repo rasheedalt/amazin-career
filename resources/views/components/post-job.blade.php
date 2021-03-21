@@ -1,8 +1,8 @@
-<div class="card">
+<div class="card border-none">
     <div class="card-header">
-        <h5 class="card-title">Post Job</h5>
+        <!-- <h5 class="card-title">Post Job</h5> -->
     </div>
-    <div class="card-body">
+    <div class="card-body" >
         <form method="POST" action="{{ route('job.post') }}">
             <div class="row mb-2">
                 <div class="col-6">
@@ -13,7 +13,7 @@
                     <p> Group Job</p>
                 </div>
                 <div class="col-6 add-job">
-                    <a class="float-right" href="#"><i class="fa fa-plus"></i> Add Job</a>
+                    <a class="float-right text-success" href="#"><i class="fa fa-plus"></i> Add Job</a>
                 </div>
             </div>
             @csrf
@@ -75,7 +75,7 @@
 
                 </div>
 
-                <button class="btn btn-block text-white" style="background-color:#072638; text-decoration:none">Submit</button>
+                <button class="btn text-white" style="background-color:#072638; text-decoration:none">Submit</button>
             </div>
         </form>
     </div>

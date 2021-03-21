@@ -52,9 +52,9 @@ body {
 .searchEng {
     display: inline-block;
     clear: both;
-    position: relative;
+    /* position: relative; */
     /* top: -150px; */
-    left: 200px;
+    /* left: 200px; */
     padding-left: 20px;
 }
 

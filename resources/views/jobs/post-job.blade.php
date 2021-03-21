@@ -8,7 +8,7 @@
         <p>With the job seekers traffic on how websites and social media platforms; Instagram, Facebook, twitter, LinkedIn, WhatsApp, telegram, we offer Employers in Nigeria the opportunity to reach the right candidates by posting their job ads/vacancies. </p>
 
         <p> Get started with us by filling the below forms: </p>
-        <div class="row justify-content-center">
+        <div class="row">
             <div class="col-md-9">
                 @include('components.post-job')
                 <hr>

@@ -9,6 +9,7 @@
     <meta name="desc" content="Nigerian Jobs">
     <link  href="/css/main/main.css" rel="stylesheet">
     <link  href="/css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <script src="/js/jquery-2.2.4.min.js.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
@@ -38,10 +39,11 @@
 
     <section class="container-fluid">
         <div class="row justify-content-center">
-            <div class="col-md-2 mx-0">
+            <div class="col-lg-2 col-md-3 mx-0">
+                @include('components.right-sidebar')
                 @include('components.left-sidebar')
             </div>
-            <div class="col-md-8" id="mid-content">
+            <div class="col-lg-10 col-md-9" id="mid-content">
                 <div id="maincontent">
                     @include('components.flash-message')
 
@@ -54,20 +56,12 @@
 
                 </div>
             </div>
-            <div class="col-md-2 mx-0">
-                @include('components.right-sidebar')
-            </div>
+            <!-- <div class="col-md-2 mx-0">
+               
+            </div> -->
         </div>
     </section>
 
-    <footer class="bg-light text-center">
-        <!-- Copyright -->
-        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
-            © Copyright {{ date('Y') }}
-            <a class="text-dark" href="/">Amazin Careers</a>
-        </div>
-        <!-- Copyright -->
-    </footer>
-
+    @include('components.footer')
 </body>
 </html>

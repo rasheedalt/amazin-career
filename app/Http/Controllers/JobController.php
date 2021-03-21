@@ -21,7 +21,7 @@ class JobController extends Controller
 
     public function saveJob(Request $request){
         $data = $request->all();
-        // dd($data);
+        
         if(isset($data['is_group']) && $data['is_group'] == 'yes'){
             DB::beginTransaction();
 
@@ -77,7 +77,7 @@ class JobController extends Controller
             $job = Job::create($dataToSave);
             
             if(auth()->user()){
-                $job->update(['is_approved' => true, 'is_active' => true]);
+                $job->update(['is_approved' => true]);
             }
 
             if($job){

@@ -37,30 +37,23 @@
 
     <section class="container-fluid">
         <div class="row justify-content-center">
-            <div class="col-md-2 m-0">
+            <div class="col-lg-2 col-md-3 m-0">
+                @include('components.right-sidebar')
                 @include('components.left-sidebar')
             </div>
-            <div class="col-md-8 col-sm-12 m-0" id="mid-content">
+            <div class="col-lg-10 col-md-9 col-sm-12 m-0" id="mid-content">
                 <div id="maincontent">
                     @include('components.flash-message')
                     @yield('main')
                     
                 </div>
             </div>
-            <div class="col-md-2 m-0">
-                @include('components.right-sidebar')
-            </div>
+            <!-- <div class="col-md-2 m-0">
+            </div> -->
         </div>
     </section>
 
-    <footer class="bg-light text-center">
-        <!-- Copyright -->
-        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
-            © Copyright {{ date('Y') }}
-            <a class="text-dark" href="/">Amazin Careers</a>
-        </div>
-        <!-- Copyright -->
-    </footer>
+    @include('components.footer')
 
 </body>
 </html>

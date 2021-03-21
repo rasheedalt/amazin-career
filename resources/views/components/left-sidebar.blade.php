@@ -19,7 +19,7 @@
         </form>
     </div>
 
-    <div class="sidebarThree">
+    <!-- <div class="sidebarThree">
         <button class="text-center"><a href="HtmlFiles/AdvertwithUs.html">ADVERTISE WITH US </a> </button>
         <ol>
             <li>Facebook</li>
@@ -28,14 +28,14 @@
             <li>LinkedIn</li>    
             <li>Youtube</li>    
         </ol>
-    </div>
+    </div> -->
 
-    <div class="sidebarFour">
+    <!-- <div class="sidebarFour">
         <ol>
             <li><a href="{{ route('disclaimer.page') }}">Disclamier</a></li>
             <li><a href="{{ route('policy.page') }}">Privacy Policy</a></li>
             <li><a href="{{ route('terms.page') }}">Terms of Services</a></li> 
         </ol>
-    </div>
+    </div> -->
 
 </div>
