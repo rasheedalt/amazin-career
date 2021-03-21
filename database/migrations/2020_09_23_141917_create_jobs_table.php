@@ -15,9 +15,9 @@ class CreateJobsTable extends Migration
     {
         Schema::create('jobs', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->text('title')->index('job_title');
+            $table->text('title')->index('job_title_indx');
             $table->text('description');
-            $table->text('company_name')->nullable()->index('job_company_name');
+            $table->text('company_name')->nullable()->index('job_company_name_idx');
             $table->text('address')->nullable();
             $table->text('deadline')->nullable();
             $table->text('application_mode');
