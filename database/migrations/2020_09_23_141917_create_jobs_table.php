@@ -19,7 +19,7 @@ class CreateJobsTable extends Migration
             $table->text('description');
             $table->text('company_name')->nullable()->index('job_company_name_idx');
             $table->text('address')->nullable();
-            $table->text('deadline')->nullable();
+            $table->string('deadline')->nullable();
             $table->text('application_mode');
             $table->text('salary')->nullable();
             $table->text('link')->nullable();
