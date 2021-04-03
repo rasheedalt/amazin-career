@@ -29,8 +29,8 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="inputAddress">Address</label>
-                    <textarea class="form-control" name="address" type="text"></textarea>
+                    <label for="inputAddress">Location</label>
+                    <input class="form-control" name="address" type="text">
                 </div>
 
                 <div class="jobs">

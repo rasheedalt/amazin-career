@@ -5,7 +5,7 @@
             $job = $value[0];
         @endphp
         @if($jobCount > 1)
-                <h4><a href="{{route('job.view', $job->job_code )}}" style="color: #072638;">{{ ucwords($job->company_name." (".$jobCount." positions)") }}</a></h4>
+                <h4><a href="{{route('job.view', $job->job_code )}}" style="color: #072638;">{{ ucwords($jobCount." positions at ".$job->company_name) }}</a></h4>
                 <date> Date posted: {{$job->created_at->format('d M Y h:i a')}} </date>
                 <p>
                 @if(strlen($job->description) > 210 )

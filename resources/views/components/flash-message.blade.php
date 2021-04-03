@@ -6,7 +6,7 @@
     </ul>
 
 @endif
-<div class="flash-message text-center" style="padding-bottom:10px;">
+<div class="flash-message text-center" style=";">
     @foreach (['danger', 'warning', 'success', 'info', 'error'] as $msg)
         @if(\Illuminate\Support\Facades\Session::has(  $msg))
             <p class="alert alert-{{ $msg== 'error' ? 'danger' : $msg }}" style="color: {{$msg== 'danger' ? 'red' : 'green'}};">{{ \Illuminate\Support\Facades\Session::get( $msg) }} 

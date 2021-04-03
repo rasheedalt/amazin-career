@@ -9,6 +9,9 @@
             <li><a href="{{ route('states.all') }}">Jobs in Other States</a></li> 
         </ol>
     </div>
+    <div class="spaceOne">
+        <p>ADVERTS</p>
+    </div>
 
     <div class="sidebarTwo">
         <form action="{{ route('email.subscribe') }}" method="POST">
