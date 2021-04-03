@@ -11,15 +11,16 @@
     <link  href="{{ asset('css/main/main.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="{{ asset('js/vendor/jquery-2.2.4.min.js') }}"></script>
+    <script src="/js/vendor/bootstrap.min.js"></script>
 
 </head>
 <body>
     
-<nav class="navbar navbar-expand-lg navbar-light bg-light" >
+<nav class="navbar navbar-expand-md navbar-light bg-light" >
+    <a class="navbar-brand" href="/"><img src="{{ asset('/images/Logo.png') }}"  height="150px" width="150px" alt="Amazin Careers"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <a class="navbar-brand" href="/"><img src="{{ asset('/images/Logo.png') }}"  height="150px" width="150px" alt="Amazin Careers"></a>
         <!-- <div id ="header"> -->
         <!-- <a href="/" class="navbar-brand"> <img src="{{ asset('/images/Logo.png') }}" alt="Amazin Careers"> </a> -->
         <div class="collapse navbar-collapse" id="navbarNav">
