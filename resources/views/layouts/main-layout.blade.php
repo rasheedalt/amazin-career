@@ -15,23 +15,27 @@
 </head>
 <body>
     
-<navbar id ="container" >
-        <div id ="header">
-        <a href="/" class="navbar-brand"> <img src="{{ asset('/images/Logo.png') }}" alt="Amazin Careers"> </a>
-              
-            <ol >
-                <li class="nav-item"><a href="/">Home</a></li>
-                <li class="nav-item"><a href="{{ route('about.page') }}">About</a></li>
-                <li class="nav-item"><a href="{{ route('services.page') }}">Services</a></li>
-                <li class="nav-item"><a href="/">Job Vacancies</a></li>
-                <li class="nav-item"><a href="{{ route('job.post') }}">Post Jobs</a></li>
-                <li class="nav-item"><a href="{{ route('scholarships.list') }}">Scholarships</a></li>
-                <li class="nav-item"><a href="{{ route('contact.page') }}">Contact</a></li>
-                <li class="nav-item"><a href="{{ route('posts') }}">Blog</a></li>
-            </ol>
+<nav class="navbar navbar-expand-lg navbar-light bg-light" >
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="/"><img src="{{ asset('/images/Logo.png') }}"  height="150px" width="150px" alt="Amazin Careers"></a>
+        <!-- <div id ="header"> -->
+        <!-- <a href="/" class="navbar-brand"> <img src="{{ asset('/images/Logo.png') }}" alt="Amazin Careers"> </a> -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ route('about.page') }}">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ route('services.page') }}">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="/">Job Vacancies</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ route('job.post') }}">Post Jobs</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ route('scholarships.list') }}">Scholarships</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ route('contact.page') }}">Contact</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ route('posts') }}">Blog</a></li>
+            </ul>
 
         </div>
-    </navbar>
+    </nav>
     
     @include('components.search-bar')
 

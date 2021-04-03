@@ -11,8 +11,9 @@ use App\Http\Requests\SearchJobRequest;
 
 class JobController extends Controller
 {
-    public function view(Job $job){
-        return view('jobs.details', compact('job'));
+    public function view($jobCode){
+        $jobs = Job::where('job_code', $jobCode)->get();
+        return view('jobs.details', compact('jobs'));
     }
 
     public function postJobView(){
@@ -37,10 +38,12 @@ class JobController extends Controller
                     'name' => $data['company_name'],
                     'description' => $data['company_name'] ." ".count($jobs). ' positions',
                 ]);
+                $jobCode = uniqid();
 
                 foreach($jobs as $job){
                     $job = array_merge($basicData, $job);
                     $job['job_group_id'] = $group->id;
+                    $job['job_code'] = $jobCode;
                     Job::create($job);
 
                     if(auth()->user()){
@@ -72,6 +75,7 @@ class JobController extends Controller
                 'salary' => $jobs[1]['salary'],
                 'deadline' => $jobs[1]['deadline'],
                 'link' => $jobs[1]['link'],
+                'job_code' => uniqid()
             ];
 
             $job = Job::create($dataToSave);

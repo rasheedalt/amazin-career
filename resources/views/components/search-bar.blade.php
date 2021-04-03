@@ -26,7 +26,7 @@
                         <input class="form-control" placeholder="Search for job vancancies" type="text" name="mobile_search"/>
                     </div>
                     <div class="col-2">
-                        <button type="submit" >Search</button>
+                        <button class="btn btn-outline-white" type="submit" >Search</button>
                     </div>
                 </div>
             </div>

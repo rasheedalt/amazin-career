@@ -28,8 +28,9 @@ class HomeController extends Controller
         $jobs = Job::where('is_approved', true)
                 ->where('is_active', true)
                 ->orderBy('created_at', 'desc')
-                // ->groupBy('job_group_id')
-                ->paginate(10);
+                // ->get()
+                ->paginate(10)
+                ->groupBy('job_code');
         // return $jobs;
         return view('welcome', compact('jobs'));
     }
