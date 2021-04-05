@@ -43,7 +43,9 @@
                             <div class="card">
                                 <div class="card-body">
                                     <p><strong>Job Title</strong></p>
-                                    <h6 class="text-danger">{{ ucwords($job->title)." (Position".$loop->iteration.")" }}</h6>
+                                    <h6 class="">{{ ucwords($job->title)." (Position".$loop->iteration.")" }}</h6><br>
+
+                                    <p>Location: {{ ucwords($job->address) }}</p>
 
                                     <p><strong>Requirements</strong></p>
 

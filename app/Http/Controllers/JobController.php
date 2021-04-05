@@ -16,6 +16,10 @@ class JobController extends Controller
         return view('jobs.details', compact('jobs'));
     }
 
+    public function viewById(Job $job){
+        return view('jobs.details', compact('job'));
+    }
+
     public function postJobView(){
         return view('jobs.post-job');
     }
@@ -121,7 +125,10 @@ class JobController extends Controller
         $jobs = Job::where('is_approved', true)->where('is_active', true)
                 ->whereHas('states', function($q) use($stateID) {
                     $q->where('states.id', $stateID);
-                })->paginate(10);
+                })
+                ->orWhere('address', 'like', '%' . $state->name . '%')
+                ->get()
+                ->groupBy('job_code');
         return view('jobs.state-jobs', compact('state', 'jobs'));
     }
 
@@ -137,7 +144,6 @@ class JobController extends Controller
             $keyword = "{$request->job} {$request->state}";
         }
 
-        // $search = Job::query();
         $search = Job::where('is_approved', true)->where('is_active', true);
         if($job){
             $search = $search->where(function ($query) use ($job) {
@@ -152,7 +158,8 @@ class JobController extends Controller
             $search = $search->whereHas('states', function ($query) use ($state) {
                 foreach ($state as $term) {
                     // Loop over the terms and do a search for each.
-                    $query->where('states.name', 'like', '%' . $term . '%');
+                    $query->where('states.name', 'like', '%' . $term . '%')
+                    ->orWhere('jobs.address', 'like', '%' . $term . '%');
                 }
             });
         }

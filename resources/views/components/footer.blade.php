@@ -27,7 +27,7 @@
       ></a>
 
       <!-- Instagram -->
-      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+      <a class="btn btn-outline-light btn-floating m-1" href="https://www.instagram.com/amazincareers" role="button"
         ><i class="fa fa-instagram"></i
       ></a>
 
@@ -56,8 +56,11 @@
           <div class="col-md-5 col-12">
             <!-- Email input -->
             <div class="form-outline form-white mb-4">
-              <input type="email" id="form5Example2" placeholder="Email Address" class="form-control" />
-              <label class="form-label" for="form5Example2"></label>
+              <form action="{{ route('email.subscribe') }}" method="POST">
+                @csrf
+                <input type="email" id="form5Example2" placeholder="Email Address" class="form-control" />
+                <label class="form-label" for="form5Example2"></label>
+              </form>
             </div>
           </div>
           <!--Grid column-->
@@ -166,7 +169,7 @@
 
   <!-- Copyright -->
   <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-    © 2020 Copyright <a class="text-white" href="/">Amazin Career</a>
+    © 2020 Copyright <a class="text-white" href="/">Amazin Careers</a>
   </div>
   <!-- Copyright -->
 </footer>

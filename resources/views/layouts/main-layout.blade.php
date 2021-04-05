@@ -12,32 +12,17 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="{{ asset('js/vendor/jquery-2.2.4.min.js') }}"></script>
     <script src="/js/vendor/bootstrap.min.js"></script>
+    <style>
+        /* nav li a {
+        display: block;
+        padding: 8px;
+        background-color: #dddddd;
+        } */
+    </style>
 
 </head>
 <body>
-    
-<nav class="navbar navbar-expand-md navbar-light bg-light" >
-    <a class="navbar-brand" href="/"><img src="{{ asset('/images/Logo.png') }}"  height="150px" width="150px" alt="Amazin Careers"></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-        <!-- <div id ="header"> -->
-        <!-- <a href="/" class="navbar-brand"> <img src="{{ asset('/images/Logo.png') }}" alt="Amazin Careers"> </a> -->
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="{{ route('about.page') }}">About</a></li>
-                <li class="nav-item"><a class="nav-link" href="{{ route('services.page') }}">Services</a></li>
-                <li class="nav-item"><a class="nav-link" href="/">Job Vacancies</a></li>
-                <li class="nav-item"><a class="nav-link" href="{{ route('job.post') }}">Post Jobs</a></li>
-                <li class="nav-item"><a class="nav-link" href="{{ route('scholarships.list') }}">Scholarships</a></li>
-                <li class="nav-item"><a class="nav-link" href="{{ route('contact.page') }}">Contact</a></li>
-                <li class="nav-item"><a class="nav-link" href="{{ route('posts') }}">Blog</a></li>
-            </ul>
-
-        </div>
-    </nav>
-    
+    @include('components.navbar')
     @include('components.search-bar')
 
     <section class="container-fluid">
@@ -53,8 +38,7 @@
                     
                 </div>
             </div>
-            <!-- <div class="col-md-2 m-0">
-            </div> -->
+
         </div>
     </section>
 
