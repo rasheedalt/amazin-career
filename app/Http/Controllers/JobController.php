@@ -158,13 +158,16 @@ class JobController extends Controller
             $search = $search->whereHas('states', function ($query) use ($state) {
                 foreach ($state as $term) {
                     // Loop over the terms and do a search for each.
-                    $query->where('states.name', 'like', '%' . $term . '%')
-                    ->orWhere('jobs.address', 'like', '%' . $term . '%');
+                    $query->where('states.name', 'like', '%' . $term . '%');
                 }
             });
+            foreach ($state as $term) {
+                // Loop over the terms and do a search for each.
+                $search->orWhere('jobs.address', 'like', '%' . $term . '%');
+            }
         }
 
-        $jobs = $search->paginate(10);
+        $jobs = $search->paginate(10)->groupBy('job_code');
         return view('jobs.state-jobs', compact('state', 'jobs', 'keyword'));
     }
 
