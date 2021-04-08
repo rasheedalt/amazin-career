@@ -38,9 +38,9 @@ class SubscribedEmailsController extends Controller
     {
         $request->validate(['email' => 'email']);
         $email = SubscribedEmail::updateOrCreate(['email' => $request->email]);
-        $this->flashSuccessMessage('Email was saved successfully');
+        $this->flashSuccessMessage('Email subscription recieved');
         return back();
-        
+
     }
 
     /**

@@ -27,7 +27,7 @@
             padding: 8px;
             /* width: 600px; */
             font-size: 14px;
-            font-family: Tahoma;
+            font-family: Roboto;
             margin-bottom: 8px;
             border-style: solid;
             border-width: 1px;
@@ -40,7 +40,7 @@
         background-color: #072638;
         color: white;
         border-radius: 3px;
-        font-family: tahoma;
+        font-family: Roboto;
         font-size: 14px;
        }
        .PostJ button:hover {

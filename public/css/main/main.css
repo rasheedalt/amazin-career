@@ -4,7 +4,7 @@
 }
 
 body {
-    font-family: 'roboto','Segoe UI', Tahoma, Geneva, Verdana, sans-serif, ;
+    font-family: 'roboto','Segoe UI', Roboto, Geneva, Verdana, sans-serif, ;
 }
 
 
@@ -29,7 +29,7 @@ body {
 
 #header ol li {
     display: inline-block;
-    
+
 }
 
 #navbarNav ul li a {
@@ -64,7 +64,7 @@ body {
     padding: 8px;
     border-style: solid;
     border-radius: 5px;
-    font-family: tahoma;
+    font-family: Roboto;
     font-size: 14px;
 }
 
@@ -74,13 +74,13 @@ body {
     padding: 8px;
     border-style: none;
     background-color: #F2EDED;
-    font-family: tahoma;
+    font-family: Roboto;
     font-size: 14px;
-    
-} 
+
+}
 .searchEng button a {
     text-decoration: none;
-    font-family: tahoma;
+    font-family: Roboto;
     font-size: 14px;
     color: #072638;
 }
@@ -100,11 +100,6 @@ body {
 }
 
 .searchEngMobile {display: none;}
-
-#sidebar {
-    /* float: left; */
-    /* margin-left: 15px; */
-}
 
 .sidebarOne {
     /* margin-top: 120px; */
@@ -128,7 +123,7 @@ body {
     margin: 5px;
     border-bottom-style: solid;
     border-bottom-width: 1px;
-    list-style: none;    
+    list-style: none;
 }
 .sidebarOne ol li a {
     text-decoration: none;
@@ -174,7 +169,7 @@ body {
     padding: 5px;
     border-style: none;
     background-color: #F2EDED;
-    font-family: tahoma;
+    font-family: Roboto;
     font-size: 14px;
 }
 
@@ -232,7 +227,7 @@ body {
     padding-top: 5px;
     margin: 5px;
     color:  #02977D;
-    list-style: none; 
+    list-style: none;
 }
 
 .sidebarFour {
@@ -249,9 +244,9 @@ body {
     padding-top: 5px;
     margin: 5px;
     border-bottom-style: solid;
-    border-bottom-width: 1px; 
+    border-bottom-width: 1px;
     border-color: white;
-    list-style: none;;   
+    list-style: none;;
 }
 .sidebarFour li a {
     text-decoration: none;
@@ -279,6 +274,7 @@ body {
 .post{
     margin-left: 1rem !important;
     margin-right: 1rem !important;
+    text-align: justify;
 }
  .post h4{
     color:  #072638;
@@ -299,8 +295,8 @@ body {
 .post p {
     color:  #072638;
     font-weight: normal;
-    font-size: 14px;
-    line-height: 20px;
+    /* font-size: 14px;
+    line-height: 20px; */
     margin-bottom: 10px;
     /* padding: 5px; */
     text-align: justified;
@@ -328,7 +324,7 @@ body {
 .nextBTN ol li a {
     text-decoration: none;
     color:  #02977D;
-   
+
 }
 .nextBTN ol li a:hover{
     text-decoration: underline;
@@ -363,7 +359,7 @@ body {
     padding-top: 5px;
     margin: 5px;
     border-bottom-style: solid;
-    border-bottom-width: 1px; 
+    border-bottom-width: 1px;
 }
 
 .Servicebar li a {
@@ -417,14 +413,14 @@ body {
         /* right: 40%; */
     }
     #header ol {margin-top: 20px;}
-    #header ol li a {    
+    #header ol li a {
         font-size: 12px;
         padding: 10px;
         color: white;
 
     }
 
-    #header ol li {    
+    #header ol li {
         width: 30%;
         margin-bottom: 2px;
         margin-left: 3px;
@@ -449,16 +445,16 @@ body {
 .searchEngMobile input{
     /* width: 315px; */
     /* height: 25px; */
-    font-family: tahoma;
-    font-size: 12px;
-    padding: 5px;
+    font-family: Roboto;
+    /* font-size: 12px;
+    padding: 5px; */
     border-style: solid;
 }
 .searchEngMobile button{
     /* width: 100%; */
-    height: 30px;
-    font-family: tahoma;
-    font-size: 12px;
+    /* height: 30px; */
+    font-family: Roboto;
+    /* font-size: 12px; */
     /* padding: 5px; */
     background-color:  #F2EDED;
     color:  #072638;
@@ -475,7 +471,7 @@ body {
 
 #maincontent {
     /* width: 440px; */
-    min-height: 100vh; 
+    min-height: 100vh;
     /* margin: 5px; */
     margin-top: 5px;
 }
@@ -492,7 +488,7 @@ body {
  .post h4{
     color:  #072638;
     font-weight: bold;
-    font-size: 17px;
+    /* font-size: 17px; */
     margin-top: 8px;
     line-height: 15px;
     /* padding: 3px; */
@@ -508,10 +504,9 @@ body {
 .post p {
     color:  #072638;
     font-weight: normal;
-    font-size: 13px;
-    line-height: 10pxpx;
+    /* font-size: 13px; */
     margin-bottom: 5px;
-    padding: 3px;
+    /* padding: 3px; */
     text-align: justified;
 }
 
@@ -535,7 +530,7 @@ body {
 .nextBTN ol li a {
     text-decoration: none;
     color:  #02977D;
-   
+
 }
 .nextBTN ol li a:hover{
     text-decoration: underline;

@@ -15,7 +15,7 @@
 
                     <p><strong>Requirements</strong></p>
 
-                    <pre style="font-family: 'roboto','Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.9;">{{ $job->description }}</pre>
+                    <pre style="font-family: 'roboto','Segoe UI', Roboto, Geneva, Verdana, sans-serif; line-height: 1.9;">{{ $job->description }}</pre>
 
                     <p><strong>Method of Application</strong></p>
                     <p>{{ $job->application_mode }}</p>
@@ -49,7 +49,7 @@
 
                                     <p><strong>Requirements</strong></p>
 
-                                    <p><pre style="font-family: 'roboto','Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.9;">{{ $job->description }}</pre></p>
+                                    <p><pre style="font-family: 'roboto','Segoe UI', Roboto, Geneva, Verdana, sans-serif; line-height: 1.9;">{{ $job->description }}</pre></p>
 
                                     <p><strong>Method of Application</strong></p>
                                     <p>{{ $job->application_mode }}</p>

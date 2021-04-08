@@ -21,10 +21,11 @@
 @section('main')
     <h3>Blog</h3>
     <div class="post">
+      @if($posts->count() > 0)
         @foreach($posts as $post)
         <div class="row">
             <div class="col-6">
-                <img src="images/Blog.jpg" width="100%" class="max-width: 90vw;" alt=""> 
+                <img src="images/Blog.jpg" width="100%" class="max-width: 90vw;" alt="">
             </div>
             <div class="col-6">
                 <h4>{{ $post->title }}</h4>
@@ -34,12 +35,14 @@
                 @else
                     {{ $post->body }}
                 @endif
-                <a href="{{route('post', $post->id )}}">read more</a> </p>        
+                <a href="{{route('post', $post->id )}}">read more</a> </p>
             </div>
         </div>
         <hr>
-        
         @endforeach
+      @else
+        <p class="text-center mt-4">No blog post available.</p>
+      @endif
     </div>
         <div class="nextBTN">
 

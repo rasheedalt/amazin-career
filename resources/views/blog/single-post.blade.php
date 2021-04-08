@@ -8,7 +8,7 @@
         .post {
             padding: 20px;
             font-size: 15px;
-            font-family: tahoma;
+            font-family: Roboto;
             
         }
         .post img{
@@ -29,7 +29,7 @@
         .share {
             padding: 20px;
             font-size: 15px;
-            font-family: tahoma;
+            font-family: Roboto;
         }
         .share img {
             width: 24px;

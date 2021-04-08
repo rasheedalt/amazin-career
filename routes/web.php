@@ -31,7 +31,7 @@ Route::group(['middleware' => ['auth:web']], function(){
     Route::post('/approve-job/{job}','JobController@approveJob')->name('admin.approve_job');
     Route::post('/delete-job/{job}','JobController@deleteJob')->name('admin.delete_job');
     Route::get('/emails','SubscribedEmailsController@index')->name('admin.emails');
-    
+
     // Service Requests
     Route::get('/requests/jobs','AdminController@jobRequests')->name('admin.job_requests');
     Route::get('/requests/business-plan','AdminController@businessPlanRequests')->name('admin.business_plan_requests');
@@ -76,6 +76,9 @@ Route::post('/subscribe', 'SubscribedEmailsController@store')->name('email.subsc
 //blog
 Route::get('/blog-posts', 'PostsController@index')->name('posts');
 Route::get('/blog/{post}', 'PostsController@show')->name('post');
+
+// ContactMessage
+Route::post('/contact/send-message', 'ContactController@sendContactMail')->name('contact.message');
 
 // Services
 Route::get('/business-plan', 'ServiceController@businessPlanView')->name('service.business_plan');

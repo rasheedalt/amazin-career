@@ -4,11 +4,11 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Roboto', Roboto, Geneva, Verdana, sans-serif;
 }
 
 #sidebar p{
-    font-family: tahoma;
+    /* font-family: Roboto; */
     font-size: 14px;
     color:  #072638;
     padding-bottom: 5px;
@@ -23,4 +23,3 @@ body {
     text-decoration: underline;
     color:  #02977D;
 }
-
