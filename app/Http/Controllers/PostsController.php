@@ -17,7 +17,7 @@ class PostsController extends Controller
      */
     public function index()
     {
-        $posts = Post::paginate(5);
+        $posts = Post::orderBy('created_at', 'desc')->paginate(5);
         return view('blog.blog-posts', compact('posts'));
     }
 
@@ -39,12 +39,13 @@ class PostsController extends Controller
      */
     public function store(StorePostRequest $request)
     {
+      // dd($request->all());
         if($request->hasFile('post_image')){
             $image = $request->file('post_image');
             $extension = $image->getClientOriginalExtension();
             $name = "{$request->title}_blog_image_".time().'.'.$extension;
             $url = $request->file('post_image')->storeAs('public/blog_images/', $name);
-            $image_url = url('/').'/storage/blog_images/'.$url;
+            $image_url = url('/').'/storage/'.$url;
         }else{
             $image_url = url('/').'default_post_image.jpg';
         }
@@ -52,11 +53,12 @@ class PostsController extends Controller
         Post::create([
             'title' => $request->title,
             'body' => $request->body,
-            'image_url' => $image_url,
+            'post_image' => $image_url,
             'user_id' => auth()->id(),
         ]);
+
         $this->flashSuccessMessage('Blog post successfully added');
-        return back();  
+        return back();
     }
 
     /**

@@ -21,12 +21,13 @@ class JobController extends Controller
     }
 
     public function postJobView(){
-        return view('jobs.post-job');
+        $states = State::all();
+        return view('jobs.post-job', compact('states'));
     }
 
     public function saveJob(Request $request){
         $data = $request->all();
-        
+
         if(isset($data['is_group']) && $data['is_group'] == 'yes'){
             DB::beginTransaction();
 
@@ -34,24 +35,32 @@ class JobController extends Controller
                 $basicData = [
                     'company_name' => $data['company_name'],
                     'company_registration_no' => $data['company_registration_no'],
-                    'address' => $data['address']
                 ];
 
                 $jobs = $data['job'];
-                $group = JobGroup::create([
-                    'name' => $data['company_name'],
-                    'description' => $data['company_name'] ." ".count($jobs). ' positions',
-                ]);
                 $jobCode = uniqid();
 
                 foreach($jobs as $job){
+                    $adds = $job['address'];
+                    $addToSaveAsLocation = !empty($adds) ? implode(",", $adds) : '';
+
                     $job = array_merge($basicData, $job);
-                    $job['job_group_id'] = $group->id;
                     $job['job_code'] = $jobCode;
-                    Job::create($job);
+                    $job['address'] = $addToSaveAsLocation;
+
+                    $savedJob = Job::create($job);
+
+                    if(!empty($adds)){
+                      foreach ($adds as $add) {
+                        $state = State::where('name', $add)->first();
+                        if($state){
+                          $savedJob->states()->attach($state);
+                        }
+                      }
+                    }
 
                     if(auth()->user()){
-                        $job->update(['is_approved' => true, 'is_active' => true]);
+                        $savedJob->update(['is_approved' => true, 'is_active' => true]);
                     }
                 }
                 DB::commit();
@@ -61,18 +70,20 @@ class JobController extends Controller
 
             } catch (\Exception $e) {
                 DB::rollback();
+                dd($e);
                 $this->flashErrorMessage('Error saving Job');
                 return back()->withInput();
             }
 
         }else{
-
             $jobs = $data['job'];
+            $adds = $jobs[1]['address'];
+            $addToSaveAsLocation = !empty($adds) ? implode(",", $adds) : '';
 
             $dataToSave = [
                 'company_name' => $data['company_name'],
                 'company_registration_no' => $data['company_registration_no'],
-                'address' => $data['address'],
+                'address' => $addToSaveAsLocation,
                 'title' => $jobs[1]['title'],
                 'description' => $jobs[1]['description'],
                 'application_mode' => $jobs[1]['application_mode'],
@@ -83,7 +94,16 @@ class JobController extends Controller
             ];
 
             $job = Job::create($dataToSave);
-            
+
+            if(!empty($adds)){
+              foreach ($adds as $add) {
+                $state = State::where('name', $add)->first();
+                if($state){
+                  $job->states()->attach($state);
+                }
+              }
+            }
+
             if(auth()->user()){
                 $job->update(['is_approved' => true]);
             }
@@ -95,7 +115,7 @@ class JobController extends Controller
                 $this->flashErrorMessage('Error saving Job');
                 return back()->withInput();
             }
-        }   
+        }
 
     }
 

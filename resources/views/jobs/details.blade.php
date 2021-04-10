@@ -4,7 +4,7 @@
     <h3>Job Vacancy Overview</h3>
     @if($jobs->count() == 1)
         @php $job = $jobs[0]; @endphp
-        <div class="post">
+        <div class="post mb-2">
             <h4>{{ ucwords($job->title)." at ".ucwords($job->company_name) }}</h4>
             <date> Date posted: {{ $job->created_at->format('d - M - Y') }} </date>
             <p>Location: {{ ucwords($job->address) }}</p>
@@ -15,7 +15,7 @@
 
                     <p><strong>Requirements</strong></p>
 
-                    <pre style="font-family: 'roboto','Segoe UI', Roboto, Geneva, Verdana, sans-serif; line-height: 1.9;">{{ $job->description }}</pre>
+                    <pre style="font-family: 'roboto','Segoe UI', Roboto, Geneva, Verdana, sans-serif; line-height: 1.9; white-space: pre-wrap;">{{ $job->description }}</pre>
 
                     <p><strong>Method of Application</strong></p>
                     <p>{{ $job->application_mode }}</p>
@@ -33,7 +33,7 @@
             </div>
         </div>
     @else
-            <div class="post">
+            <div class="post mb-2">
                 <h4>{{ count($jobs)." Positions at ".$jobs[0]->company_name }}</h4>
                 <date> Date posted: {{ $jobs[0]->created_at->format('d - M - Y') }} </date>
 
