@@ -45,7 +45,7 @@ body {
     color: white;
     /* height: 30px; */
     Background-color: #072638;
-    /* border-radius: 5px; */
+    border-radius: 10px;
     transition: 0.8s ease;
 }
 

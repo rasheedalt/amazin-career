@@ -1,6 +1,6 @@
 @extends('layouts.main-layout')
 <style>
-        
+
         .maincontent {
             height: 500px;
 
@@ -9,7 +9,7 @@
             padding: 20px;
             font-size: 15px;
             font-family: Roboto;
-            
+
         }
         .post img{
             width: 500px;
@@ -17,7 +17,7 @@
         }
          .post h4{
             margin-bottom: 20px;
-            
+
 
          }
         .post p,  date {
@@ -49,17 +49,17 @@
         <h4>{{ $post->title }}</h4>
 
         <img src="/images/Blog.jpg" alt="{{ $post->title }}">
-    
+
         <date> Date: {{ $post->created_at }} </date><br>
         <p>{{ $post->body }}</p>
-        
-        <div class="share">
+
+        <!-- <div class="share">
             <p>Share this on: </p>
             <a href="https://www.facebook.com"> <img src="images/facebook.png" alt=""></a>
             <a href="https://www.instagram.com"> <img src="images/instagram.png" alt=""></a>
             <a href="https://www.twitter.com"> <img src="images/twitter.png" alt=""></a>
-            <a href="https://www.linkedin.com"> <img src="images/linkedin.png" alt=""></a>      
-        </div>
+            <a href="https://www.linkedin.com"> <img src="images/linkedin.png" alt=""></a>
+        </div> -->
         <hr>
     </div>
 

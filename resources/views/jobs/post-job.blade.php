@@ -9,9 +9,8 @@
 
         <p> Get started with us by filling the below forms: </p>
         <div class="row">
-            <div class="col-md-9">
+            <div class="col-md-9 pb-3">
                 @include('components.post-job')
-                <hr>
             </div>
         </div>
 

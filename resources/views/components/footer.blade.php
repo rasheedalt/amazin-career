@@ -12,12 +12,12 @@
     <!-- Section: Social media -->
     <section class="mb-4">
       <!-- Facebook -->
-      <!-- <a class="btn btn-outline-light btn-floating m-1" href="#" role="button"
+      <a class="btn btn-outline-light btn-floating m-1" href="https://www.facebook.com/amazincareers" role="button"
         ><i class="fa fa-facebook-f"></i
-      ></a> -->
+      ></a>
 
       <!-- Twitter -->
-      <a class="btn btn-outline-light btn-floating m-1" href=" https://mobile.twitter.com/AmazinCareers" role="button"
+      <a class="btn btn-outline-light btn-floating m-1" href=" https://www.twitter.com/AmazinCareers" role="button"
         ><i class="fa fa-twitter"></i
       ></a>
 
