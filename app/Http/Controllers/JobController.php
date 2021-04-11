@@ -147,8 +147,15 @@ class JobController extends Controller
                     $q->where('states.id', $stateID);
                 })
                 ->orWhere('address', 'like', '%' . $state->name . '%')
-                ->get()
-                ->groupBy('job_code');
+                ->select(DB::raw('group_concat(company_name) as company_name,
+                     group_concat(created_at) as date,
+                     group_concat(description) as description,
+                     group_concat(title) as title,
+                     job_code,
+                     count(*) as count'))
+                 ->orderBy('created_at', 'desc')
+                 ->groupBy('job_code')
+                ->paginate(10);
         return view('jobs.state-jobs', compact('state', 'jobs'));
     }
 
@@ -187,7 +194,16 @@ class JobController extends Controller
             }
         }
 
-        $jobs = $search->paginate(10)->groupBy('job_code');
+        $jobs = $search
+        ->select(DB::raw('group_concat(company_name) as company_name,
+             group_concat(created_at) as date,
+             group_concat(description) as description,
+             group_concat(title) as title,
+             job_code,
+             count(*) as count'))
+         ->orderBy('created_at', 'desc')
+         ->groupBy('job_code')
+        ->paginate(10);
         return view('jobs.state-jobs', compact('state', 'jobs', 'keyword'));
     }
 
