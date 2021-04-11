@@ -153,7 +153,7 @@ class JobController extends Controller
                      group_concat(title) as title,
                      job_code,
                      count(*) as count'))
-                 ->orderBy('created_at', 'desc')
+                 ->orderBy('date', 'desc')
                  ->groupBy('job_code')
                 ->paginate(10);
         return view('jobs.state-jobs', compact('state', 'jobs'));
@@ -201,7 +201,7 @@ class JobController extends Controller
              group_concat(title) as title,
              job_code,
              count(*) as count'))
-         ->orderBy('created_at', 'desc')
+         ->orderBy('date', 'desc')
          ->groupBy('job_code')
         ->paginate(10);
         return view('jobs.state-jobs', compact('state', 'jobs', 'keyword'));

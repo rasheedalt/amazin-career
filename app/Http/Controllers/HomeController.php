@@ -33,7 +33,7 @@ class HomeController extends Controller
                group_concat(title) as title,
                job_code,
                count(*) as count'))
-           ->orderBy('created_at', 'desc')
+           ->orderBy('date', 'desc')
            ->paginate(10);
 
         return view('welcome', compact('jobs'));
