@@ -1,5 +1,5 @@
 <nav style="background-color: #F2EDED;     min-height: 20vh;" class="navbar navbar-expand-lg navbar-light" >
-    <a class="navbar-brand" href="/"><img class="" style="max-height: 100px; max-width: 80vw;" src="{{ asset('/images/Latest_logo.png') }}" alt="Amazin Careers"></a>
+    <a class="navbar-brand" href="/"><img class="" style="max-height: 100px; max-width: 80vw;" src="/images/Latest_logo.png" alt="Amazin Careers"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>

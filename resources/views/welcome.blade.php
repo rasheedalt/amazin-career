@@ -11,10 +11,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link  href="{{ asset('css/bootstrap.css') }}" rel="stylesheet">
     <link  href="{{ asset('css/main/main.css') }}" rel="stylesheet">
-    <link  href="/css/modal.css" rel="stylesheet">
+    <link  href="{{ asset('css/modal.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="{{ asset('js/vendor/jquery-2.2.4.min.js') }}"></script>
-    <script src="/js/vendor/bootstrap.min.js"></script>
+    <script src="{{ asset('js/vendor/bootstrap.min.js') }}"></script>
     <style>
         body{
           font-family: 'Roboto', Roboto, Geneva, Verdana, sans-serif !important;
