@@ -15,7 +15,7 @@
     @yield('more-styles')
     <script src="{{ asset('js/vendor/jquery-2.2.4.min.js') }}"></script>
     <script src="/js/vendor/bootstrap.min.js"></script>
-    
+
     @yield('more-scripts')
 
     <style>
@@ -31,7 +31,7 @@
 
     <section class="container-fluid">
         <div class="row justify-content-center">
-            <div class="col-lg-2 col-md-3 m-0">
+            <div class="col-lg-2 col-md-2 m-0">
                 @include('components.right-sidebar')
                 @include('components.left-sidebar')
             </div>

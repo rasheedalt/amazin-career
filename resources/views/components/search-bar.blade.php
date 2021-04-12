@@ -22,10 +22,10 @@
 
             <div class="searchEngMobile">
                 <div class="row mt-4 mb-4">
-                    <div class="col-9">
+                    <div class="col-8">
                         <input class="form-control" placeholder="Search for Job Vancancies" type="text" name="mobile_search"/>
                     </div>
-                    <div class="col-3">
+                    <div class="col-4">
                         <button class="btn" type="submit" >Search</button>
                     </div>
                 </div>

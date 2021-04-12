@@ -466,8 +466,8 @@ body {
     color: white;
 }
 
-#sidebar {display: none;}
-#adevrtbar {display: none;}
+/* #sidebar {display: none;}
+#adevrtbar {display: none;} */
 
 #maincontent {
     /* width: 440px; */
