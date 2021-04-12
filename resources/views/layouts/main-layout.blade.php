@@ -10,20 +10,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link  href="{{ asset('css/bootstrap.css') }}" rel="stylesheet">
+    <link  href="{{ asset('css/bootstrap.map') }}" rel="stylesheet">
     <link  href="{{ asset('css/main/main.css') }}" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}">
     @yield('more-styles')
     <script src="{{ asset('js/vendor/jquery-2.2.4.min.js') }}"></script>
-    <script src="/js/vendor/bootstrap.min.js"></script>
+    <script src="{{ asset('js/vendor/bootstrap.min.js') }}"></script>
 
     @yield('more-scripts')
-
-    <style>
-        body{
-          font-family: 'Roboto', Roboto, Geneva, Verdana, sans-serif !important;
-        }
-    </style>
-
 </head>
 <body>
     @include('components.navbar')
