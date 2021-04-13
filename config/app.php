@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    'name' => env('APP_NAME', 'Amazing Careers NG'),
 
     /*
     |--------------------------------------------------------------------------
@@ -94,6 +94,9 @@ return [
     */
 
     'fallback_locale' => 'en',
+
+    'mail_to' => env('MAIL_TO', 'Kadegoke760@gmail.com'),
+    'mail_cc' => env('MAIL_CC', ['rrasheedalt@gmail.com', 'mudathirdhikrullah@gmail.com']),
 
     /*
     |--------------------------------------------------------------------------
@@ -227,5 +230,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
 
     ],
+
+
 
 ];

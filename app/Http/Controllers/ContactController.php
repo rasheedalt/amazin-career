@@ -10,10 +10,13 @@ class ContactController extends Controller
 {
     public function sendContactMail(Request $request){
       $data = $request->all();
-      return (new ContactMessage($data))->render();
-      Mail::to('rrasheedalt@gmail.com')->send(new ContactMessage($data));
+      // return (new ContactMessage($data))->render();
+      Mail::to(config('app.mail_to'))
+      ->cc(['rrasheedalt@gmail.com', 'mudathirdhikrullah@gmail.com'])
+      // ->cc(config('app.mail_cc'))
+      ->send(new ContactMessage($data));
 
-      $this->flashSuccessMessage('Your message is sent, we will respond accordingly.');
+      $this->flashSuccessMessage('Thank you for contacting us, we will respond accordingly.');
       return back();
     }
 }
