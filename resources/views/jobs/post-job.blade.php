@@ -104,7 +104,7 @@ input:checked + .slider:before {
                           <div class="form-group col-md-6">
                             <label for="inputAddress">Location</label>
                             <select class="form-control select-single" data-placeholder="Choose a state..." multiple="multiple" name="job[${length}][address][]">
-                              <option value="">Choose a location</option>
+                              <option value="Nation wide">Nigeria (nation wide)</option>
                               @foreach ($states as $state)
                                 <option value="{{ $state->name }}">{{ $state->name }}</option>
                               @endforeach

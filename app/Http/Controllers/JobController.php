@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Job;
 use App\Models\State;
 use App\Models\JobGroup;
+use App\Http\Requests\CreateJobRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Requests\SearchJobRequest;
@@ -25,7 +26,7 @@ class JobController extends Controller
         return view('jobs.post-job', compact('states'));
     }
 
-    public function saveJob(Request $request){
+    public function saveJob(CreateJobRequest $request){
         $data = $request->all();
 
         if(isset($data['is_group']) && $data['is_group'] == 'yes'){
@@ -51,10 +52,15 @@ class JobController extends Controller
                     $savedJob = Job::create($job);
 
                     if(!empty($adds)){
-                      foreach ($adds as $add) {
-                        $state = State::where('name', $add)->first();
-                        if($state){
-                          $savedJob->states()->attach($state);
+                      if( in_array('Nation wide',$adds) ){
+                        $allStates = State::all();
+                        $job->states()->attach($allStates);
+                      }else{
+                        foreach ($adds as $add) {
+                          $state = State::where('name', $add)->first();
+                          if($state){
+                            $savedJob->states()->attach($state);
+                          }
                         }
                       }
                     }
@@ -96,6 +102,11 @@ class JobController extends Controller
             $job = Job::create($dataToSave);
 
             if(!empty($adds)){
+              if( in_array('Nation wide',$adds) ){
+                $allStates = State::all();
+                $job->states()->attach($allStates);
+              }
+
               foreach ($adds as $add) {
                 $state = State::where('name', $add)->first();
                 if($state){

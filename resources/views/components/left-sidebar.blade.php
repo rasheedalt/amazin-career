@@ -4,9 +4,9 @@
         <ol>
             <li><a href="{{ route('job.state', 'LA') }}">Jobs in Lagos</a></li>
             <li><a href="{{ route('job.state', 'FC') }}">Jobs in Abuja</a></li>
-            <li><a href="{{ route('job.state', 'RI') }}">Jobs in Portharcourt</a></li>
+            <li><a href="{{ route('job.state', 'RI') }}">Jobs in Rivers</a></li>
             <li><a href="{{ route('job.state', 'KN') }}">Jobs in Kano</a></li>
-            <li><a href="{{ route('states.all') }}">Jobs in Other States</a></li> 
+            <li><a href="{{ route('states.all') }}">Jobs in Other States</a></li>
         </ol>
     </div>
     <div class="spaceOne">
@@ -28,8 +28,8 @@
             <li>Facebook</li>
             <li>Instagram</li>
             <li>Twitter</li>
-            <li>LinkedIn</li>    
-            <li>Youtube</li>    
+            <li>LinkedIn</li>
+            <li>Youtube</li>
         </ol>
     </div> -->
 
@@ -37,7 +37,7 @@
         <ol>
             <li><a href="{{ route('disclaimer.page') }}">Disclamier</a></li>
             <li><a href="{{ route('policy.page') }}">Privacy Policy</a></li>
-            <li><a href="{{ route('terms.page') }}">Terms of Services</a></li> 
+            <li><a href="{{ route('terms.page') }}">Terms of Services</a></li>
         </ol>
     </div> -->
 
