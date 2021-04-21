@@ -19,6 +19,7 @@
                     <div class="form-group ">
                         <input  class="form-control" name="fullname" placeholder="Full Name" type="text"> <br>
                         <input class="form-control" name="email"  placeholder="Email Adress" type="text"><br>
+                        <input class="form-control" name="phone_no"  placeholder="Phone Number" type="text"><br>
                         <select  class="form-control" name="category" id="info">
                             <option value="Complaints"> Choose information Categories</option>
                             <option value="Enquiries"> Enquiries</option>

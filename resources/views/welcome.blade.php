@@ -169,7 +169,7 @@
         $( document ).ready(function() {
             setTimeout(() => {
                 $('#subscribeModal').show()
-            }, 3000);
+            }, 15000);
 
             $("#subscribeModal .close").click(function(){
                 $("#subscribeModal").hide() })

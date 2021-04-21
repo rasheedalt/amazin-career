@@ -18,7 +18,7 @@
             @csrf
             <p>Enter your mail and Subcribe for job alerts</p>
             <input class='form-control' name="email" placeholder= "Email Addresss" type="text">
-            <button>Subcribe</button>
+            <button>Subscribe</button>
         </form>
     </div>
 
