@@ -27,7 +27,7 @@
                     <p>{{ $job->salary ?? 'Not Available' }} </p>
 
                     @if($job->link)
-                    <a href="{{ $job->link }}" class="btn btn-success text-white" style="background-color:#072638; text-decoration:none">Apply</a>
+                    <a href="{{ $job->link }}" target="_blank" class="btn btn-success text-white" style="background-color:#072638; text-decoration:none">Apply</a>
                     @endif
                 </div>
             </div>
@@ -61,7 +61,7 @@
                                     <p>{{ $job->salary ?? 'Not Available' }} </p>
 
                                     @if($job->link)
-                                    <a href="{{ $job->link }}" class="btn btn-success text-white" style="background-color:#072638; text-decoration:none">Apply</a>
+                                    <a href="{{ $job->link }}" target="_blank" class="btn btn-success text-white" style="background-color:#072638; text-decoration:none">Apply</a>
                                     <hr>
                                     @endif
                                 </div>

@@ -18,7 +18,7 @@
         <p>{{ $scholarship->deadline }} </p>
 
         @if($scholarship->link)
-        <a href="{{ $scholarship->link }}" class="btn btn-success text-white" style="background-color:#072638; text-decoration:none">Apply</a>
+        <a href="{{ $scholarship->link }}" target="_blank" class="btn btn-success text-white" style="background-color:#072638; text-decoration:none">Apply</a>
         @endif
     </div>
 

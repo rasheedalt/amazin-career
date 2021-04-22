@@ -3,7 +3,7 @@
 @section('main')
     <h3>SCHOLARSHIPS</h3>
     <div class="post">
-      @if($scholarships->count() > 1)
+      @if($scholarships->count() > 0)
         @foreach($scholarships as $scholarship)
             <h4>{{ ucwords($scholarship->title) }}</h4>
             <date> Date: {{$scholarship->created_at}} </date>
@@ -13,7 +13,7 @@
             @else
                 {{ $scholarship->description }}
             @endif
-            <a href="{{route('scholarship.view', $scholarship->id )}}">read more</a> </p>
+            <a href="{{route('scholarship.view', $scholarship->id )}}" >read more</a> </p>
             <hr>
         @endforeach
       @else

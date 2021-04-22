@@ -24,13 +24,13 @@ class SaveScholarshipRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required|string',
-            'description' => 'required|string',
-            'application_mode' => 'required|string',
-            'link' => 'required|string',
+            'title' => 'bail|required|string',
+            'description' => 'bail|required|string',
+            'application_mode' => 'bail|required|string',
+            'link' => 'bail|required|string',
             'is_active' => 'string',
-            'deadline' => 'string',
-            'requirements' => 'required|string'
+            'deadline' => 'bail|string|max:60',
+            'requirements' => 'bail|required|string'
         ];
     }
 }
