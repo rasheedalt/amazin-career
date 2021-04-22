@@ -98,11 +98,11 @@ input:checked + .slider:before {
 
                       <div class="form-group form-row">
                         <div class="form-group col-md-6">
-                          <label for="inputAddress">Job Title</label>
+                          <label for="inputAddress">Job Title <span class="text-danger">*</span></label>
                           <textarea class="form-control" name="job[${length}][title]" type="text"></textarea>
                         </div>
                           <div class="form-group col-md-6">
-                            <label for="inputAddress">Location</label>
+                            <label for="inputAddress">Location <span class="text-danger">*</span></label>
                             <select class="form-control select-single" data-placeholder="Choose a state..." multiple="multiple" name="job[${length}][address][]">
                               <option value="Nation wide">Nigeria (nation wide)</option>
                               @foreach ($states as $state)
@@ -114,23 +114,23 @@ input:checked + .slider:before {
 
                       <div class="form-group form-row">
                         <div class="form-group col-md-6">
-                          <label for="inputAddress">Requirements/Job description</label>
+                          <label for="inputAddress">Requirements/Job description <span class="text-danger">*</span></label>
                           <textarea class="form-control" name="job[${length}][description]" cols="30" rows="5"></textarea>
                         </div>
 
                         <div class="form-group col-md-6">
-                          <label for="inputAddress">Method of Application</label>
+                          <label for="inputAddress">Method of Application <span class="text-danger">*</span></label>
                           <textarea class="form-control" name="job[${length}][application_mode]" cols="30" rows="3"></textarea>
                         </div>
                       </div>
 
                       <div class="form-row">
                           <div class="form-group col-md-6">
-                          <label for="inputEmail4">Salary Range</label>
+                          <label for="inputEmail4">Salary Range <span class="text-danger">*</span></label>
                           <input class="form-control" name="job[${length}][salary]" required type="text">
                           </div>
                           <div class="form-group col-md-6">
-                              <label for="inputPassword4">Deadline</label>
+                              <label for="inputPassword4">Deadline <span class="text-danger">*</span></label>
                               <input class="form-control" name="job[${length}][deadline]" type="text">
                           </div>
                       </div>

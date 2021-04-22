@@ -58,7 +58,7 @@ Route::get('/services/{service}', 'ServiceController@viewService')->name('servic
 // Jobs
 Route::get('/jobs/{job}', 'JobController@view')->name('job.view');
 Route::get('/post-job', 'JobController@postJobView')->name('job.post');
-Route::post('/post-job', 'JobController@saveJob')->name('job.post');
+Route::post('/post-job/{admin?}', 'JobController@saveJob')->name('job.post');
 Route::get('/view-jobs/{stateCode}', 'JobController@viewStateJobs')->name('job.state');
 Route::post('/jobs/search', 'JobController@searchJob')->name('job.search');
 

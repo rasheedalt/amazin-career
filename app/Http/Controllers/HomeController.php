@@ -27,6 +27,8 @@ class HomeController extends Controller
     public function home()
     {
         $jobs = Job::groupBy('job_code')
+          ->where('is_active', true)
+          ->where('is_approved', true)
           ->select(DB::raw('group_concat(company_name) as company_name,
                group_concat(created_at) as date,
                group_concat(description) as description,

@@ -74,7 +74,9 @@ input:checked + .slider:before {
     <h3>Post Job</h3>
       <div class="row">
           <div class="col-md-9 pb-3">
-              @include('components.post-job')
+              @include('components.post-job', [
+                'isAdmin' => TRUE
+              ])
           </div>
       </div>
   </div>

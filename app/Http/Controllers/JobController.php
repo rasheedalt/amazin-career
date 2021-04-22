@@ -26,7 +26,7 @@ class JobController extends Controller
         return view('jobs.post-job', compact('states'));
     }
 
-    public function saveJob(CreateJobRequest $request){
+    public function saveJob(CreateJobRequest $request, $admin = null){
         $data = $request->all();
 
         if(isset($data['is_group']) && $data['is_group'] == 'yes'){
@@ -65,19 +65,21 @@ class JobController extends Controller
                       }
                     }
 
-                    if(auth()->user()){
+                    if($admin){
                         $savedJob->update(['is_approved' => true, 'is_active' => true]);
+                    }else{
+                      $savedJob->update(['is_approved' => false]);
                     }
                 }
                 DB::commit();
 
-                $this->flashSuccessMessage('Jobs were saved successfully');
+                $this->flashSuccessMessage('Jobs posted successfully');
                 return back();
 
             } catch (\Exception $e) {
                 DB::rollback();
                 dd($e);
-                $this->flashErrorMessage('Error saving Job');
+                $this->flashErrorMessage('Error posting Job');
                 return back()->withInput();
             }
 
@@ -115,15 +117,17 @@ class JobController extends Controller
               }
             }
 
-            if(auth()->user()){
+            if($admin){
                 $job->update(['is_approved' => true]);
+            }else{
+                $job->update(['is_approved' => false]);
             }
 
             if($job){
-                $this->flashSuccessMessage('Job was saved successfully');
+                $this->flashSuccessMessage('Job posted successfully');
                 return back();
             }else{
-                $this->flashErrorMessage('Error saving Job');
+                $this->flashErrorMessage('Error posting Job');
                 return back()->withInput();
             }
         }
