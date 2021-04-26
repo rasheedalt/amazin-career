@@ -54,7 +54,7 @@ class JobController extends Controller
                     if(!empty($adds)){
                       if( in_array('Nation wide',$adds) ){
                         $allStates = State::all();
-                        $job->states()->attach($allStates);
+                        $savedJob->states()->attach($allStates);
                       }else{
                         foreach ($adds as $add) {
                           $state = State::where('name', $add)->first();
