@@ -27,7 +27,7 @@ class SaveScholarshipRequest extends FormRequest
             'title' => 'bail|required|string',
             'description' => 'bail|required|string',
             'application_mode' => 'bail|required|string',
-            'link' => 'bail|required|string',
+            'link' => 'bail|nullable|string',
             'is_active' => 'string',
             'deadline' => 'bail|string|max:60',
             'requirements' => 'bail|required|string'

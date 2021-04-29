@@ -5,7 +5,7 @@
     @if($jobs->count() == 1)
         @php $job = $jobs[0]; @endphp
         <div class="post mb-2">
-            <h4>{{ ucwords($job->title)." at ".ucwords($job->company_name) }}</h4>
+            <h4>{{ ucwords($job->title) }}</h4>
             <date> Date posted: {{ $job->created_at->format('d - M - Y') }} </date>
             <p>Location: {{ ucwords($job->address) }}</p>
             <div class="card">

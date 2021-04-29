@@ -147,7 +147,7 @@ class ServiceController extends Controller
             $image = $request->file('picture');
             $extension = $image->getClientOriginalExtension();
             $name = "{$request->linkedin_username}_picture_".time().'.'.$extension;
-            $url = $request->file('cv')->storeAs('public/pictures/', $name);
+            $url = $request->file('picture')->storeAs('public/pictures/', $name);
             $cv = url('/')."/storage/pictures/".$name;
             $data['picture'] = $cv;
         }
