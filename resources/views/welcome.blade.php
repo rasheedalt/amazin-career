@@ -106,6 +106,7 @@
     <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}">
     <script src="{{ asset('js/vendor/jquery-2.2.4.min.js') }}"></script>
     <script src="{{ asset('js/vendor/bootstrap.min.js') }}"></script>
+    <script data-ad-client="ca-pub-7369873058175843" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 </head>
 <body>
