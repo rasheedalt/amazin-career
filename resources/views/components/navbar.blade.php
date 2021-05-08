@@ -13,7 +13,7 @@
             <li class="nav-item mr-md-1"><a class="nav-link" href="{{ route('job.post') }}">Post Jobs</a></li>
             <li class="nav-item mr-md-1"><a class="nav-link" href="{{ route('scholarships.list') }}">Scholarships</a></li>
             <li class="nav-item mr-md-1"><a class="nav-link" href="{{ route('contact.page') }}">Contact</a></li>
-            <li class="nav-item mr-md-1"><a class="nav-link" href="{{ route('posts') }}">Blog</a></li>
+            <li class="nav-item mr-md-1"><a class="nav-link" href="{{ route('posts') }}">Blog</a></li> 
         </ul>
     </div>
 </nav>
