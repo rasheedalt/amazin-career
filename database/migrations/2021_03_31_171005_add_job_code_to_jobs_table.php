@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddGroupColumnToJobsTable extends Migration
+class AddJobCodeToJobsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,7 +14,7 @@ class AddGroupColumnToJobsTable extends Migration
     public function up()
     {
         Schema::table('jobs', function (Blueprint $table) {
-            $table->unsignedBigInteger('job_group_id')->nullable();
+            $table->string('job_code')->index('job_code_index');
         });
     }
 
@@ -26,7 +26,7 @@ class AddGroupColumnToJobsTable extends Migration
     public function down()
     {
         Schema::table('jobs', function (Blueprint $table) {
-            $table->dropColumn('job_group_id');
+            $table->dropColumn('job_code');
         });
     }
 }

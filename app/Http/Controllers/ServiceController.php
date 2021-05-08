@@ -23,6 +23,14 @@ class ServiceController extends Controller
     }
 
     public function postBusinessPlan(Request $request){
+      $request->validate([
+        'first_name' => 'bail|required|string',
+        'last_name' => 'bail|required|string',
+        'email_address' => 'bail|required|email',
+        'phone_number' => 'bail|required',
+        'type_of_business' => 'bail|required|string',
+      ]);
+
         $data = $request->all();
         $result = BusinessPlan::create($data);
 
@@ -37,6 +45,17 @@ class ServiceController extends Controller
     }
 
     public function postCompanyRegistration(Request $request){
+      $request->validate([
+        'first_proposed_business_name' => 'bail|required|string',
+        'second_proposed_business_name' => 'bail|required|string',
+        'name_of_business_owner' => 'bail|required|string',
+        'business_address' => 'bail|required|string',
+        'nature_of_bussiness' => 'bail|required|string',
+        'email_address' => 'bail|required|email',
+        'phone_number' => 'bail|required',
+        'start_date' => 'bail|required|file',
+      ]);
+
         $data = $request->all();
         $result = CompanyRegistration::create($data);
 
@@ -51,6 +70,14 @@ class ServiceController extends Controller
     }
 
     public function postCoverLetter(Request $request){
+      $request->validate([
+        'first_name' => 'bail|required|string',
+        'last_name' => 'bail|required|string',
+        'email_address' => 'bail|required|email',
+        'phone_number' => 'bail|required',
+        'cv' => 'bail|required|file',
+      ]);
+
         $data = $request->all();
         if($request->hasFile('cv')){
             $image = $request->file('cv');
@@ -74,6 +101,14 @@ class ServiceController extends Controller
     }
 
     public function postCvReview(Request $request){
+        $request->validate([
+          'first_name' => 'bail|required|string',
+          'last_name' => 'bail|required|string',
+          'email_address' => 'bail|required|email',
+          'phone_number' => 'bail|required',
+          'cv' => 'bail|required|file',
+        ]);
+
         $data = $request->all();
 
         if($request->hasFile('cv')){
@@ -98,12 +133,21 @@ class ServiceController extends Controller
     }
 
     public function postLinkedInOptimization(Request $request){
+        $request->validate([
+          'linkedin_username' => 'bail|required|string',
+          'linkedin_password' => 'bail|required|string',
+          'email_address' => 'bail|required|email',
+          'phone_number' => 'bail|required',
+          'cv' => 'bail|required|file',
+          'picture' => 'bail|required|file',
+        ]);
+
         $data = $request->all();
         if($request->hasFile('picture')){
             $image = $request->file('picture');
             $extension = $image->getClientOriginalExtension();
             $name = "{$request->linkedin_username}_picture_".time().'.'.$extension;
-            $url = $request->file('cv')->storeAs('public/pictures/', $name);
+            $url = $request->file('picture')->storeAs('public/pictures/', $name);
             $cv = url('/')."/storage/pictures/".$name;
             $data['picture'] = $cv;
         }

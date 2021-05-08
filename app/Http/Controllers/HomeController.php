@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Models\Job;
 
 class HomeController extends Controller
@@ -15,7 +16,7 @@ class HomeController extends Controller
     // public function __construct()
     // {
     //     $this->middleware('guest');
-        
+
     // }
 
     /**
@@ -25,12 +26,18 @@ class HomeController extends Controller
      */
     public function home()
     {
-        $jobs = Job::where('is_approved', true)
-                ->where('is_active', true)
-                ->orderBy('created_at', 'desc')
-                // ->groupBy('job_group_id')
-                ->paginate(10);
-        // return $jobs;
+        $jobs = Job::groupBy('job_code')
+          ->where('is_active', true)
+          ->where('is_approved', true)
+          ->select(DB::raw('group_concat(company_name) as company_name,
+               group_concat(created_at) as date,
+               group_concat(description) as description,
+               group_concat(title) as title,
+               job_code,
+               count(*) as count'))
+           ->orderBy('date', 'desc')
+           ->paginate(10);
+
         return view('welcome', compact('jobs'));
     }
 

@@ -21,7 +21,8 @@ class StaticPagesController extends Controller
     }
 
     public function postJobPage(){
-        return view('pages.post-job');
+      $states = State::all();
+        return view('pages.post-job', compact('states'));
     }
 
     public function disclaimerPage(){

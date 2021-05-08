@@ -23,7 +23,7 @@
         .PostJ input {
             /* padding: 8px; */
             font-size: 14px;
-            font-family: Tahoma;
+            font-family: Roboto;
             /* margin-bottom: 5px;
             margin-top: 5px; */
             border-bottom-style: solid;
@@ -38,7 +38,7 @@
         background-color: red;
         color: white;
         border-radius: 3px;
-        font-family: tahoma;
+        font-family: Roboto;
         font-size: 14px;
        }
        .PostJ button:hover {
@@ -55,7 +55,7 @@
             text-decoration: none;
             list-style: none;
             color:  #072638;
-            font-family: tahoma;
+            font-family: Roboto;
             font-size: 15px;
             
         }

@@ -2,109 +2,167 @@
 
 @section('more-styles')
 <link  href="{{ asset('css/admin/dashboard.css') }}" rel="stylesheet">
-
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 <style>
-        .PV {
-            padding: 12px;
-            padding-left: 29px;
-            background-color: #072638;
-            color: white;
-        }
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
 
-        .State {
-            padding: 15px;
-            margin-left: 10px;
-            /* float: left; */
-        }
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
 
-        .PostJ {
-            /* float: left; */
-            padding: 15px;
-            margin-left: 40px;
-        }
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
 
-        .PostJ input, textarea {
-            padding: 8px;
-            /* width: 600px; */
-            font-size: 14px;
-            font-family: Tahoma;
-            margin-bottom: 8px;
-            border-style: solid;
-            border-width: 1px;
-        }
-        .PostJ button{
-        width: 100px;
-        padding: 10px;
-        margin-bottom: 20px;
-        border-style: none;
-        background-color: #072638;
-        color: white;
-        border-radius: 3px;
-        font-family: tahoma;
-        font-size: 14px;
-       }
-       .PostJ button:hover {
-        background-color: #F2EDED;
-        color:  #072638;
-        transition: 0.8s ease;
-        }
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
 
+input:checked + .slider {
+  background-color: #2196F3;
+}
 
-    </style>
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+</style>
 @endsection
 
 @section('content')
-<div id="maincontent" class="mt-2 mr-2 mb-3">
-             <h3>POST JOB</h3>
-             <hr>
-            <form action="{{ route('admin.job_post') }}" method="POST">
-                <div class="row">
-                    <div class="col-3">
-                        <div class= "State">
-                                    <label><input type="checkbox" value="" id="ckbCheckAll"> select all</label><br/>
-                                <div class="row">
-                                @foreach($states as $state)
-                                    <div class="col-6">
-                                        <label><input class="checkBoxClass" type="checkbox"name="state[]" value="{{ $state->id }}" id="{{ $state->name }}"> {{ $state->name }}</label><br/>
-                                    </div>
-                                    @endforeach
-                                </div>
-                        </div>
-                    </div>
-                    <div class="col-8">
+  <div id="contaner" class="mt-2 mr-2 mb-3">
+    <h3>Post Job</h3>
+      <div class="row">
+          <div class="col-md-9 pb-3">
+              @include('components.post-job', [
+                'isAdmin' => TRUE
+              ])
+          </div>
+      </div>
+  </div>
+@endsection
 
-                        <div class="PostJ">
-                        @include('components.flash-message')
-        
-                                @csrf
-                                <input class="form-control" name="company_name" value="{{ old('company_name') }}" placeholder="Company" type="text"/> <br/>
-                                <input class="form-control" name="company_registration_no" value="{{ old('company_registration_no') }}" placeholder="Company Registration No" type="text"/> <br/>
-                                <input class="form-control" name="address" value="{{ old('address') }}" placeholder="Adress/Location" type="text"/><br/>
-                                <input class="form-control" name="title" value="{{ old('title') }}" placeholder="Job Positions" type="text"/><br/>
-                                <input class="form-control" name="salary" value="{{ old('salary') }}" placeholder="Salary Range" type="text"/><br/>
-                                <textarea class="form-control" name="description" placeholder="Requirements" id="" cols="30" rows="5">{{ old('description') }}</textarea><br/>
-                                <textarea class="form-control" name="application_mode" placeholder="Method of Application" id="" cols="30" rows="5">{{ old('application_mode') }}</textarea><br/>
-                                <input class="form-control" name="deadline" value="{{ old('deadline') }}" placeholder="Deadlines" type="text"/><br/>
-                                <input class="form-control" name="link" value="{{ old('link') }}" placeholder="Application Link" type="text"/><br/>
-                                <button>Post</button>
-                        </div>
-                    </div>
-                </div>
-
-            </form>
-           
-        </div>
+@section('more-scripts')
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 <script>
-    $(document).ready(function () {
-    $("#ckbCheckAll").click(function () {
-        $(".checkBoxClass").prop('checked', $(this).prop('checked'));
+  $(document ).ready(function() {
+        $('#add-job').hide();
+        $('.first-job-title').hide();
+        $('.select-single').select2();
+
+        $('#switch').change(function(){
+          if( $('#switch').is(":checked") ){
+            $('#add-job').show();
+            $('.first-job-title').show();
+          }else{
+            $('#add-job').hide();
+            $('.first-job-title').hide();
+          }
+        })
+
+        $('#add-job').on('click', function(){
+          let length = $('#jobs').children().length + 1;
+
+          let row = `
+              <li class="list-group-item" id="job${length}">
+                  <div>
+                      <div class="row">
+                        <div class="col"><h4>Job Position ${length}</h4></div>
+                        <div class="col"><a onClick="removeDiv(${length})" class="float-right" href="#"><i class="fa fa-times fa-2x"></i></a></div>
+                      </div>
+
+                      <div class="form-group form-row">
+                        <div class="form-group col-md-6">
+                          <label for="inputAddress">Job Title</label>
+                          <textarea class="form-control" name="job[${length}][title]" type="text"></textarea>
+                        </div>
+                          <div class="form-group col-md-6">
+                            <label for="inputAddress">Location</label>
+                            <select class="form-control select-single" data-placeholder="Choose a state..." multiple="multiple" name="job[${length}][address][]">
+                              <option value="Nation wide">Nigeria (nation wide)</option>
+                              @foreach ($states as $state)
+                                <option value="{{ $state->name }}">{{ $state->name }}</option>
+                              @endforeach
+                            </select>
+                          </div>
+                      </div>
+
+                      <div class="form-group form-row">
+                        <div class="form-group col-md-6">
+                          <label for="inputAddress">Requirements/Job description</label>
+                          <textarea class="form-control" name="job[${length}][description]" cols="30" rows="5"></textarea>
+                        </div>
+
+                        <div class="form-group col-md-6">
+                          <label for="inputAddress">Method of Application</label>
+                          <textarea class="form-control" name="job[${length}][application_mode]" cols="30" rows="3"></textarea>
+                        </div>
+                      </div>
+
+                      <div class="form-row">
+                          <div class="form-group col-md-6">
+                          <label for="inputEmail4">Salary Range</label>
+                          <input class="form-control" name="job[${length}][salary]" required type="text">
+                          </div>
+                          <div class="form-group col-md-6">
+                              <label for="inputPassword4">Deadline</label>
+                              <input class="form-control" name="job[${length}][deadline]" type="text">
+                          </div>
+                      </div>
+
+                      <div class="form-group">
+                          <label for="inputAddress">Application Link</label>
+                          <input class="form-control" name="job[${length}][link]" type="text">
+                      </div>
+                  </div>
+                  </li>`;
+            $('#jobs').append(row)
+            $('.select-single').select2();
+        })
     });
-    
-    $(".checkBoxClass").change(function(){
-        if (!$(this).prop("checked")){
-            $("#ckbCheckAll").prop("checked",false);
-        }
-    });
-});
+
+    function removeDiv(id){
+      $(`#job${id}`).remove()
+    }
 </script>
 @endsection

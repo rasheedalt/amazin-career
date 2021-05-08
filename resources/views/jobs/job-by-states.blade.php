@@ -25,13 +25,13 @@
         }
         #maincontent{
             height: 200px;
-            
+
         }
 
         .post1 {
             padding: 50px;
             float: left;
-           
+
        }
        .post1 ol li {
             padding-left: 15px;
@@ -53,7 +53,7 @@
         .post2 {
             padding: 50px;
             float: left;
-           
+
        }
        .post2 ol li {
             padding-left: 15px;
@@ -75,7 +75,7 @@
         .post3 {
             padding: 50px;
             float: left;
-           
+
        }
        .post3 ol li {
             padding-left: 15px;
@@ -107,8 +107,8 @@
                 <li><a href="{{ route('job.state', 'LA') }}">LA|Lagos Jobs</a></li>
                 <li><a href="{{ route('job.state', 'FC') }}"> FC|Abuja Jobs</a></li>
                 <li><a href="{{ route('job.state', 'RI') }}"> PH|Portharcourt Jobs</a></li>
-                <li><a href="{{ route('job.state', 'KN') }}l">KN|Kano Jobs</a></li>
-                <li><a href="{{ route('job.state', 'AB') }}"> AB|Abia Jobs</a></li> 
+                <li><a href="{{ route('job.state', 'KN') }}">KN|Kano Jobs</a></li>
+                <li><a href="{{ route('job.state', 'AB') }}"> AB|Abia Jobs</a></li>
                 <li><a href="{{ route('job.state', 'AD') }}">AD|Adamawa Jobs </a></li>
                 <li><a href="{{ route('job.state', 'AK') }}">AK|Akwa Ibom Jobs</a></li>
                 <li><a href="{{ route('job.state', 'AN') }}">AN|Anambra Jobs</a></li>

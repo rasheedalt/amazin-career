@@ -4,7 +4,7 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Roboto', Roboto, Geneva, Verdana, sans-serif;
 }
 
 #maincontent {
@@ -16,7 +16,7 @@ body {
 }
 #maincontent h3 {
     text-align: center;
-    font-family: Tahoma;
+    font-family: Roboto;
     font-size: 17px;
     padding: 5px;
     padding-bottom: 20px;
@@ -35,11 +35,11 @@ body {
 }
 
 #header h4 {
-    font-family: Tahoma;
+    font-family: Roboto;
 }
 
 #header p{
-    font-family: tahoma;
+    font-family: Roboto;
     font-size: 14px;
     padding: 5PX;
 }
@@ -54,7 +54,7 @@ body {
     text-decoration: none;
     list-style: none;
     color:  #072638;
-    font-family: tahoma;
+    font-family: Roboto;
     font-size: 15px;
 }
 #sidebar ol a li {
@@ -79,7 +79,7 @@ body {
 }
 
 #sidebar p {
-    font-family: tahoma;
+    font-family: Roboto;
     font-size: 15px;
     text-indent: 30px;
 }
@@ -92,7 +92,7 @@ body {
 
 .CI {
     margin: 10px;
-    width: 150px;   
+    width: 150px;
     height: 70px;
     background-color: #E3E3E3;
     text-align: center;
@@ -102,14 +102,14 @@ body {
     padding-right: 20px;
 }
 .CI h2 {
-    font-family: tahoma;
+    font-family: Roboto;
     font-size: 30px;
     padding: 10px;
 }
 
 .PJR {
     margin: 10px;
-    width: 150px;   
+    width: 150px;
     height: 70px;
     background-color: #E3E3E3;
     text-align: center;
@@ -119,7 +119,7 @@ body {
     padding-right: 20px;
 }
 .PJR h2 {
-    font-family: tahoma;
+    font-family: Roboto;
     font-size: 30px;
     padding: 10px;
 }
@@ -130,7 +130,7 @@ body {
 }
 .Emails {
     margin: 10px;
-    width: 150px;   
+    width: 150px;
     height: 70px;
     background-color: #E3E3E3;
     text-align: center;
@@ -140,7 +140,7 @@ body {
     padding-right: 20px;
 }
 .Emails h2 {
-    font-family: tahoma;
+    font-family: Roboto;
     font-size: 30px;
     padding: 10px;
 }
@@ -149,7 +149,7 @@ body {
     color:  #E3E3E3;
     list-style: none;
     text-decoration: none;
-    font-family: tahoma;
+    font-family: Roboto;
     font-size: 15px;
 }
 
@@ -175,7 +175,7 @@ body {
 
 .WV {
     margin: 10px;
-    width: 150px;   
+    width: 150px;
     height: 70px;
     background-color: #E3E3E3;
     text-align: center;
@@ -185,14 +185,14 @@ body {
     padding-right: 20px;
 }
 .WV h2 {
-    font-family: tahoma;
+    font-family: Roboto;
     font-size: 30px;
     padding: 10px;
 }
 
 .DV {
     margin: 10px;
-    width: 150px;   
+    width: 150px;
     height: 70px;
     background-color: #E3E3E3;
     text-align: center;
@@ -202,7 +202,7 @@ body {
     padding-right: 20px;
 }
 .DV h2 {
-    font-family: tahoma;
+    font-family: Roboto;
     font-size: 30px;
     padding: 10px;
 }
@@ -215,7 +215,7 @@ body {
 
 .DCC {
     margin: 10px;
-    width: 150px;   
+    width: 150px;
     height: 70px;
     background-color: #E3E3E3;
     text-align: center;
@@ -225,14 +225,14 @@ body {
     padding-right: 20px;
 }
 .DCC h2 {
-    font-family: tahoma;
+    font-family: Roboto;
     font-size: 30px;
     padding: 10px;
 }
 
 .MV{
     margin: 10px;
-    width: 150px;   
+    width: 150px;
     height: 70px;
     background-color: #E3E3E3;
     text-align: center;
@@ -242,14 +242,14 @@ body {
     padding-right: 20px;
 }
 .MV h2 {
-    font-family: tahoma;
+    font-family: Roboto;
     font-size: 30px;
     padding: 10px;
 }
 
 .WV{
     margin: 10px;
-    width: 150px;   
+    width: 150px;
     height: 70px;
     background-color: #E3E3E3;
     text-align: center;
@@ -259,7 +259,7 @@ body {
     padding-right: 20px;
 }
 .WV h2 {
-    font-family: tahoma;
+    font-family: Roboto;
     font-size: 30px;
     padding: 10px;
 }
@@ -282,7 +282,7 @@ body {
     }
 
     #header h4 {
-        font-family: Tahoma;
+        font-family: Roboto;
         font-size: 12px;
     }
     #header p{
@@ -384,7 +384,7 @@ body {
 
 
 
-    
+
 
 
 

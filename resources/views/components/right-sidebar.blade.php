@@ -8,12 +8,8 @@
             <li><a href="{{ route('service.cv_review')}}">CV Rewrite</a></li>
             <li><a href="{{ route('service.linkin_opt')}}">LinkedIn Optimization</a></li>
         </ol>
-
-        <div class="spaceOne">
-            <p>ADEVRTS</p>
-        </div>
         <div class="spaceTwo">
-            <p>ADEVRTS</p>
+            <p>ADVERTS</p>
         </div>
     </div>
 </div>
