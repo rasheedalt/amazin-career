@@ -93,7 +93,7 @@
       <div class="row">
         <!--Grid column-->
         <div class="col-lg-3 col-md-6 mb-4 col-6">
-          <h5 class="text-uppercase">Links</h5>
+          <h5 class="text-uppercase">TERMS AND PRIVACY</h5>
 
           <ul class="list-unstyled mb-0" style="color: #02977 !important;">
             <li>
