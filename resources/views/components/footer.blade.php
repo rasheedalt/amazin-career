@@ -147,15 +147,24 @@
 
         <!--Grid column-->
         <div class="col-lg-3 col-md-6 col-6 mb-4">
-          <h5 class="text-uppercase">Links</h5>
+          <h5 class="text-uppercase">Services</h5>
 
           <ul class="list-unstyled mb-0">
             <li>
-              <a href="{{ route('job.post') }}" class="text-white">Post Job</a>
+              <a href="{{ route('service.business_plan')}}" class="text-white" >Business Plan</a>
             </li>
-            <!-- <li>
-              <a href="{{ route('services.page') }}" class="text-white">Post Scholarship</a>
-            </li> -->
+            <li>
+              <a href="{{ route('service.company_reg')}}" class="text-white" >Company Registration</a>
+            </li>
+            <li>
+              <a href="{{ route('service.cover_letter')}}" class="text-white" >Cover Letter</a>
+            </li>
+            <li>
+              <a href="{{ route('service.cv_review')}}" class="text-white" >CV Rewrite</a>
+            </li>
+            <li>
+              <a href="{{ route('service.linkin_opt')}}" class="text-white" >LinkedIn Optimization</a>
+            </li>
           </ul>
         </div>
         <!--Grid column-->
