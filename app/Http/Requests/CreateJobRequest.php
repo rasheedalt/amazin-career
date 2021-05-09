@@ -24,7 +24,14 @@ class CreateJobRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'company_name' => 'required',
+            'company_registration_no' => 'required',
+            'job.address' => 'required',
+            'job.title' => 'required',
+            'job.description' => 'required',
+            'job.application_mode' => 'required',
+            'job.salary' => 'required',
+            'job.deadline' => 'required',
         ];
     }
 }

@@ -129,17 +129,23 @@
 
         <!--Grid column-->
         <div class="col-lg-3 col-md-6 col-6 mb-4 mb-md-0 ">
-          <h5 class="text-uppercase">Links</h5>
+          <h5 class="text-uppercase">Jobs</h5>
 
           <ul class="list-unstyled mb-0">
             <li>
-              <a href="{{ route('posts') }}" class="text-white">Blog</a>
+              <a href="{{ route('job.state', 'LA') }}" class="text-white">Jobs in Lagos</a>
             </li>
             <li>
-              <a href="{{ route('scholarships.list') }}" class="text-white">Scholarships</a>
+              <a href="{{ route('job.state', 'FC') }}" class="text-white">Jobs in Abuja</a>
             </li>
             <li>
-              <a href="{{ route('services.page') }}" class="text-white">Services</a>
+              <a href="{{ route('job.state', 'RI') }}" class="text-white">Jobs in Rivers</a>
+            </li>
+            <li>
+              <a href="{{ route('job.state', 'KN') }}" class="text-white">Jobs in Kano</a>
+            </li>
+            <li>
+              <a href="{{ route('states.all') }}" class="text-white">Jobs in all states</a>
             </li>
           </ul>
         </div>
