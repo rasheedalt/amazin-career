@@ -32,7 +32,7 @@ class AdminController extends Controller
         $businessPlan = BusinessPlan::count();
         $linkedInOpt = LinkedinOptimization::count();
         $coverLetters = CoverLetter::count();
-        return view('admin.dashboard', compact('emailCount', 'jobs', 'businessPlan', 'cvs', 
+        return view('admin.dashboard', compact('emailCount', 'jobs', 'businessPlan', 'cvs',
                     'Scholarships', 'linkedInOpt', 'coverLetters', 'jobRequests'));
     }
 
@@ -50,12 +50,12 @@ class AdminController extends Controller
         return view('admin.job_post', compact('states'));
     }
 
-    public function postJob(SaveJobRequest $request){
+    public function postJob(Request $request){
         $data = $request->except('state', '_token');
         $states =  $request->state;
         $data['is_active'] = true;
         $data['is_approved'] = true;
-        
+
         $job = Job::create($data);
 
         if($states){
@@ -97,7 +97,7 @@ class AdminController extends Controller
             return back()->withInput();
         }
 
-        User::find(auth()->user()->id)->update(['password'=> Hash::make($request->new_password)]); 
+        User::find(auth()->user()->id)->update(['password'=> Hash::make($request->new_password)]);
         $this->flashSuccessMessage('Password changed successfully');
         return back();
     }
