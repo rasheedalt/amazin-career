@@ -46,11 +46,11 @@
                   <div class="form-group form-row">
                     <div class="form-group col-md-6">
                       <label for="inputAddress">Job Title <span class="text-danger">*</span></label>
-                      <textarea class="form-control" name="job[1][title]" type="text"></textarea>
+                      <textarea class="form-control" name="job[1][title]" type="text" required></textarea>
                     </div>
                       <div class="form-group col-md-6">
                         <label for="inputAddress">Location <span class="text-danger">*</span></label>
-                        <select class="form-control select-single" data-placeholder="Choose a state..." multiple="multiple" name="job[1][address][]">
+                        <select class="form-control select-single" data-placeholder="Choose a state..." multiple="multiple" name="job[1][address][]" required>
                           <option value="Nation wide">Nigeria (nation wide)</option>
                           @foreach ($states as $state)
                             <option value="{{ $state->name }}">{{ $state->name }}</option>
@@ -63,12 +63,12 @@
                   <div class="form-group form-row">
                     <div class="form-group col-md-6">
                       <label for="inputAddress">Requirements/Job description <span class="text-danger">*</span></label>
-                      <textarea class="form-control" name="job[1][description]" cols="30" rows="5"></textarea>
+                      <textarea class="form-control" name="job[1][description]" cols="30" rows="5" required></textarea>
                     </div>
 
                     <div class="form-group col-md-6">
                       <label for="inputAddress">Method of Application <span class="text-danger">*</span></label>
-                      <textarea class="form-control" name="job[1][application_mode]" cols="30" rows="3"></textarea>
+                      <textarea class="form-control" name="job[1][application_mode]" cols="30" rows="3" required></textarea>
                     </div>
                   </div>
 
@@ -79,7 +79,7 @@
                       </div>
                       <div class="form-group col-md-6">
                           <label for="inputPassword4">Deadline <span class="text-danger">*</span></label>
-                          <input class="form-control" name="job[1][deadline]" type="text">
+                          <input class="form-control" name="job[1][deadline]" required type="text">
                       </div>
                   </div>
 

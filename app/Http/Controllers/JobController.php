@@ -26,7 +26,7 @@ class JobController extends Controller
         return view('jobs.post-job', compact('states'));
     }
 
-    public function saveJob(CreateJobRequest $request, $admin = null){
+    public function saveJob(Request $request, $admin = null){
         $data = $request->all();
 
         if(isset($data['is_group']) && $data['is_group'] == 'yes'){
