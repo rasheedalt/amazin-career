@@ -39,6 +39,11 @@ Route::group(['middleware' => ['auth:web']], function(){
     Route::get('/requests/cover-letter','AdminController@coverLetterRequests')->name('admin.cover_letter_requests');
     Route::get('/requests/business-registration','AdminController@businessRegistrationRequests')->name('admin.business_reg_requests');
     Route::get('/requests/cv-rewrite','AdminController@cvRewriteRequests')->name('admin.cv_rewrite_requests');
+
+    // schlrship
+    Route::get('/admin/scholarships','ScholarshipsController@manage')->name('admin.manage_scholarships');
+    Route::post('/{scholarship}/delete','ScholarshipsController@destroy')->name('admin.delete_scholarship');
+    Route::post('/{scholarship}/toggle','ScholarshipsController@activateToggle')->name('admin.scholarship_activate_toggle');
 });
 
 Auth::routes();

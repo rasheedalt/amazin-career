@@ -45,7 +45,6 @@
     <h3> SCHOLARSHIPS </h3>
     <hr>
     <div class="PostJ mx-md-3">
-    @include('components.flash-message')
         <form method="post" action="{{ route('scholarship.post') }}">
             @csrf
             <input name="title" class="form-control" placeholder="Scholarships title" value="{{ old('title') }}" type="text"/> <br/>

@@ -15,7 +15,7 @@ class ScholarshipsController extends Controller
      */
     public function index()
     {
-        $scholarships = Scholarship::latest()->paginate(10);
+        $scholarships = Scholarship::where('is_active', true)->latest()->paginate(10);
         return view('scholarships.list',compact('scholarships'));
     }
 
@@ -27,6 +27,12 @@ class ScholarshipsController extends Controller
     public function create()
     {
         //
+    }
+
+    public function manage()
+    {
+        $scholarships = Scholarship::latest()->paginate(10);
+        return view('admin.manage_scholarship', compact('scholarships'));
     }
 
     /**
@@ -82,8 +88,23 @@ class ScholarshipsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Scholarship $scholarship)
     {
-        //
+        $scholarship->delete();
+        return back()->with('success', 'Scolarship deleted successfully');   
+    }
+
+    public function activateToggle(Scholarship $scholarship){
+        if(auth()->user() && !auth()->user()->isStaff()){
+
+            $toggle = $scholarship->is_active ? false : true;
+            $scholarship->update(['is_active' => $toggle]);
+            $this->flashSuccessMessage('Successfull');
+            return back();
+
+        }else{
+            $this->flashErrorMessage('Unauthorized');
+            return back();
+        }
     }
 }

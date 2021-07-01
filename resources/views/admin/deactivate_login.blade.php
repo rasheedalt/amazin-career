@@ -83,8 +83,11 @@
                                 <form method="post" action="{{ route('login.deactivate', $user->id) }}" >
                                     @csrf
                                     <div class="row mb-1">
-                                        <div class="col-8">
+                                        <div class="col-5">
                                             <td>{{ strtolower($user->email) }}</td>
+                                        </div>
+                                        <div class="col-3">
+                                            <td>{{  $user->is_active ? 'Active' : 'Inactive' }}</td>
                                         </div>
                                         <div class="col-2">
                                             <td><button class="btn" style="{{ !$user->is_active ? 'background-color:green;' : '' }}">{{ $user->is_active ? 'Deactivate' : 'Activate'}}</button> <br/></td>

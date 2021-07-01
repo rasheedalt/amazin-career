@@ -9,6 +9,7 @@
         @if(!$user->isStaff())<a href="{{ route('admin.emails') }}"><li> Subscribed Emails </li></a>@endif
         @if(!$user->isStaff())<a href="{{ route('login.generate') }}"><li> Generate Login </li></a>@endif
         @if(!$user->isStaff())<a href="{{ route('admin.manage_jobs') }}"><li> Manage Jobs </li></a>@endif
+        @if(!$user->isStaff())<a href="{{ route('admin.manage_scholarships') }}"><li> Manage Scholarships </li></a>@endif
         <a href="{{ route('password.change') }}"><li> Change Password</li></a>
         <a href="{{ route('logout') }}"
             onclick="event.preventDefault();

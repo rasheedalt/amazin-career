@@ -14,7 +14,7 @@
         <div class="card bg-muted">
             <div class="card-body ">
                 <p>Job Requests</p>
-                <h2>{{ $jobRequests }}</h >
+                <h2>{{ number_format($jobRequests) }}</h >
             </div>
         </div>
     </div>
@@ -22,7 +22,7 @@
         <div class="card bg-muted">
             <div class="card-body ">
                 <p>Emails</p>
-                <h2>{{ $emailCount }}</h >
+                <h2>{{ number_format($emailCount) }}</h >
             </div>
         </div>
     </div>
@@ -30,7 +30,7 @@
         <div class="card bg-muted">
             <div class="card-body ">
                 <p>Jobs Available</p>
-                <h2>{{ $jobs }}</h >
+                <h2>{{ number_format($jobs) }}</h >
             </div>
         </div>
     </div>
@@ -38,7 +38,7 @@
         <div class="card bg-muted">
             <div class="card-body ">
                 <p>Business Plan Requests</p>
-                <h2>{{ $businessPlan }}</h >
+                <h2>{{ number_format($businessPlan) }}</h >
             </div>
         </div>
     </div>
@@ -46,7 +46,7 @@
         <div class="card bg-muted">
             <div class="card-body ">
                 <p>CV Rewrite Requests</p>
-                <h2>{{ $cvs }}</h>
+                <h2>{{ number_format($cvs) }}</h>
             </div>
         </div>
     </div>
@@ -54,7 +54,7 @@
         <div class="card bg-muted">
             <div class="card-body ">
                 <p>LinkedIn Opt. Requests</p>
-                <h2>{{ $linkedInOpt }}</h>
+                <h2>{{ number_format($linkedInOpt) }}</h>
             </div>
         </div>
     </div>
@@ -62,7 +62,7 @@
         <div class="card bg-muted">
             <div class="card-body ">
                 <p>Cover Letter Requests</p>
-                <h2>{{ $coverLetters }}</h>
+                <h2>{{ number_format($coverLetters) }}</h>
             </div>
         </div>
     </div>
